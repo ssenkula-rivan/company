@@ -66,8 +66,8 @@ export default function Footer() {
             transition={{ delay: 0.1, duration: 0.6 }}
           >
             <div className="flex items-center mb-4">
-              <img src="/LOGO.png" alt="AMODZ Logo" className="w-10 h-10 mr-3" />
-              <h5 className="text-lg font-bold">AMODZ</h5>
+              <img src="/LOGO.png" alt="AMODZ Logo" className="w-14 h-14 mr-3 bg-white rounded-full p-2" />
+              <h5 className="text-lg font-bold">AMODZ PROPERTIES LIMITED</h5>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed mb-4">
               Your trusted real estate partner for property sales, rentals, and investments.
