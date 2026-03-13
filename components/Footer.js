@@ -10,6 +10,7 @@ if (typeof window !== 'undefined') {
 
 export default function Footer() {
   const footerRef = useRef(null)
+  const currentYear = new Date().getFullYear()
 
   useEffect(() => {
     // Parallax effect for footer background using GSAP
@@ -46,7 +47,7 @@ export default function Footer() {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="bg-dark-blue text-white py-20 relative overflow-hidden border-t-4 border-orange"
+      className="bg-dark-blue text-white py-12 md:py-20 relative overflow-hidden border-t-4 border-orange"
     >
       {/* Parallax Background */}
       <div className="footer-parallax absolute inset-0 bg-gradient-to-br from-orange/10 to-primary-blue/10">
@@ -54,142 +55,121 @@ export default function Footer() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-8">
+          {/* Company Info */}
           <motion.div 
-            className="footer-section footer-element"
-            initial={{ opacity: 0, y: 50 }}
+            className="footer-section"
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.8, ease: 'easeOut' }}
+            transition={{ delay: 0.1, duration: 0.6 }}
           >
-            <h5 className="text-xl font-bold mb-6 flex items-center">
-              <i className="fas fa-certificate mr-3 text-orange"></i>
-              AMODZ PROPERTIES LIMITED
-            </h5>
-            <motion.p 
-              className="text-gray-300 mb-6 leading-relaxed"
-              whileHover={{ x: 10 }}
-              transition={{ duration: 0.3 }}
-            >
-              Your trusted partner for all property needs - sales, rentals, and real estate investments.
-            </motion.p>
-            <motion.div 
-              className="flex space-x-4"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.6, stagger: 0.1 }}
-            >
+            <div className="flex items-center mb-4">
+              <img src="/LOGO.png" alt="AMODZ Logo" className="w-10 h-10 mr-3" />
+              <h5 className="text-lg font-bold">AMODZ</h5>
+            </div>
+            <p className="text-gray-300 text-sm leading-relaxed mb-4">
+              Your trusted real estate partner for property sales, rentals, and investments.
+            </p>
+            <div className="flex space-x-3">
               {socialLinks.map((social, index) => (
                 <motion.a
                   key={index}
                   href={social.href}
-                  className="text-white hover:text-orange transition-colors duration-300 text-2xl"
-                  whileHover={{ 
-                    scale: 1.2, 
-                    rotate: 10,
-                    color: '#F1592B'
-                  }}
-                  whileTap={{ scale: 0.9 }}
+                  className="w-10 h-10 bg-orange/20 hover:bg-orange text-white rounded-full flex items-center justify-center transition-all duration-300"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <i className={social.icon}></i>
+                  <i className={`${social.icon} text-sm`}></i>
                 </motion.a>
               ))}
-            </motion.div>
+            </div>
           </motion.div>
 
+          {/* Quick Links */}
           <motion.div 
-            className="footer-section footer-element"
-            initial={{ opacity: 0, y: 50 }}
+            className="footer-section"
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.4, duration: 0.8, ease: 'easeOut' }}
+            transition={{ delay: 0.2, duration: 0.6 }}
           >
-            <h6 className="text-lg font-semibold mb-6">Quick Links</h6>
-            <motion.ul 
-              className="space-y-3"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-            >
+            <h6 className="text-base font-semibold mb-4 text-orange">Quick Links</h6>
+            <ul className="space-y-2">
               {quickLinks.map((link, index) => (
-                <motion.li 
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.7 + index * 0.1, duration: 0.5 }}
-                >
+                <li key={index}>
                   <Link 
                     href={link.href}
-                    className="text-gray-300 hover:text-orange transition-colors duration-300 inline-block"
-                    whileHover={{ x: 10 }}
-                    transition={{ duration: 0.3 }}
+                    className="text-gray-300 text-sm hover:text-orange transition-colors duration-300 flex items-center"
                   >
+                    <i className="fas fa-chevron-right text-orange mr-2 text-xs"></i>
                     {link.name}
                   </Link>
-                </motion.li>
+                </li>
               ))}
-            </motion.ul>
+            </ul>
           </motion.div>
 
+          {/* Services */}
           <motion.div 
-            className="footer-section footer-element"
-            initial={{ opacity: 0, y: 50 }}
+            className="footer-section"
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.6, duration: 0.8, ease: 'easeOut' }}
+            transition={{ delay: 0.3, duration: 0.6 }}
           >
-            <h6 className="text-lg font-semibold mb-6">Contact Info</h6>
-            <motion.div 
-              className="space-y-3"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.8, duration: 0.6 }}
-            >
-              <motion.p 
-                className="text-gray-300 mb-3"
-                whileHover={{ x: 10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <i className="fas fa-map-marker-alt mr-3"></i>
-                Complex City Centre<br />
-                Floor 4, Room T106<br />
-                Kampala, Uganda
-              </motion.p>
-              <motion.p 
-                className="text-gray-300 mb-3"
-                whileHover={{ x: 10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <i className="fas fa-phone mr-3"></i>
-                +256 752 880 507<br />
-                +256 784 956 426
-              </motion.p>
-              <motion.p 
-                className="text-gray-300"
-                whileHover={{ x: 10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <i className="fas fa-envelope mr-3"></i>
-                info@amodz.com
-              </motion.p>
-            </motion.div>
+            <h6 className="text-base font-semibold mb-4 text-orange">Services</h6>
+            <ul className="space-y-2 text-sm text-gray-300">
+              <li className="flex items-center"><i className="fas fa-home text-orange mr-2"></i>Property Sales</li>
+              <li className="flex items-center"><i className="fas fa-key text-orange mr-2"></i>Property Rentals</li>
+              <li className="flex items-center"><i className="fas fa-building text-orange mr-2"></i>Land & Plots</li>
+              <li className="flex items-center"><i className="fas fa-chart-line text-orange mr-2"></i>Investment Advisory</li>
+            </ul>
+          </motion.div>
+
+          {/* Contact Info */}
+          <motion.div 
+            className="footer-section"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+          >
+            <h6 className="text-base font-semibold mb-4 text-orange">Contact</h6>
+            <div className="space-y-3 text-sm">
+              <div className="flex items-start">
+                <i className="fas fa-map-marker-alt text-orange mr-3 mt-1 flex-shrink-0"></i>
+                <p className="text-gray-300">Complex City Centre, Floor 4, Room T106, Kampala</p>
+              </div>
+              <div className="flex items-center">
+                <i className="fas fa-phone text-orange mr-3 flex-shrink-0"></i>
+                <a href="tel:+256752880507" className="text-gray-300 hover:text-orange transition-colors">+256 752 880 507</a>
+              </div>
+              <div className="flex items-center">
+                <i className="fas fa-envelope text-orange mr-3 flex-shrink-0"></i>
+                <a href="mailto:info@amodz.com" className="text-gray-300 hover:text-orange transition-colors">info@amodz.com</a>
+              </div>
+            </div>
           </motion.div>
         </div>
 
+        {/* Divider */}
+        <div className="border-t border-gray-700 my-8"></div>
+
+        {/* Bottom Footer */}
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 1, duration: 0.8 }}
-          className="border-t border-gray-700 mt-12 pt-8 text-center"
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="flex flex-col sm:flex-row justify-between items-center text-center sm:text-left text-sm text-gray-400 space-y-4 sm:space-y-0"
         >
-          <p className="text-gray-400">
-            © 2025 AMODZ PROPERTIES LIMITED. All rights reserved.
-          </p>
+          <p>© {currentYear} AMODZ PROPERTIES LIMITED. All rights reserved.</p>
+          <div className="flex space-x-6">
+            <Link href="#" className="hover:text-orange transition-colors">Privacy Policy</Link>
+            <Link href="#" className="hover:text-orange transition-colors">Terms & Conditions</Link>
+          </div>
         </motion.div>
       </div>
     </motion.footer>
