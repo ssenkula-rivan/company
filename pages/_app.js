@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useEffect, useRef } from 'react'
+import PageTransition from '../components/PageTransition'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
@@ -102,14 +103,17 @@ export default function App({ Component, pageProps }) {
   }, [])
 
   return (
-    <motion.div 
-      ref={containerRef}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="page-content min-h-screen"
-    >
-      <Component {...pageProps} />
-    </motion.div>
+    <>
+      <PageTransition />
+      <motion.div 
+        ref={containerRef}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="page-content min-h-screen"
+      >
+        <Component {...pageProps} />
+      </motion.div>
+    </>
   )
 }
