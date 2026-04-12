@@ -137,15 +137,37 @@ export default function MissionVision() {
         >
           <h3 className="text-2xl font-bold text-dark-blue mb-6">Our Story</h3>
           <div className="space-y-4 text-gray-700 leading-relaxed">
-            <p>
-              <span className="font-semibold text-dark-blue">Amodz Properties Limited</span> is a dynamic real estate company founded on <span className="font-semibold">26 August 2022</span> by <span className="font-semibold">Christine Nanteza</span> and <span className="font-semibold">Raymond Muddibo</span>, who serve as partners in the business. Since its establishment, the company has focused on delivering reliable real estate solutions while building a strong and trusted presence in the property sector.
+            <div className="space-y-6 text-gray-700 leading-relaxed">
+            <p className="text-lg">
+              Founded on <span className="font-bold text-primary-blue">August 26, 2022</span> by <span className="font-bold text-primary-blue">Amoding Magret</span>, Amodz Properties Limited has established itself as Uganda's trusted real estate partner.
             </p>
-            <p>
-              The company specializes in <span className="font-semibold">selling land, developing properties, constructing houses, and offering finished homes for sale</span>. Through these services, Amodz Properties Limited aims to provide clients with accessible opportunities to own property and achieve their dream of home ownership.
+            
+            <div className="bg-gradient-to-r from-primary-blue/5 to-orange/5 rounded-xl p-6 border-l-4 border-orange">
+              <h5 className="font-bold text-dark-blue mb-3">Core Services</h5>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex items-center space-x-3">
+                  <span className="w-2 h-2 bg-orange rounded-full"></span>
+                  <span className="text-sm">Land Sales & Acquisition</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <span className="w-2 h-2 bg-orange rounded-full"></span>
+                  <span className="text-sm">Property Development</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <span className="w-2 h-2 bg-orange rounded-full"></span>
+                  <span className="text-sm">Residential Construction</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <span className="w-2 h-2 bg-orange rounded-full"></span>
+                  <span className="text-sm">Finished Homes</span>
+                </div>
+              </div>
+            </div>
+            
+            <p className="text-lg">
+              Our commitment to <span className="font-bold text-primary-blue">excellence and integrity</span> ensures every client receives professional service, making property ownership accessible and dreams achievable.
             </p>
-            <p>
-              With a commitment to <span className="font-semibold">professionalism, flexibility, and customer satisfaction</span>, the company continues to grow by offering convenient and trusted property services designed to help clients turn their dreams of owning a home into reality.
-            </p>
+          </div>
           </div>
         </motion.div>
       </div>

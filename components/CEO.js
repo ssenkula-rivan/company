@@ -2,68 +2,144 @@ import { motion } from 'framer-motion'
 
 export default function CEO() {
   return (
-    <section id="ceo" className="py-24 bg-white border-t border-gray-200">
-      <div className="container mx-auto px-4">
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
+    <section id="ceo" className="relative py-20 bg-gradient-to-br from-slate-50 via-white to-slate-50 overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-orange to-amber-300 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-gradient-to-r from-primary-blue to-blue-400 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-5xl font-bold text-dark-blue text-center mb-20"
+          className="text-center mb-16"
         >
-          Leadership
-        </motion.h2>
+          <h2 className="text-5xl md:text-6xl font-bold text-dark-blue mb-4">Executive Leadership</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-orange via-amber-400 to-primary-blue mx-auto rounded-full"></div>
+        </motion.div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-16 lg:gap-20 items-center">
+          {/* CEO Profile Visual */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="flex justify-center"
+            transition={{ duration: 0.8 }}
+            className="relative order-2 xl:order-1"
           >
-            <div className="w-80 h-80 bg-gradient-to-br from-primary-blue to-dark-blue rounded-2xl shadow-2xl flex items-center justify-center">
-              <div className="text-center text-white">
-                <div className="text-6xl mb-4 font-bold">CEO</div>
-                <p className="text-lg font-semibold">Photo</p>
+            <div className="relative group">
+              {/* Main profile card */}
+              <div className="w-full max-w-sm mx-auto bg-gradient-to-br from-primary-blue via-blue-700 to-orange rounded-3xl shadow-2xl p-10 transform transition-all duration-700 hover:scale-105 hover:shadow-3xl">
+                <div className="text-center text-white">
+                  <div className="w-28 h-28 mx-auto mb-6 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center border-4 border-white border-opacity-30">
+                    <span className="text-4xl font-bold tracking-wider">AM</span>
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-2">Amoding Magret</h3>
+                  <p className="text-lg md:text-xl font-semibold mb-1">Chief Executive Officer</p>
+                  <p className="text-base md:text-lg opacity-90">& Managing Director</p>
+                  <div className="mt-4 pt-4 border-t border-white border-opacity-30">
+                    <p className="text-sm opacity-80">Founder • Amodz Properties Limited</p>
+                  </div>
+                </div>
               </div>
+              
+              {/* Achievement badges */}
+              <motion.div 
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="absolute -top-6 -right-6 bg-white rounded-2xl shadow-xl p-5 border-l-4 border-orange"
+              >
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-orange">2022</div>
+                  <p className="text-xs text-gray-600 font-medium">Year Founded</p>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-5 border-l-4 border-primary-blue"
+              >
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary-blue">BSc</div>
+                  <p className="text-xs text-gray-600 font-medium">Finance • Makerere</p>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
           
+          {/* CEO Information */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-6 order-1 xl:order-2"
           >
-            <div>
-              <h3 className="text-4xl font-bold text-dark-blue mb-2">Christine Nanteza</h3>
-              <p className="text-xl text-orange font-semibold mb-6">Founder & Chief Executive Officer</p>
-              <div className="flex gap-2 mb-6">
-                <div className="h-1 w-16 bg-orange rounded"></div>
+            {/* Strategic Vision */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-white rounded-2xl shadow-lg p-8 border-l-4 border-orange"
+            >
+              <h4 className="text-xl md:text-2xl font-bold text-dark-blue mb-4 flex items-center">
+                <span className="w-8 h-8 bg-gradient-to-r from-orange to-amber-400 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                  <span className="text-white font-bold text-sm">✓</span>
+                </span>
+                Strategic Vision
+              </h4>
+              <p className="text-gray-700 leading-relaxed text-base md:text-lg">
+                Transforming Uganda's real estate landscape through innovative property development and youth empowerment initiatives.
+              </p>
+            </motion.div>
+            
+            {/* Core Competencies */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="grid grid-cols-2 gap-4"
+            >
+              <div className="bg-gradient-to-br from-orange/5 to-orange/10 rounded-xl p-5 border border-orange/20 hover:border-orange/40 transition-colors">
+                <h5 className="font-bold text-dark-blue mb-2 text-sm">Financial Acumen</h5>
+                <p className="text-gray-600 text-xs leading-relaxed">Makerere Finance graduate with strategic investment expertise</p>
               </div>
-            </div>
+              <div className="bg-gradient-to-br from-primary-blue/5 to-primary-blue/10 rounded-xl p-5 border border-primary-blue/20 hover:border-primary-blue/40 transition-colors">
+                <h5 className="font-bold text-dark-blue mb-2 text-sm">Global Reach</h5>
+                <p className="text-gray-600 text-xs leading-relaxed">Specialized diaspora client services and international investments</p>
+              </div>
+              <div className="bg-gradient-to-br from-orange/5 to-orange/10 rounded-xl p-5 border border-orange/20 hover:border-orange/40 transition-colors">
+                <h5 className="font-bold text-dark-blue mb-2 text-sm">Innovation</h5>
+                <p className="text-gray-600 text-xs leading-relaxed">Modern residential solutions addressing market gaps</p>
+              </div>
+              <div className="bg-gradient-to-br from-primary-blue/5 to-primary-blue/10 rounded-xl p-5 border border-primary-blue/20 hover:border-primary-blue/40 transition-colors">
+                <h5 className="font-bold text-dark-blue mb-2 text-sm">Trust & Integrity</h5>
+                <p className="text-gray-600 text-xs leading-relaxed">Transparent dealings with unwavering ethical standards</p>
+              </div>
+            </motion.div>
             
-            <div className="bg-gray-50 p-8 rounded-2xl">
-              <h4 className="text-xl font-bold text-dark-blue mb-4">About the CEO</h4>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                Christine Nanteza is the Founder and Chief Executive Officer of Amodz Properties Limited, a real estate company established on 26 August 2022 with a clear vision of making property ownership more accessible and reliable.
+            {/* Leadership Message */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="bg-gradient-to-r from-primary-blue via-blue-700 to-orange rounded-2xl p-8 text-white relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-40 h-40 bg-white bg-opacity-10 rounded-full -mr-20 -mt-20"></div>
+              <h4 className="text-xl md:text-2xl font-bold mb-4 relative z-10">Leadership Commitment</h4>
+              <p className="text-base md:text-lg leading-relaxed relative z-10 italic font-light">
+                "Transforming property dreams into reality through innovative real estate solutions. Every development reflects our commitment to excellence, integrity, and your future success."
               </p>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                With a strong passion for real estate development and community growth, she founded the company to provide trusted property solutions including land sales, property development, construction of houses, and the sale of finished homes.
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                Through her leadership, the company continues to focus on delivering professional, transparent, and client-centered services that help individuals and families secure their future through property ownership.
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                Her leadership is guided by a commitment to integrity, reliability, and excellence, ensuring that every project undertaken by the company meets the expectations of clients and contributes to the growth of sustainable communities.
-              </p>
-            </div>
-            
-            <div className="bg-orange/10 p-8 rounded-2xl border-l-4 border-orange">
-              <h4 className="text-xl font-bold text-dark-blue mb-4">Message from the CEO</h4>
-              <p className="text-gray-700 leading-relaxed italic">
-                "At Amodz Properties Limited, we believe that owning a home is one of the most important investments in life. Our mission is to make property ownership simple, accessible, and trustworthy for our clients. We are committed to guiding every client through the journey of owning land or a home with professionalism, transparency, and dedication."
-              </p>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
