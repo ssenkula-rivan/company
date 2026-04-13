@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/hGXdKtvtF0U9GCvlt3MSV/_buildManifest.js",
-    "static/hGXdKtvtF0U9GCvlt3MSV/_ssgManifest.js"
+    "static/ufO6xBJ-END9fT4btzlZk/_buildManifest.js",
+    "static/ufO6xBJ-END9fT4btzlZk/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -17,7 +17,7 @@
       "static/chunks/664-8c5a4c082990d0a6.js",
       "static/chunks/545-ccac88ddeed48f68.js",
       "static/chunks/135-b379d5af5875e577.js",
-      "static/chunks/pages/index-0fce7cc8a89e7586.js"
+      "static/chunks/pages/index-470777a8f527f797.js"
     ],
     "/_app": [
       "static/chunks/webpack-fd8027ecb5121007.js",
@@ -55,7 +55,7 @@
       "static/chunks/main-9bd8649e1ba6c278.js",
       "static/chunks/664-8c5a4c082990d0a6.js",
       "static/chunks/545-ccac88ddeed48f68.js",
-      "static/chunks/pages/careers-d3d5d4fc9be7722a.js"
+      "static/chunks/pages/careers-d6ac1d0d1981e31a.js"
     ],
     "/contact": [
       "static/chunks/webpack-fd8027ecb5121007.js",
@@ -63,7 +63,7 @@
       "static/chunks/main-9bd8649e1ba6c278.js",
       "static/chunks/664-8c5a4c082990d0a6.js",
       "static/chunks/545-ccac88ddeed48f68.js",
-      "static/chunks/pages/contact-b7e93a8275d64c11.js"
+      "static/chunks/pages/contact-190d6cf5da400e27.js"
     ],
     "/faq": [
       "static/chunks/webpack-fd8027ecb5121007.js",
@@ -119,7 +119,7 @@
       "static/chunks/main-9bd8649e1ba6c278.js",
       "static/chunks/664-8c5a4c082990d0a6.js",
       "static/chunks/545-ccac88ddeed48f68.js",
-      "static/chunks/pages/tenders-6a8b84305ca838a4.js"
+      "static/chunks/pages/tenders-bc0191d8deb74b5b.js"
     ]
   },
   "ampFirstPages": []

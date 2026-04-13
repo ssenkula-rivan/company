@@ -53,7 +53,7 @@ export default function Careers() {
             </ul>
             
             <p className="text-gray-700 mb-6">
-              Send your CV to <strong>careers@qci-uganda.com</strong>
+              Send your CV to <strong>careers@amodzproperties.com</strong>
             </p>
             
             <Link href="#contact">

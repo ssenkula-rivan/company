@@ -57,7 +57,7 @@ export default function Contact() {
               <i className="fas fa-envelope text-orange text-2xl mt-1"></i>
               <div>
                 <strong className="text-dark-blue">Email:</strong>
-                <p className="text-gray-700">info@qci-uganda.com<br/>careers@qci-uganda.com<br/>tenders@qci-uganda.com</p>
+                <p className="text-gray-700">info@amodzproperties.com<br/>careers@amodzproperties.com<br/>tenders@amodzproperties.com</p>
               </div>
             </div>
             

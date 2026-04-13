@@ -54,7 +54,7 @@ export default function Tenders() {
             
             <div className="text-center mt-8 pt-6 border-t border-gray-200">
               <p className="text-gray-700">
-                For tender inquiries: <strong>tenders@qci-uganda.com</strong>
+                For tender inquiries: <strong>tenders@amodzproperties.com</strong>
               </p>
             </div>
           </motion.div>
