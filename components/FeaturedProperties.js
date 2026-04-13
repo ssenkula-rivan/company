@@ -68,7 +68,7 @@ export default function FeaturedProperties() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full bg-orange text-white py-3 rounded-lg font-semibold hover:bg-dark-orange transition-colors"
+                  className="w-full bg-gradient-to-r from-orange to-orange-600 text-white py-3 rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   View Details
                 </motion.button>

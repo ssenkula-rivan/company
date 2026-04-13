@@ -60,7 +60,7 @@ export default function Careers() {
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-primary-blue text-white px-12 py-3 rounded-full font-semibold hover:bg-dark-blue transition-colors"
+                className="bg-gradient-to-r from-primary-blue to-blue-700 text-white px-12 py-3 rounded-full font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 Apply Now
               </motion.button>

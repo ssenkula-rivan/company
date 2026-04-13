@@ -266,7 +266,7 @@ export default function Hero() {
               onClick={handlePrevImage}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-dark-blue w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 opacity-100 group-hover:opacity-100 z-10"
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white hover:bg-orange text-dark-blue hover:text-white w-12 h-12 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 opacity-100 z-20 border-2 border-white"
             >
               <span className="text-xl font-bold">‹</span>
             </motion.button>
@@ -275,7 +275,7 @@ export default function Hero() {
               onClick={handleNextImage}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-dark-blue w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 opacity-100 group-hover:opacity-100 z-10"
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white hover:bg-orange text-dark-blue hover:text-white w-12 h-12 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 opacity-100 z-20 border-2 border-white"
             >
               <span className="text-xl font-bold">›</span>
             </motion.button>
@@ -286,10 +286,13 @@ export default function Hero() {
                 <motion.button
                   key={index}
                   onClick={() => setCurrentImageIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    index === currentImageIndex ? 'bg-white w-8' : 'bg-white/50'
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    index === currentImageIndex 
+                      ? 'bg-white w-8 shadow-lg' 
+                      : 'bg-white/60 hover:bg-white/80 w-2'
                   }`}
-                  whileHover={{ scale: 1.2 }}
+                  whileHover={{ scale: index === currentImageIndex ? 1.1 : 1.3 }}
+                  whileTap={{ scale: 0.9 }}
                 />
               ))}
             </div>

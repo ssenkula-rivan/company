@@ -129,12 +129,14 @@ export default function Contact() {
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange"
             ></textarea>
             
-            <button 
+            <motion.button 
               type="submit"
-              className="w-full bg-primary-blue text-white py-3 rounded-lg font-semibold hover:bg-dark-blue transition-colors"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="w-full bg-gradient-to-r from-primary-blue to-blue-700 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               Send Message
-            </button>
+            </motion.button>
           </motion.form>
         </div>
       </div>
