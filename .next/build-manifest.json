@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/ufO6xBJ-END9fT4btzlZk/_buildManifest.js",
-    "static/ufO6xBJ-END9fT4btzlZk/_ssgManifest.js"
+    "static/cFMXzZuKrRfhxBTdKaGlB/_buildManifest.js",
+    "static/cFMXzZuKrRfhxBTdKaGlB/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -15,15 +15,15 @@
       "static/chunks/framework-33a4b02d97bf4d67.js",
       "static/chunks/main-9bd8649e1ba6c278.js",
       "static/chunks/664-8c5a4c082990d0a6.js",
-      "static/chunks/545-ccac88ddeed48f68.js",
+      "static/chunks/545-8dd78a1dfce19d9b.js",
       "static/chunks/135-b379d5af5875e577.js",
-      "static/chunks/pages/index-470777a8f527f797.js"
+      "static/chunks/pages/index-5b69d2452cd3e8fd.js"
     ],
     "/_app": [
       "static/chunks/webpack-fd8027ecb5121007.js",
       "static/chunks/framework-33a4b02d97bf4d67.js",
       "static/chunks/main-9bd8649e1ba6c278.js",
-      "static/css/91a9ffb6885e2a8e.css",
+      "static/css/300d489dbabeec1a.css",
       "static/chunks/pages/_app-c753ca37cf33c307.js"
     ],
     "/_error": [
@@ -37,7 +37,7 @@
       "static/chunks/framework-33a4b02d97bf4d67.js",
       "static/chunks/main-9bd8649e1ba6c278.js",
       "static/chunks/664-8c5a4c082990d0a6.js",
-      "static/chunks/545-ccac88ddeed48f68.js",
+      "static/chunks/545-8dd78a1dfce19d9b.js",
       "static/chunks/135-b379d5af5875e577.js",
       "static/chunks/pages/about-58a5d7b6251fa8da.js"
     ],
@@ -46,7 +46,7 @@
       "static/chunks/framework-33a4b02d97bf4d67.js",
       "static/chunks/main-9bd8649e1ba6c278.js",
       "static/chunks/664-8c5a4c082990d0a6.js",
-      "static/chunks/545-ccac88ddeed48f68.js",
+      "static/chunks/545-8dd78a1dfce19d9b.js",
       "static/chunks/pages/blog-22468ab37ab215e0.js"
     ],
     "/careers": [
@@ -54,7 +54,7 @@
       "static/chunks/framework-33a4b02d97bf4d67.js",
       "static/chunks/main-9bd8649e1ba6c278.js",
       "static/chunks/664-8c5a4c082990d0a6.js",
-      "static/chunks/545-ccac88ddeed48f68.js",
+      "static/chunks/545-8dd78a1dfce19d9b.js",
       "static/chunks/pages/careers-d6ac1d0d1981e31a.js"
     ],
     "/contact": [
@@ -62,15 +62,15 @@
       "static/chunks/framework-33a4b02d97bf4d67.js",
       "static/chunks/main-9bd8649e1ba6c278.js",
       "static/chunks/664-8c5a4c082990d0a6.js",
-      "static/chunks/545-ccac88ddeed48f68.js",
-      "static/chunks/pages/contact-190d6cf5da400e27.js"
+      "static/chunks/545-8dd78a1dfce19d9b.js",
+      "static/chunks/pages/contact-2840b937b59531d9.js"
     ],
     "/faq": [
       "static/chunks/webpack-fd8027ecb5121007.js",
       "static/chunks/framework-33a4b02d97bf4d67.js",
       "static/chunks/main-9bd8649e1ba6c278.js",
       "static/chunks/664-8c5a4c082990d0a6.js",
-      "static/chunks/545-ccac88ddeed48f68.js",
+      "static/chunks/545-8dd78a1dfce19d9b.js",
       "static/chunks/pages/faq-a84d2e6aae0a6a78.js"
     ],
     "/gallery": [
@@ -78,7 +78,7 @@
       "static/chunks/framework-33a4b02d97bf4d67.js",
       "static/chunks/main-9bd8649e1ba6c278.js",
       "static/chunks/664-8c5a4c082990d0a6.js",
-      "static/chunks/545-ccac88ddeed48f68.js",
+      "static/chunks/545-8dd78a1dfce19d9b.js",
       "static/chunks/pages/gallery-4892eb3e0c5c1f82.js"
     ],
     "/plots": [
@@ -86,7 +86,7 @@
       "static/chunks/framework-33a4b02d97bf4d67.js",
       "static/chunks/main-9bd8649e1ba6c278.js",
       "static/chunks/664-8c5a4c082990d0a6.js",
-      "static/chunks/545-ccac88ddeed48f68.js",
+      "static/chunks/545-8dd78a1dfce19d9b.js",
       "static/chunks/pages/plots-4329ff5027e2ca7b.js"
     ],
     "/projects": [
@@ -94,15 +94,36 @@
       "static/chunks/framework-33a4b02d97bf4d67.js",
       "static/chunks/main-9bd8649e1ba6c278.js",
       "static/chunks/664-8c5a4c082990d0a6.js",
-      "static/chunks/545-ccac88ddeed48f68.js",
-      "static/chunks/pages/projects-38236956bc97fa8b.js"
+      "static/chunks/545-8dd78a1dfce19d9b.js",
+      "static/chunks/pages/projects-8ce7c893cdf931af.js"
+    ],
+    "/projects/kampala-residential-complex": [
+      "static/chunks/webpack-fd8027ecb5121007.js",
+      "static/chunks/framework-33a4b02d97bf4d67.js",
+      "static/chunks/main-9bd8649e1ba6c278.js",
+      "static/chunks/664-8c5a4c082990d0a6.js",
+      "static/chunks/pages/projects/kampala-residential-complex-90ea530928c5a3ce.js"
+    ],
+    "/projects/mukono-residential-estate": [
+      "static/chunks/webpack-fd8027ecb5121007.js",
+      "static/chunks/framework-33a4b02d97bf4d67.js",
+      "static/chunks/main-9bd8649e1ba6c278.js",
+      "static/chunks/664-8c5a4c082990d0a6.js",
+      "static/chunks/pages/projects/mukono-residential-estate-6870e0f7733bf848.js"
+    ],
+    "/projects/ntinda-commercial-hub": [
+      "static/chunks/webpack-fd8027ecb5121007.js",
+      "static/chunks/framework-33a4b02d97bf4d67.js",
+      "static/chunks/main-9bd8649e1ba6c278.js",
+      "static/chunks/664-8c5a4c082990d0a6.js",
+      "static/chunks/pages/projects/ntinda-commercial-hub-b3ca0ca4760c7a83.js"
     ],
     "/properties": [
       "static/chunks/webpack-fd8027ecb5121007.js",
       "static/chunks/framework-33a4b02d97bf4d67.js",
       "static/chunks/main-9bd8649e1ba6c278.js",
       "static/chunks/664-8c5a4c082990d0a6.js",
-      "static/chunks/545-ccac88ddeed48f68.js",
+      "static/chunks/545-8dd78a1dfce19d9b.js",
       "static/chunks/pages/properties-aac6cf629cb1170b.js"
     ],
     "/services": [
@@ -110,7 +131,7 @@
       "static/chunks/framework-33a4b02d97bf4d67.js",
       "static/chunks/main-9bd8649e1ba6c278.js",
       "static/chunks/664-8c5a4c082990d0a6.js",
-      "static/chunks/545-ccac88ddeed48f68.js",
+      "static/chunks/545-8dd78a1dfce19d9b.js",
       "static/chunks/pages/services-fa3ae9e74bf08ae5.js"
     ],
     "/tenders": [
@@ -118,7 +139,7 @@
       "static/chunks/framework-33a4b02d97bf4d67.js",
       "static/chunks/main-9bd8649e1ba6c278.js",
       "static/chunks/664-8c5a4c082990d0a6.js",
-      "static/chunks/545-ccac88ddeed48f68.js",
+      "static/chunks/545-8dd78a1dfce19d9b.js",
       "static/chunks/pages/tenders-bc0191d8deb74b5b.js"
     ]
   },

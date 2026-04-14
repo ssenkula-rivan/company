@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 export default function Projects() {
   const projects = [
@@ -38,10 +39,52 @@ export default function Projects() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-5xl font-bold text-dark-blue text-center mb-20"
+          className="text-5xl font-bold text-dark-blue text-center mb-12"
         >
           Our Projects
         </motion.h2>
+
+        {/* Auto-playing Video Section */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-20"
+        >
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-orange">
+            <motion.video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-96 md:h-[500px] object-cover"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <source src="/videos/projects-showcase.mp4" type="video/mp4" />
+              <source src="/videos/projects-showcase.webm" type="video/webm" />
+              Your browser does not support the video tag.
+            </motion.video>
+            
+            <div className="absolute inset-0 bg-gradient-to-r from-primary-blue/20 via-transparent to-orange/20 pointer-events-none"></div>
+            
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="text-center text-white"
+              >
+                <h3 className="text-2xl md:text-3xl font-bold mb-3">Discover Our Projects</h3>
+                <p className="text-lg opacity-90 max-w-2xl mx-auto">
+                  Experience our commitment to excellence through our portfolio of completed and ongoing developments across Uganda
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((project, index) => (
@@ -87,13 +130,15 @@ export default function Projects() {
                   </div>
                 </div>
                 
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full bg-primary-blue text-white py-3 rounded-lg font-semibold hover:bg-dark-blue transition-colors"
-                >
-                  Learn More
-                </motion.button>
+                <Link href={`/projects/${project.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full bg-gradient-to-r from-primary-blue to-blue-700 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  >
+                    Learn More
+                  </motion.button>
+                </Link>
               </div>
             </motion.div>
           ))}

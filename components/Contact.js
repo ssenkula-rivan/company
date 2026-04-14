@@ -49,7 +49,7 @@ export default function Contact() {
               <i className="fas fa-phone text-orange text-2xl mt-1"></i>
               <div>
                 <strong className="text-dark-blue">Phone:</strong>
-                <p className="text-gray-700">+256 752 880 507<br/>+256 784 956 426</p>
+                <p className="text-gray-700">+256 752 830 507<br/>+256 784 956 426</p>
               </div>
             </div>
             
@@ -65,7 +65,7 @@ export default function Contact() {
               <i className="fas fa-clock text-orange text-2xl mt-1"></i>
               <div>
                 <strong className="text-dark-blue">Business Hours:</strong>
-                <p className="text-gray-700">Monday - Friday: 8:00 AM - 6:00 PM<br/>Saturday: 9:00 AM - 2:00 PM<br/>Sunday: Closed</p>
+                <p className="text-gray-700">Monday - Friday: 8:00 AM - 6:00 PM<br/>Saturday: Closed<br/>Sunday: Closed</p>
               </div>
             </div>
           </motion.div>

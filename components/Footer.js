@@ -147,7 +147,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center">
                 <i className="fas fa-phone text-orange mr-3 flex-shrink-0"></i>
-                <a href="tel:+256752880507" className="text-gray-300 hover:text-orange transition-colors">+256 752 880 507</a>
+                <a href="tel:+256752830507" className="text-gray-300 hover:text-orange transition-colors">+256 752 830 507</a>
               </div>
               <div className="flex items-center">
                 <i className="fas fa-envelope text-orange mr-3 flex-shrink-0"></i>
