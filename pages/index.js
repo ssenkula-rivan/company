@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
+import SecondaryNav from '../components/SecondaryNav'
 import FeaturedProperties from '../components/FeaturedProperties'
 import PlotsLand from '../components/PlotsLand'
 import HowToStart from '../components/HowToStart'
@@ -24,6 +25,7 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
+      <SecondaryNav />
       <FeaturedProperties />
       <PlotsLand />
       <HowToStart />
