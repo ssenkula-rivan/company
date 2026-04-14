@@ -28,7 +28,7 @@ export default function Statistics() {
         <div className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-white rounded-full blur-3xl"></div>
       </div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

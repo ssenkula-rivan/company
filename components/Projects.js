@@ -33,8 +33,8 @@ export default function Projects() {
   ]
 
   return (
-    <section id="projects" className="py-24 bg-gray-50 border-t border-gray-200">
-      <div className="container mx-auto px-4">
+    <section id="projects" className="py-24 bg-gray-50 border-t border-gray-200 relative z-10">
+      <div className="container mx-auto px-4 relative z-10">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

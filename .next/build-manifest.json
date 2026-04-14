@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/cFMXzZuKrRfhxBTdKaGlB/_buildManifest.js",
-    "static/cFMXzZuKrRfhxBTdKaGlB/_ssgManifest.js"
+    "static/O_a9Lm1WKlKl1h_dK0PKP/_buildManifest.js",
+    "static/O_a9Lm1WKlKl1h_dK0PKP/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -17,7 +17,7 @@
       "static/chunks/664-8c5a4c082990d0a6.js",
       "static/chunks/545-8dd78a1dfce19d9b.js",
       "static/chunks/135-b379d5af5875e577.js",
-      "static/chunks/pages/index-5b69d2452cd3e8fd.js"
+      "static/chunks/pages/index-d7610360edc72725.js"
     ],
     "/_app": [
       "static/chunks/webpack-fd8027ecb5121007.js",
@@ -95,7 +95,7 @@
       "static/chunks/main-9bd8649e1ba6c278.js",
       "static/chunks/664-8c5a4c082990d0a6.js",
       "static/chunks/545-8dd78a1dfce19d9b.js",
-      "static/chunks/pages/projects-8ce7c893cdf931af.js"
+      "static/chunks/pages/projects-473f708ca2970e08.js"
     ],
     "/projects/kampala-residential-complex": [
       "static/chunks/webpack-fd8027ecb5121007.js",
