@@ -2,11 +2,14 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 export default function PropertiesPage() {
+  const router = useRouter()
   const [properties, setProperties] = useState([])
   const [loading, setLoading] = useState(true)
   const [filter, setFilter] = useState('all')
+  const [locationFilter, setLocationFilter] = useState('')
 
   useEffect(() => {
     const fetchProperties = async () => {
@@ -24,9 +27,22 @@ export default function PropertiesPage() {
     fetchProperties()
   }, [])
 
-  const filteredProperties = filter === 'all' 
-    ? properties 
-    : properties.filter(p => p.type === filter)
+  // Get location from URL query parameter
+  useEffect(() => {
+    if (router.isReady) {
+      const { location } = router.query
+      if (location) {
+        setLocationFilter(location)
+      }
+    }
+  }, [router.isReady, router.query])
+
+  const filteredProperties = properties.filter(p => {
+    const matchesType = filter === 'all' || p.type === filter
+    const matchesLocation = !locationFilter || 
+      p.location?.toLowerCase().includes(locationFilter.toLowerCase())
+    return matchesType && matchesLocation
+  })
 
   return (
     <>
@@ -39,7 +55,25 @@ export default function PropertiesPage() {
             className="text-center mb-16"
           >
             <h1 className="text-5xl font-bold text-dark-blue mb-4">Our Properties</h1>
-            <p className="text-xl text-gray-600">Discover our complete collection of premium properties</p>
+            <p className="text-xl text-gray-600">
+              {locationFilter 
+                ? `Properties in ${locationFilter}` 
+                : 'Discover our complete collection of premium properties'}
+            </p>
+            {locationFilter && (
+              <motion.button
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                onClick={() => {
+                  setLocationFilter('')
+                  router.push('/properties', undefined, { shallow: true })
+                }}
+                className="mt-4 text-orange hover:text-orange-600 font-medium flex items-center gap-2 mx-auto"
+              >
+                <i className="fas fa-times-circle"></i>
+                Clear location filter
+              </motion.button>
+            )}
           </motion.div>
 
           <motion.div 

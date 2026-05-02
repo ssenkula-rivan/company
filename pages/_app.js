@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useEffect, useRef, useState } from 'react'
 import PageTransition from '../components/PageTransition'
 import SplashScreen from '../components/SplashScreen'
+import SecondaryNav from '../components/SecondaryNav'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
@@ -115,7 +116,8 @@ export default function App({ Component, pageProps }) {
       {!showSplash && (
         <>
           <PageTransition />
-          <motion.div 
+          <SecondaryNav />
+          <motion.div
             ref={containerRef}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
