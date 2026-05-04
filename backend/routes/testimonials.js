@@ -13,14 +13,24 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Get all pending testimonials (admin only)
+router.get('/pending', authenticateToken, async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM testimonials WHERE approved = false ORDER BY created_at DESC');
+    res.json(result.rows);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // Create testimonial (public)
 router.post('/', async (req, res) => {
-  const { name, role, text, rating, photo_url } = req.body;
+  const { name, email, role, text, rating, photo_url } = req.body;
   
   try {
     const result = await pool.query(
-      'INSERT INTO testimonials (name, role, text, rating, photo_url, approved) VALUES ($1, $2, $3, $4, $5, false) RETURNING *',
-      [name, role, text, rating || 5, photo_url]
+      'INSERT INTO testimonials (name, email, role, text, rating, photo_url, approved) VALUES ($1, $2, $3, $4, $5, $6, false) RETURNING *',
+      [name, email, role, text, rating || 5, photo_url]
     );
     res.status(201).json({ message: 'Testimonial submitted for approval', id: result.rows[0].id });
   } catch (err) {

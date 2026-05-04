@@ -44,6 +44,7 @@ CREATE TABLE projects (
 CREATE TABLE testimonials (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
+  email VARCHAR(255),
   role VARCHAR(255),
   text TEXT NOT NULL,
   rating INTEGER DEFAULT 5,
