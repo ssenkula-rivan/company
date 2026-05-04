@@ -21,6 +21,7 @@ export default function Team() {
       title: 'Kabuye Duncan',
       role: 'Client Relations Officer',
       icon: 'fa-user-tie',
+      image: '/images/client.jpeg',
       description: 'Client communication specialist ensuring exceptional service delivery and customer relationship management excellence.'
     }
   ]
