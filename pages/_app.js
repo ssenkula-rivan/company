@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react'
 import PageTransition from '../components/PageTransition'
 import SplashScreen from '../components/SplashScreen'
 import SecondaryNav from '../components/SecondaryNav'
+import { LanguageProvider } from '../contexts/LanguageContext'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
@@ -106,7 +107,7 @@ export default function App({ Component, pageProps }) {
   }, [])
 
   return (
-    <>
+    <LanguageProvider>
       <AnimatePresence>
         {showSplash && (
           <SplashScreen onComplete={() => setShowSplash(false)} />
@@ -128,6 +129,6 @@ export default function App({ Component, pageProps }) {
           </motion.div>
         </>
       )}
-    </>
+    </LanguageProvider>
   )
 }

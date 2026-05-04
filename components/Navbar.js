@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
+import LanguageSwitcher from './LanguageSwitcher'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const navItemVariants = {
   hidden: { y: -20, opacity: 0 },
@@ -31,6 +33,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const lastScrollY = useRef(0)
+  const { t } = useLanguage()
 
   useEffect(() => {
     // Scroll detection
@@ -45,11 +48,12 @@ export default function Navbar() {
   }, [])
 
   const navItems = [
-    { name: 'Home', href: '/', icon: 'fa-home' },
+    { name: 'Home', href: '/', icon: 'fa-home', translationKey: 'home' },
     {
       name: 'Properties',
       href: '/properties',
       icon: 'fa-chevron-down',
+      translationKey: 'properties',
       dropdown: [
         { name: 'All Properties', href: '/properties', icon: 'fa-home' },
         { name: 'Plots & Land', href: '/plots', icon: 'fa-map' },
@@ -59,6 +63,7 @@ export default function Navbar() {
       name: 'About Us',
       href: '/about',
       icon: 'fa-chevron-down',
+      translationKey: 'about',
       dropdown: [
         { name: 'Company Info', href: '/about', icon: 'fa-building' },
         { name: 'Our Team', href: '/about', icon: 'fa-users' },
@@ -87,11 +92,12 @@ export default function Navbar() {
       name: 'Our Services',
       href: '/services',
       icon: 'fa-chevron-down',
+      translationKey: 'services',
       dropdown: [
         { name: 'All Services', href: '/services', icon: 'fa-concierge-bell' },
       ]
     },
-    { name: 'Contact', href: '/contact', icon: 'fa-envelope' },
+    { name: 'Contact', href: '/contact', icon: 'fa-envelope', translationKey: 'contact' },
   ]
 
   const handleAnchorClick = (e, href) => {
@@ -146,7 +152,7 @@ export default function Navbar() {
                       whileHover={{ y: -2 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      <span>{item.name}</span>
+                      <span>{t(item.translationKey) || item.name}</span>
                       <i className={`fas ${item.icon} text-xs`}></i>
                     </motion.button>
                     <div className="absolute left-0 top-full pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
@@ -183,12 +189,15 @@ export default function Navbar() {
                       className="nav-link text-white hover:text-orange transition-all duration-300 flex items-center space-x-2 py-2 px-3"
                     >
                       {item.icon && <i className={`fas ${item.icon}`}></i>}
-                      <span>{item.name}</span>
+                      <span>{t(item.translationKey) || item.name}</span>
                     </Link>
                   </motion.div>
                 )}
               </div>
             ))}
+            
+            {/* Language Switcher */}
+            <LanguageSwitcher />
           </div>
 
           <motion.button 
