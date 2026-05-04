@@ -391,11 +391,9 @@ export default function SecondaryNav() {
                 <div className="p-2">
                   <div className="px-3 py-2 text-xs font-bold text-gray-500 uppercase">Our Locations</div>
                   
-                  <a href="/properties?location=Kapeeka" className="block px-3 py-3 hover:bg-orange-50 rounded-lg transition-colors">
+                  <a href="/properties?location=Kapeeka" className="block px-3 py-3 hover:bg-gray-50 rounded-lg transition-colors">
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <i className="fas fa-map-marker-alt text-orange text-sm"></i>
-                      </div>
+                      <i className="fas fa-map-marker-alt text-gray-600"></i>
                       <div>
                         <p className="font-semibold text-dark-blue text-sm">Kapeeka</p>
                         <p className="text-xs text-gray-500">Premium plots available</p>
@@ -403,11 +401,9 @@ export default function SecondaryNav() {
                     </div>
                   </a>
                   
-                  <a href="/properties?location=Seeta" className="block px-3 py-3 hover:bg-primary-blue-50 rounded-lg transition-colors">
+                  <a href="/properties?location=Seeta" className="block px-3 py-3 hover:bg-gray-50 rounded-lg transition-colors">
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <i className="fas fa-map-marker-alt text-primary-blue text-sm"></i>
-                      </div>
+                      <i className="fas fa-map-marker-alt text-gray-600"></i>
                       <div>
                         <p className="font-semibold text-dark-blue text-sm">Seeta</p>
                         <p className="text-xs text-gray-500">Modern housing</p>
@@ -415,11 +411,9 @@ export default function SecondaryNav() {
                     </div>
                   </a>
                   
-                  <a href="/properties?location=Mukono" className="block px-3 py-3 hover:bg-orange-50 rounded-lg transition-colors">
+                  <a href="/properties?location=Mukono" className="block px-3 py-3 hover:bg-gray-50 rounded-lg transition-colors">
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <i className="fas fa-map-marker-alt text-orange text-sm"></i>
-                      </div>
+                      <i className="fas fa-map-marker-alt text-gray-600"></i>
                       <div>
                         <p className="font-semibold text-dark-blue text-sm">Mukono</p>
                         <p className="text-xs text-gray-500">Strategic location</p>
@@ -431,9 +425,7 @@ export default function SecondaryNav() {
                   
                   <a href="/properties" className="block px-3 py-3 hover:bg-gray-50 rounded-lg transition-colors">
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <i className="fas fa-th-large text-gray-600 text-sm"></i>
-                      </div>
+                      <i className="fas fa-th-large text-gray-600"></i>
                       <div>
                         <p className="font-semibold text-dark-blue text-sm">View All Properties</p>
                         <p className="text-xs text-gray-500">Browse complete catalog</p>
