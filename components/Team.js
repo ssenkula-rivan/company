@@ -6,7 +6,7 @@ export default function Team() {
       title: 'Amoding Magret',
       role: 'Chief Executive Officer & Managing Director',
       icon: 'fa-user',
-      image: '/images/CEO1.jpeg',
+      image: '/images/new.png',
       description: 'Founder driving innovative real estate solutions with Finance expertise from Makerere University. Specializes in diaspora services, housing gap analysis, and transparent property investments.',
       isCEO: true
     },
