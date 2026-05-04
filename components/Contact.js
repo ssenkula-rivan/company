@@ -41,7 +41,7 @@ export default function Contact() {
               <i className="fas fa-map-marker-alt text-orange text-2xl mt-1"></i>
               <div>
                 <strong className="text-dark-blue">Office Location:</strong>
-                <p className="text-gray-700">Complex City Centre<br/>Floor 4, Room T106<br/>Kampala, Uganda</p>
+                <p className="text-gray-700">Complex City Centre<br/>Floor 4, Room J10b<br/>Kampala, Uganda</p>
               </div>
             </div>
             
