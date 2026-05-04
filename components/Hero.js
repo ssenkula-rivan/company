@@ -156,7 +156,7 @@ export default function Hero() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.8, ease: 'easeOut' }}
               >
-                Where Dreams Meet The Door
+                Making your dream a living home.
               </motion.p>
               
               <motion.div 
