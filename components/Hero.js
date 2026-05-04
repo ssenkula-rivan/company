@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { useState, useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useLanguage } from '../contexts/LanguageContext'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
@@ -13,6 +14,7 @@ export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 })
   const heroRef = useRef(null)
+  const { t } = useLanguage()
 
   const carouselImages = [
     '/images/_ (36).jpeg',
@@ -146,7 +148,7 @@ export default function Hero() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.8, ease: 'easeOut' }}
               >
-                AMODZ PROPERTIES LIMITED
+                {t('heroTitle')}
               </motion.h1>
               
               <motion.p 
@@ -156,7 +158,7 @@ export default function Hero() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.8, ease: 'easeOut' }}
               >
-                Making your dream a living home.
+                {t('heroTagline')}
               </motion.p>
               
               <motion.div 

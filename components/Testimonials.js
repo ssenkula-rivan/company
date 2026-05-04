@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { useLanguage } from '../contexts/LanguageContext'
 
 // Testimonials component with client review submission form
 export default function Testimonials() {
+  const { t } = useLanguage()
   const [commentData, setCommentData] = useState({
     name: '',
     rating: 5,
@@ -96,7 +98,7 @@ export default function Testimonials() {
           viewport={{ once: true }}
           className="text-5xl font-bold text-dark-blue text-center mb-6"
         >
-          What Our Clients Say
+          {t('whatClientsSay')}
         </motion.h2>
         
         <motion.p
@@ -105,7 +107,7 @@ export default function Testimonials() {
           viewport={{ once: true }}
           className="text-center text-gray-600 text-lg mb-20 max-w-2xl mx-auto"
         >
-          Real stories from satisfied clients who found their dream properties with us
+          {t('testimonialsDesc')}
         </motion.p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
@@ -149,7 +151,7 @@ export default function Testimonials() {
           className="max-w-2xl mx-auto"
         >
           <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
-            <h3 className="text-lg font-bold text-dark-blue mb-4">Leave a Review</h3>
+            <h3 className="text-lg font-bold text-dark-blue mb-4">{t('leaveReview')}</h3>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Name */}
@@ -161,13 +163,13 @@ export default function Testimonials() {
                   onChange={handleInputChange}
                   required
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange text-sm"
-                  placeholder="Your name"
+                  placeholder={t('yourName')}
                 />
               </div>
 
               {/* Rating */}
               <div className="flex items-center gap-3">
-                <span className="text-sm text-gray-600">Rating:</span>
+                <span className="text-sm text-gray-600">{t('rating')}:</span>
                 <div className="flex gap-1">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <motion.button
@@ -195,7 +197,7 @@ export default function Testimonials() {
                   required
                   rows="3"
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange text-sm"
-                  placeholder="Share your experience..."
+                  placeholder={t('shareExperience')}
                 ></textarea>
               </div>
 
@@ -207,7 +209,7 @@ export default function Testimonials() {
                   className="bg-green-50 border border-green-200 text-green-700 px-4 py-2 rounded-lg text-sm"
                 >
                   <i className="fas fa-check-circle mr-2"></i>
-                  Thank you! Your review will be published after verification.
+                  {t('reviewSuccess')}
                 </motion.div>
               )}
 
@@ -223,12 +225,12 @@ export default function Testimonials() {
                   {isSubmitting ? (
                     <>
                       <i className="fas fa-spinner fa-spin mr-2"></i>
-                      Posting...
+                      {t('posting')}
                     </>
                   ) : (
                     <>
                       <i className="fas fa-paper-plane mr-2"></i>
-                      Post Review
+                      {t('postReview')}
                     </>
                   )}
                 </motion.button>

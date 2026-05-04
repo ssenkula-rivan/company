@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { useLanguage } from '../contexts/LanguageContext'
 
 export default function FeaturedProperties() {
+  const { t } = useLanguage()
   const properties = [
     {
       id: 1,
@@ -44,7 +46,7 @@ export default function FeaturedProperties() {
           viewport={{ once: true }}
           className="text-5xl font-bold text-dark-blue text-center mb-6"
         >
-          Featured Properties
+          {t('featuredProperties')}
         </motion.h2>
         
         <motion.p
@@ -53,7 +55,7 @@ export default function FeaturedProperties() {
           viewport={{ once: true }}
           className="text-center text-gray-600 text-lg mb-20 max-w-3xl mx-auto"
         >
-          Discover our handpicked selection of premium properties in prime locations across Uganda. From modern homes to commercial plots, find your perfect investment.
+          {t('featuredPropertiesDesc')}
         </motion.p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -112,7 +114,7 @@ export default function FeaturedProperties() {
                       className="w-full bg-gradient-to-r from-orange to-orange-600 text-white py-3 rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl"
                     >
                       <i className="fas fa-phone mr-2"></i>
-                      Contact Us
+                      {t('contactUs')}
                     </motion.button>
                   </Link>
                 </div>
@@ -133,7 +135,7 @@ export default function FeaturedProperties() {
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-primary-blue to-dark-blue text-white px-12 py-4 rounded-full font-bold hover:from-blue-700 hover:to-blue-900 transition-all duration-300 shadow-lg"
             >
-              View All Properties
+              {t('viewAllProperties')}
               <i className="fas fa-arrow-right ml-2"></i>
             </motion.button>
           </Link>
