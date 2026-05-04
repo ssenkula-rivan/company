@@ -10,7 +10,6 @@ const nextConfig = {
     CUSTOM_KEY: 'AMODZ_PROPERTIES',
     NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000',
   },
-  trailingSlash: true,
   async rewrites() {
     return [
       {

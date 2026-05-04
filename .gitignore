@@ -25,6 +25,7 @@ dist/
 build/
 .cache/
 .next/
+out/
 
 # Temporary files
 *.tmp
