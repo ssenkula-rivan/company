@@ -37,7 +37,7 @@ export default function CEO() {
                     <img 
                       src="/images/ceo.jpeg" 
                       alt="Amoding Magret - CEO"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-top"
                     />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-2">Amoding Magret</h3>
