@@ -6,6 +6,7 @@ export default function Team() {
       title: 'Amoding Magret',
       role: 'Chief Executive Officer & Managing Director',
       icon: 'fa-user',
+      image: '/images/CEO1.jpeg',
       description: 'Founder driving innovative real estate solutions with Finance expertise from Makerere University. Specializes in diaspora services, housing gap analysis, and transparent property investments.',
       isCEO: true
     },
@@ -90,12 +91,20 @@ export default function Team() {
                       member.isCEO 
                         ? 'bg-white bg-opacity-20 backdrop-blur-sm border-4 border-white border-opacity-30' 
                         : 'bg-gradient-to-br from-primary-blue to-orange'
-                    } rounded-full flex items-center justify-center`}>
-                      <span className={`${
-                        member.isCEO ? 'text-white' : 'text-white'
-                      } font-bold text-2xl`}>
-                        {member.title.split(' ').map(n => n[0]).join('')}
-                      </span>
+                    } rounded-full flex items-center justify-center overflow-hidden`}>
+                      {member.image ? (
+                        <img 
+                          src={member.image} 
+                          alt={member.title}
+                          className="w-full h-full object-cover object-top"
+                        />
+                      ) : (
+                        <span className={`${
+                          member.isCEO ? 'text-white' : 'text-white'
+                        } font-bold text-2xl`}>
+                          {member.title.split(' ').map(n => n[0]).join('')}
+                        </span>
+                      )}
                     </div>
                     
                     <h4 className={`text-xl font-bold mb-2 ${
