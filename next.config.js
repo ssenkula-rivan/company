@@ -9,9 +9,7 @@ const nextConfig = {
   env: {
     CUSTOM_KEY: 'AMODZ_PROPERTIES',
   },
-  output: 'export',
   trailingSlash: true,
-  distDir: 'out',
 }
 
 module.exports = nextConfig

@@ -1,6 +1,9 @@
+# This project is now deployed on Vercel
+# Netlify configuration kept for reference only
+
 [build]
   command = "npm ci && npm run build"
-  publish = "out"
+  publish = ".next"
 
 [[redirects]]
   from = "/api/*"
