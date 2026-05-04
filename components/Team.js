@@ -14,6 +14,7 @@ export default function Team() {
       title: 'Kikome Maria Pascy',
       role: 'Human Resource Manager',
       icon: 'fa-user-tie',
+      image: '/images/manager.jpeg',
       description: 'Strategic HR leader combining Accounting & Finance background with exceptional people management. Drives recruitment, employee relations, and organizational culture development.'
     },
     {
