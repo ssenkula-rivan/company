@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { useLanguage } from '../contexts/LanguageContext'
 
 export default function Gallery() {
   const [selectedVideo, setSelectedVideo] = useState(null)
   const [currentPage, setCurrentPage] = useState(1)
+  const { t } = useLanguage()
 
   const videos = [
     {
@@ -80,7 +82,7 @@ export default function Gallery() {
             viewport={{ once: true }}
             className="page-title mb-8 mb-md-12 text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-blue mb-4">Video Gallery</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-primary-blue mb-4">{t('videoGallery')}</h1>
             <div className="w-24 h-1 bg-gradient-to-r from-orange to-primary-blue mx-auto rounded-full"></div>
           </motion.div>
 
@@ -115,7 +117,7 @@ export default function Gallery() {
                       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                         <div className="bg-orange text-white px-6 py-3 rounded-full font-bold text-lg shadow-lg">
                           <i className="fas fa-clock mr-2"></i>
-                          Coming Soon
+                          {t('comingSoon')}
                         </div>
                       </div>
                     ) : (

@@ -1,22 +1,25 @@
 import { motion } from 'framer-motion'
+import { useLanguage } from '../contexts/LanguageContext'
 
 export default function Statistics() {
+  const { t } = useLanguage()
+  
   const stats = [
     {
       number: '500+',
-      label: 'Properties Sold'
+      label: t('propertiesSold')
     },
     {
       number: '15+',
-      label: 'Years of Experience'
+      label: t('yearsExperience')
     },
     {
       number: '2000+',
-      label: 'Happy Clients'
+      label: t('happyClients')
     },
     {
       number: '50+',
-      label: 'Projects Completed'
+      label: t('projectsCompleted')
     }
   ]
 

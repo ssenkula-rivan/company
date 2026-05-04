@@ -49,6 +49,47 @@ export const translations = {
     posting: 'Posting...',
     reviewSuccess: 'Thank you! Your review will be published after verification.',
     
+    // Gallery
+    videoGallery: 'Video Gallery',
+    comingSoon: 'Coming Soon',
+    
+    // Projects
+    ourProjects: 'Our Projects',
+    projectsDesc: 'Explore our completed and ongoing development projects',
+    
+    // CEO
+    meetOurCEO: 'Meet Our CEO',
+    ceoDesc: 'Visionary leadership driving innovation in Uganda\'s real estate sector',
+    
+    // Team
+    ourTeam: 'Our Team',
+    teamDesc: 'Meet the professionals behind our success',
+    
+    // Statistics
+    yearsExperience: 'Years Experience',
+    happyClients: 'Happy Clients',
+    propertiesSold: 'Properties Sold',
+    projectsCompleted: 'Projects Completed',
+    
+    // Blog
+    latestNews: 'Latest News & Tips',
+    blogDesc: 'Stay updated with real estate insights and market trends',
+    readMore: 'Read More',
+    
+    // FAQ
+    frequentlyAsked: 'Frequently Asked Questions',
+    faqDesc: 'Find answers to common questions about our services',
+    
+    // Careers
+    joinOurTeam: 'Join Our Team',
+    careersDesc: 'Build your career with Uganda\'s leading real estate company',
+    applyNow: 'Apply Now',
+    
+    // Contact
+    getInTouch: 'Get In Touch',
+    contactDesc: 'Ready to find your dream property? Contact us today',
+    sendMessage: 'Send Message',
+    
     // Footer
     quickLinks: 'Quick Links',
     followUs: 'Follow Us',
@@ -57,12 +98,24 @@ export const translations = {
     
     // Common
     learnMore: 'Learn More',
-    readMore: 'Read More',
     viewDetails: 'View Details',
     location: 'Location',
     price: 'Price',
     size: 'Size',
     status: 'Status',
+    loading: 'Loading...',
+    submit: 'Submit',
+    cancel: 'Cancel',
+    close: 'Close',
+    next: 'Next',
+    previous: 'Previous',
+    search: 'Search',
+    filter: 'Filter',
+    sort: 'Sort',
+    all: 'All',
+    new: 'New',
+    popular: 'Popular',
+    recommended: 'Recommended',
   },
   
   lg: {
@@ -111,6 +164,47 @@ export const translations = {
     posting: 'Tusindika...',
     reviewSuccess: 'Webale! Okubuulira kwo kujja kufulumizibwa oluvannyuma lw\'okukakasa.',
     
+    // Gallery
+    videoGallery: 'Ebifaananyi by\'Amaloboozi',
+    comingSoon: 'Bijja Mangu',
+    
+    // Projects
+    ourProjects: 'Pulojekiti Zaffe',
+    projectsDesc: 'Laba pulojekiti zaffe ezimaze n\'ezigenda mu maaso',
+    
+    // CEO
+    meetOurCEO: 'Sisinkane ne Mukulu Waffe',
+    ceoDesc: 'Obukulembeze obw\'ekiruubirirwa obuvuga enkyukakyuka mu bintu by\'Uganda',
+    
+    // Team
+    ourTeam: 'Ttiimu Yaffe',
+    teamDesc: 'Sisinkane n\'abakugu abali emabega w\'obuwanguzi bwaffe',
+    
+    // Statistics
+    yearsExperience: 'Emyaka gy\'Obumanyirivu',
+    happyClients: 'Bakasitoma Abasanyufu',
+    propertiesSold: 'Ebintu Ebyatundibwa',
+    projectsCompleted: 'Pulojekiti Ezamalibwa',
+    
+    // Blog
+    latestNews: 'Amawulire n\'Amagezi Agaggya',
+    blogDesc: 'Beera ng\'omanyi ebikwata ku bintu n\'entambula y\'akatale',
+    readMore: 'Soma Ebisingawo',
+    
+    // FAQ
+    frequentlyAsked: 'Ebibuuzo Ebisinga Okubuuzibwa',
+    faqDesc: 'Zuula ebiragiro ku bibuuzo ebisinga ku buweereza bwaffe',
+    
+    // Careers
+    joinOurTeam: 'Weegatte ku Ttiimu Yaffe',
+    careersDesc: 'Zimba omulimu gwo ne kkampuni enkulu ey\'ebintu mu Uganda',
+    applyNow: 'Saba Kati',
+    
+    // Contact
+    getInTouch: 'Tukubire',
+    contactDesc: 'Weetegese okuzuula ekintu kyo eky\'ekirooto? Tukubire leero',
+    sendMessage: 'Sindika Obubaka',
+    
     // Footer
     quickLinks: 'Ebikwata Amangu',
     followUs: 'Tugoberere',
@@ -119,12 +213,24 @@ export const translations = {
     
     // Common
     learnMore: 'Manya Ebisingawo',
-    readMore: 'Soma Ebisingawo',
     viewDetails: 'Laba Ebikwata',
     location: 'Ekifo',
     price: 'Omuwendo',
     size: 'Obunene',
     status: 'Embeera',
+    loading: 'Tukozesa...',
+    submit: 'Sindika',
+    cancel: 'Sazaamu',
+    close: 'Ggalawo',
+    next: 'Eddako',
+    previous: 'Ekyasooka',
+    search: 'Noonya',
+    filter: 'Sengejja',
+    sort: 'Tegeka',
+    all: 'Byonna',
+    new: 'Bipya',
+    popular: 'Ebimanyiddwa',
+    recommended: 'Ebyakuteesebwa',
   }
 }
 

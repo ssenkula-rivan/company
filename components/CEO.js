@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion'
+import { useLanguage } from '../contexts/LanguageContext'
 
 export default function CEO() {
+  const { t } = useLanguage()
+  
   return (
     <section id="ceo" className="relative py-20 bg-gradient-to-br from-slate-50 via-white to-slate-50 overflow-hidden">
       {/* Background decoration */}
@@ -16,7 +19,7 @@ export default function CEO() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold text-dark-blue mb-4">Executive Leadership</h2>
+          <h2 className="text-5xl md:text-6xl font-bold text-dark-blue mb-4">{t('meetOurCEO')}</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-orange via-amber-400 to-primary-blue mx-auto rounded-full"></div>
         </motion.div>
         

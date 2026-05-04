@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
+import { useLanguage } from '../contexts/LanguageContext'
 
 export default function Team() {
+  const { t } = useLanguage()
   const teamMembers = [
     {
       title: 'Amoding Magret',
@@ -56,7 +58,7 @@ export default function Team() {
           viewport={{ once: true }}
           className="text-5xl font-bold text-dark-blue text-center mb-20"
         >
-          Our People
+          {t('ourTeam')}
         </motion.h2>
         
         <div className="space-y-20">
