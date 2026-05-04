@@ -1,7 +1,19 @@
-import { motion } from 'framer-motion'
-import Link from 'next/link'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useState } from 'react'
 
 export default function Careers() {
+  const [showForm, setShowForm] = useState(false)
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    position: '',
+    message: '',
+    cv: null
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null)
+
   const opportunities = [
     'Real Estate Agent',
     'Property Manager',
@@ -9,6 +21,43 @@ export default function Careers() {
     'Marketing Specialist',
     'Administrative Assistant'
   ]
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+  }
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0]
+    if (file && file.size <= 5000000) { // 5MB limit
+      setFormData(prev => ({ ...prev, cv: file }))
+    } else {
+      alert('File size must be less than 5MB')
+    }
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    // Simulate form submission (replace with actual API call)
+    setTimeout(() => {
+      setIsSubmitting(false)
+      setSubmitStatus('success')
+      setTimeout(() => {
+        setShowForm(false)
+        setSubmitStatus(null)
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          position: '',
+          message: '',
+          cv: null
+        })
+      }, 2000)
+    }, 1500)
+  }
 
   return (
     <section id="careers" className="py-24 bg-white border-t border-gray-200">
@@ -56,18 +105,198 @@ export default function Careers() {
               Send your CV to <strong>careers@amodzproperties.com</strong>
             </p>
             
-            <Link href="#contact">
-              <motion.button 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-primary-blue to-blue-700 text-white px-12 py-3 rounded-full font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              >
-                Apply Now
-              </motion.button>
-            </Link>
+            <motion.button 
+              onClick={() => setShowForm(true)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-gradient-to-r from-primary-blue to-blue-700 text-white px-12 py-3 rounded-full font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
+              Apply Now
+            </motion.button>
           </motion.div>
         </div>
       </div>
+
+      {/* Application Form Popup */}
+      <AnimatePresence>
+        {showForm && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+            onClick={() => setShowForm(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            >
+              <div className="sticky top-0 bg-gradient-to-r from-primary-blue to-orange p-6 rounded-t-2xl">
+                <div className="flex justify-between items-center">
+                  <h3 className="text-2xl font-bold text-white">Job Application Form</h3>
+                  <button
+                    onClick={() => setShowForm(false)}
+                    className="text-white hover:text-gray-200 text-3xl leading-none"
+                  >
+                    ×
+                  </button>
+                </div>
+              </div>
+
+              <form onSubmit={handleSubmit} className="p-6 space-y-4">
+                {/* Name */}
+                <div>
+                  <label className="block text-dark-blue font-semibold mb-2">
+                    Full Name <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue"
+                    placeholder="Enter your full name"
+                  />
+                </div>
+
+                {/* Email */}
+                <div>
+                  <label className="block text-dark-blue font-semibold mb-2">
+                    Email Address <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+
+                {/* Phone */}
+                <div>
+                  <label className="block text-dark-blue font-semibold mb-2">
+                    Phone Number <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue"
+                    placeholder="+256 XXX XXX XXX"
+                  />
+                </div>
+
+                {/* Position */}
+                <div>
+                  <label className="block text-dark-blue font-semibold mb-2">
+                    Position Applied For <span className="text-red-500">*</span>
+                  </label>
+                  <select
+                    name="position"
+                    value={formData.position}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue"
+                  >
+                    <option value="">Select a position</option>
+                    {opportunities.map((opp, index) => (
+                      <option key={index} value={opp}>{opp}</option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Cover Letter */}
+                <div>
+                  <label className="block text-dark-blue font-semibold mb-2">
+                    Cover Letter / Message
+                  </label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    rows="4"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue"
+                    placeholder="Tell us why you're a great fit for this position..."
+                  ></textarea>
+                </div>
+
+                {/* CV Upload */}
+                <div>
+                  <label className="block text-dark-blue font-semibold mb-2">
+                    Upload CV/Resume <span className="text-red-500">*</span>
+                  </label>
+                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-primary-blue transition-colors">
+                    <input
+                      type="file"
+                      id="cv-upload"
+                      onChange={handleFileChange}
+                      accept=".pdf,.doc,.docx"
+                      required
+                      className="hidden"
+                    />
+                    <label htmlFor="cv-upload" className="cursor-pointer">
+                      <i className="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-2 block"></i>
+                      <p className="text-gray-600 mb-1">
+                        {formData.cv ? formData.cv.name : 'Click to upload or drag and drop'}
+                      </p>
+                      <p className="text-sm text-gray-500">PDF, DOC, DOCX (Max 5MB)</p>
+                    </label>
+                  </div>
+                </div>
+
+                {/* Submit Status */}
+                {submitStatus === 'success' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg"
+                  >
+                    <i className="fas fa-check-circle mr-2"></i>
+                    Application submitted successfully!
+                  </motion.div>
+                )}
+
+                {/* Submit Button */}
+                <div className="flex gap-4 pt-4">
+                  <button
+                    type="button"
+                    onClick={() => setShowForm(false)}
+                    className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="flex-1 bg-gradient-to-r from-primary-blue to-orange text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-orange-600 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <i className="fas fa-spinner fa-spin mr-2"></i>
+                        Submitting...
+                      </>
+                    ) : (
+                      <>
+                        <i className="fas fa-paper-plane mr-2"></i>
+                        Submit Application
+                      </>
+                    )}
+                  </button>
+                </div>
+              </form>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   )
 }
