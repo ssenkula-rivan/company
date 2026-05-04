@@ -5,8 +5,6 @@ import { useState } from 'react'
 export default function Testimonials() {
   const [commentData, setCommentData] = useState({
     name: '',
-    email: '',
-    role: '',
     rating: 5,
     comment: ''
   })
@@ -65,8 +63,6 @@ export default function Testimonials() {
         },
         body: JSON.stringify({
           name: commentData.name,
-          email: commentData.email,
-          role: commentData.role,
           text: commentData.comment,
           rating: commentData.rating
         })
@@ -77,8 +73,6 @@ export default function Testimonials() {
         setSubmitSuccess(true)
         setCommentData({
           name: '',
-          email: '',
-          role: '',
           rating: 5,
           comment: ''
         })
@@ -152,106 +146,56 @@ export default function Testimonials() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-3xl mx-auto"
+          className="max-w-2xl mx-auto"
         >
-          <div className="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-primary-blue">
-            <h3 className="text-2xl font-bold text-dark-blue mb-2 text-center">Share Your Experience</h3>
-            <p className="text-gray-600 text-center mb-6">We'd love to hear about your experience with AMODZ Properties</p>
+          <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
+            <h3 className="text-lg font-bold text-dark-blue mb-4">Leave a Review</h3>
 
             <form onSubmit={handleSubmit} className="space-y-4">
-              {/* Name and Email */}
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-dark-blue font-semibold mb-2">
-                    Your Name <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={commentData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue"
-                    placeholder="John Doe"
-                  />
-                </div>
-                <div>
-                  <label className="block text-dark-blue font-semibold mb-2">
-                    Email Address <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={commentData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue"
-                    placeholder="john@example.com"
-                  />
-                </div>
-              </div>
-
-              {/* Role */}
+              {/* Name */}
               <div>
-                <label className="block text-dark-blue font-semibold mb-2">
-                  Your Role <span className="text-red-500">*</span>
-                </label>
-                <select
-                  name="role"
-                  value={commentData.role}
+                <input
+                  type="text"
+                  name="name"
+                  value={commentData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue"
-                >
-                  <option value="">Select your role</option>
-                  <option value="Property Owner">Property Owner</option>
-                  <option value="Investor">Investor</option>
-                  <option value="First-time Buyer">First-time Buyer</option>
-                  <option value="Commercial Client">Commercial Client</option>
-                  <option value="Tenant">Tenant</option>
-                  <option value="Other">Other</option>
-                </select>
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange text-sm"
+                  placeholder="Your name"
+                />
               </div>
 
               {/* Rating */}
-              <div>
-                <label className="block text-dark-blue font-semibold mb-2">
-                  Your Rating <span className="text-red-500">*</span>
-                </label>
-                <div className="flex gap-2">
+              <div className="flex items-center gap-3">
+                <span className="text-sm text-gray-600">Rating:</span>
+                <div className="flex gap-1">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <motion.button
                       key={star}
                       type="button"
                       onClick={() => handleRatingClick(star)}
-                      whileHover={{ scale: 1.2 }}
+                      whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
-                      className="text-3xl focus:outline-none"
+                      className="text-2xl focus:outline-none"
                     >
                       <span className={star <= commentData.rating ? 'text-orange' : 'text-gray-300'}>
                         ★
                       </span>
                     </motion.button>
                   ))}
-                  <span className="ml-2 text-gray-600 self-center">
-                    {commentData.rating} {commentData.rating === 1 ? 'star' : 'stars'}
-                  </span>
                 </div>
               </div>
 
               {/* Comment */}
               <div>
-                <label className="block text-dark-blue font-semibold mb-2">
-                  Your Review <span className="text-red-500">*</span>
-                </label>
                 <textarea
                   name="comment"
                   value={commentData.comment}
                   onChange={handleInputChange}
                   required
-                  rows="5"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue"
-                  placeholder="Share your experience with AMODZ Properties..."
+                  rows="3"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange text-sm"
+                  placeholder="Share your experience..."
                 ></textarea>
               </div>
 
@@ -260,31 +204,31 @@ export default function Testimonials() {
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg"
+                  className="bg-green-50 border border-green-200 text-green-700 px-4 py-2 rounded-lg text-sm"
                 >
                   <i className="fas fa-check-circle mr-2"></i>
-                  Thank you for your review! It will be published after verification.
+                  Thank you! Your review will be published after verification.
                 </motion.div>
               )}
 
               {/* Submit Button */}
-              <div className="text-center">
+              <div>
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-primary-blue to-orange text-white px-12 py-4 rounded-full font-bold hover:from-blue-700 hover:to-orange-600 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full bg-gradient-to-r from-orange to-orange-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-md disabled:opacity-50 disabled:cursor-not-allowed text-sm"
                 >
                   {isSubmitting ? (
                     <>
                       <i className="fas fa-spinner fa-spin mr-2"></i>
-                      Submitting...
+                      Posting...
                     </>
                   ) : (
                     <>
                       <i className="fas fa-paper-plane mr-2"></i>
-                      Submit Review
+                      Post Review
                     </>
                   )}
                 </motion.button>
