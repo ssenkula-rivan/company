@@ -10,43 +10,43 @@ export default function Gallery() {
       id: 1,
       title: 'Kampala Residential Complex - Complete Tour',
       description: 'Take a complete tour of our flagship residential project featuring 50 modern units with world-class amenities.',
-      thumbnail: 'https://img.youtube.com/vi/pvBdC0oAijQ/hqdefault.jpg',
-      videoUrl: 'https://www.youtube.com/watch?v=pvBdC0oAijQ'
+      thumbnail: '/images/_ (36).jpeg',
+      comingSoon: true
     },
     {
       id: 2,
       title: 'Ntinda Commercial Hub - Business Excellence',
       description: 'Explore premium commercial spaces designed for modern businesses in prime location.',
-      thumbnail: 'https://img.youtube.com/vi/ZENhfjul5wU/hqdefault.jpg',
-      videoUrl: 'https://www.youtube.com/watch?v=ZENhfjul5wU'
+      thumbnail: '/images/_ (37).jpeg',
+      comingSoon: true
     },
     {
       id: 3,
       title: 'Mukono Residential Estate - Affordable Living',
       description: 'Discover affordable housing solutions with 100+ units designed for comfortable family living.',
-      thumbnail: 'https://img.youtube.com/vi/9o6QWTxMJlM/hqdefault.jpg',
-      videoUrl: 'https://www.youtube.com/watch?v=9o6QWTxMJlM'
+      thumbnail: '/images/_ (38).jpeg',
+      comingSoon: true
     },
     {
       id: 4,
       title: 'Property Investment Guide - Expert Advice',
       description: 'Learn from our experts about real estate investment strategies and market trends in Uganda.',
-      thumbnail: 'https://img.youtube.com/vi/M7CKJtdHstE/hqdefault.jpg',
-      videoUrl: 'https://www.youtube.com/watch?v=M7CKJtdHstE'
+      thumbnail: '/images/_ (39).jpeg',
+      comingSoon: true
     },
     {
       id: 5,
       title: 'Quality Construction - Behind the Scenes',
       description: 'See how we maintain quality standards in every construction project we undertake.',
-      thumbnail: 'https://img.youtube.com/vi/3VklVIJySLI/hqdefault.jpg',
-      videoUrl: 'https://www.youtube.com/watch?v=3VklVIJySLI'
+      thumbnail: '/images/_ (40).jpeg',
+      comingSoon: true
     },
     {
       id: 6,
       title: 'Client Testimonials - Success Stories',
       description: 'Hear from our satisfied clients about their experience with Amodz Properties.',
-      thumbnail: 'https://img.youtube.com/vi/w3wkY-Px6nQ/hqdefault.jpg',
-      videoUrl: 'https://www.youtube.com/watch?v=w3wkY-Px6nQ'
+      thumbnail: '/images/_ (41).jpeg',
+      comingSoon: true
     }
   ]
 
@@ -99,23 +99,32 @@ export default function Gallery() {
                   {/* Video Thumbnail */}
                   <div 
                     className="video-thumb position-relative cursor-pointer"
-                    onClick={() => openVideoModal(video)}
+                    onClick={() => !video.comingSoon && openVideoModal(video)}
                   >
                     <img 
                       src={video.thumbnail} 
                       alt={video.title}
-                      className="w-full h-48 object-cover"
+                      className="w-full h-48 object-cover object-top"
                     />
                     
                     {/* Video Overlay */}
                     <div className="video-overlay absolute inset-0 bg-black bg-opacity-40 transition-all duration-300 hover:bg-opacity-50"></div>
                     
-                    {/* Play Button */}
-                    <div className="play-btn absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                      <div className="w-16 h-16 bg-orange bg-opacity-90 rounded-full flex items-center justify-center hover:bg-opacity-100 transition-all duration-300 hover:scale-110">
-                        <i className="fas fa-play text-white text-xl ml-1"></i>
+                    {/* Coming Soon Badge or Play Button */}
+                    {video.comingSoon ? (
+                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <div className="bg-orange text-white px-6 py-3 rounded-full font-bold text-lg shadow-lg">
+                          <i className="fas fa-clock mr-2"></i>
+                          Coming Soon
+                        </div>
                       </div>
-                    </div>
+                    ) : (
+                      <div className="play-btn absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <div className="w-16 h-16 bg-orange bg-opacity-90 rounded-full flex items-center justify-center hover:bg-opacity-100 transition-all duration-300 hover:scale-110">
+                          <i className="fas fa-play text-white text-xl ml-1"></i>
+                        </div>
+                      </div>
+                    )}
                   </div>
 
                   {/* Card Body */}
