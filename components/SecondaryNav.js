@@ -375,7 +375,7 @@ export default function SecondaryNav() {
             transition={{ delay: 0.4 }}
             className="flex items-center gap-3"
           >
-            <Link href="/properties">
+            <div className="relative group">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -383,8 +383,66 @@ export default function SecondaryNav() {
               >
                 <i className="fas fa-home"></i>
                 <span className="hidden sm:inline">Properties</span>
+                <i className="fas fa-chevron-down text-xs"></i>
               </motion.button>
-            </Link>
+              
+              {/* Properties Dropdown */}
+              <div className="absolute right-0 top-full mt-2 w-56 bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div className="p-2">
+                  <div className="px-3 py-2 text-xs font-bold text-gray-500 uppercase">Our Locations</div>
+                  
+                  <a href="/properties?location=Kapeeka" className="block px-3 py-3 hover:bg-orange-50 rounded-lg transition-colors">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i className="fas fa-map-marker-alt text-orange text-sm"></i>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-dark-blue text-sm">Kapeeka</p>
+                        <p className="text-xs text-gray-500">Premium plots available</p>
+                      </div>
+                    </div>
+                  </a>
+                  
+                  <a href="/properties?location=Seeta" className="block px-3 py-3 hover:bg-primary-blue-50 rounded-lg transition-colors">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i className="fas fa-map-marker-alt text-primary-blue text-sm"></i>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-dark-blue text-sm">Seeta</p>
+                        <p className="text-xs text-gray-500">Modern housing</p>
+                      </div>
+                    </div>
+                  </a>
+                  
+                  <a href="/properties?location=Mukono" className="block px-3 py-3 hover:bg-orange-50 rounded-lg transition-colors">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i className="fas fa-map-marker-alt text-orange text-sm"></i>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-dark-blue text-sm">Mukono</p>
+                        <p className="text-xs text-gray-500">Strategic location</p>
+                      </div>
+                    </div>
+                  </a>
+                  
+                  <div className="h-px bg-gray-200 my-2"></div>
+                  
+                  <a href="/properties" className="block px-3 py-3 hover:bg-gray-50 rounded-lg transition-colors">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i className="fas fa-th-large text-gray-600 text-sm"></i>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-dark-blue text-sm">View All Properties</p>
+                        <p className="text-xs text-gray-500">Browse complete catalog</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
             
             <Link href="/contact">
               <motion.button
