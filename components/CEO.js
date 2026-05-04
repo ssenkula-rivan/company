@@ -33,8 +33,12 @@ export default function CEO() {
               {/* Main profile card */}
               <div className="w-full max-w-sm mx-auto bg-gradient-to-br from-primary-blue via-blue-700 to-orange rounded-3xl shadow-2xl p-10 transform transition-all duration-700 hover:scale-105 hover:shadow-3xl">
                 <div className="text-center text-white">
-                  <div className="w-28 h-28 mx-auto mb-6 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center border-4 border-white border-opacity-30">
-                    <span className="text-4xl font-bold tracking-wider">AM</span>
+                  <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white border-opacity-50 shadow-xl">
+                    <img 
+                      src="/images/ceo.jpg" 
+                      alt="Amoding Magret - CEO"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-2">Amoding Magret</h3>
                   <p className="text-lg md:text-xl font-semibold mb-1">Chief Executive Officer</p>
