@@ -147,6 +147,17 @@ export default function SecondaryNav() {
   const [phoneNumber, setPhoneNumber] = useState('')
   const [showConfirmation, setShowConfirmation] = useState(false)
   const [filteredDistricts, setFilteredDistricts] = useState([])
+  const [showQuotationForm, setShowQuotationForm] = useState(false)
+  const [quotationData, setQuotationData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    serviceType: '',
+    location: '',
+    budget: '',
+    message: ''
+  })
+  const [isSubmittingQuotation, setIsSubmittingQuotation] = useState(false)
   const searchRef = useRef(null)
 
   // Filter districts based on search query
@@ -226,6 +237,33 @@ export default function SecondaryNav() {
     }
   }
 
+  const handleQuotationInputChange = (e) => {
+    const { name, value } = e.target
+    setQuotationData(prev => ({ ...prev, [name]: value }))
+  }
+
+  const handleQuotationSubmit = async (e) => {
+    e.preventDefault()
+    setIsSubmittingQuotation(true)
+
+    // Simulate form submission (replace with actual API call)
+    setTimeout(() => {
+      setIsSubmittingQuotation(false)
+      setShowQuotationForm(false)
+      setShowConfirmation(true)
+      setQuotationData({
+        name: '',
+        email: '',
+        phone: '',
+        serviceType: '',
+        location: '',
+        budget: '',
+        message: ''
+      })
+      setTimeout(() => setShowConfirmation(false), 5000)
+    }, 1500)
+  }
+
   return (
     <motion.section
       initial={{ opacity: 0, y: -20 }}
@@ -241,16 +279,15 @@ export default function SecondaryNav() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <Link href="/contact">
-              <motion.button
-                whileHover={{ scale: 1.08, boxShadow: "0 15px 35px rgba(241, 89, 43, 0.5)" }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-orange text-white px-8 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl hover:bg-orange-600 transition-all duration-300 flex items-center gap-3 border-2 border-white"
-              >
-                <i className="fas fa-file-invoice text-lg"></i>
-                <span className="text-lg">Get a Quotation</span>
-              </motion.button>
-            </Link>
+            <motion.button
+              onClick={() => setShowQuotationForm(true)}
+              whileHover={{ scale: 1.08, boxShadow: "0 15px 35px rgba(241, 89, 43, 0.5)" }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-orange text-white px-8 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl hover:bg-orange-600 transition-all duration-300 flex items-center gap-3 border-2 border-white"
+            >
+              <i className="fas fa-file-invoice text-lg"></i>
+              <span className="text-lg">Get a Quotation</span>
+            </motion.button>
           </motion.div>
 
           {/* Search Bar */}
@@ -501,6 +538,196 @@ export default function SecondaryNav() {
                 </p>
               </div>
             </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Quotation Form Popup */}
+      <AnimatePresence>
+        {showQuotationForm && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+            onClick={() => setShowQuotationForm(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            >
+              <div className="sticky top-0 bg-gradient-to-r from-orange to-orange-600 p-6 rounded-t-2xl">
+                <div className="flex justify-between items-center">
+                  <div>
+                    <h3 className="text-2xl font-bold text-white">Get a Quotation</h3>
+                    <p className="text-white text-opacity-90 text-sm">Tell us about your project</p>
+                  </div>
+                  <button
+                    onClick={() => setShowQuotationForm(false)}
+                    className="text-white hover:text-gray-200 text-3xl leading-none"
+                  >
+                    ×
+                  </button>
+                </div>
+              </div>
+
+              <form onSubmit={handleQuotationSubmit} className="p-6 space-y-4">
+                {/* Name */}
+                <div>
+                  <label className="block text-dark-blue font-semibold mb-2">
+                    Full Name <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={quotationData.name}
+                    onChange={handleQuotationInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange"
+                    placeholder="Enter your full name"
+                  />
+                </div>
+
+                {/* Email */}
+                <div>
+                  <label className="block text-dark-blue font-semibold mb-2">
+                    Email Address <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={quotationData.email}
+                    onChange={handleQuotationInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+
+                {/* Phone */}
+                <div>
+                  <label className="block text-dark-blue font-semibold mb-2">
+                    Phone Number <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={quotationData.phone}
+                    onChange={handleQuotationInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange"
+                    placeholder="+256 XXX XXX XXX"
+                  />
+                </div>
+
+                {/* Service Type */}
+                <div>
+                  <label className="block text-dark-blue font-semibold mb-2">
+                    Service Type <span className="text-red-500">*</span>
+                  </label>
+                  <select
+                    name="serviceType"
+                    value={quotationData.serviceType}
+                    onChange={handleQuotationInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange"
+                  >
+                    <option value="">Select a service</option>
+                    <option value="buy-land">Buy Land</option>
+                    <option value="buy-house">Buy House</option>
+                    <option value="rent-property">Rent Property</option>
+                    <option value="construction">Construction Services</option>
+                    <option value="property-management">Property Management</option>
+                    <option value="valuation">Property Valuation</option>
+                    <option value="consultation">Real Estate Consultation</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                {/* Location */}
+                <div>
+                  <label className="block text-dark-blue font-semibold mb-2">
+                    Preferred Location <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="location"
+                    value={quotationData.location}
+                    onChange={handleQuotationInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange"
+                    placeholder="e.g., Kampala, Wakiso, Mukono"
+                  />
+                </div>
+
+                {/* Budget */}
+                <div>
+                  <label className="block text-dark-blue font-semibold mb-2">
+                    Budget Range
+                  </label>
+                  <select
+                    name="budget"
+                    value={quotationData.budget}
+                    onChange={handleQuotationInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange"
+                  >
+                    <option value="">Select budget range</option>
+                    <option value="under-50m">Under 50M UGX</option>
+                    <option value="50m-100m">50M - 100M UGX</option>
+                    <option value="100m-200m">100M - 200M UGX</option>
+                    <option value="200m-500m">200M - 500M UGX</option>
+                    <option value="above-500m">Above 500M UGX</option>
+                    <option value="flexible">Flexible</option>
+                  </select>
+                </div>
+
+                {/* Message */}
+                <div>
+                  <label className="block text-dark-blue font-semibold mb-2">
+                    Additional Details
+                  </label>
+                  <textarea
+                    name="message"
+                    value={quotationData.message}
+                    onChange={handleQuotationInputChange}
+                    rows="4"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange"
+                    placeholder="Tell us more about your requirements..."
+                  ></textarea>
+                </div>
+
+                {/* Submit Button */}
+                <div className="flex gap-4 pt-4">
+                  <button
+                    type="button"
+                    onClick={() => setShowQuotationForm(false)}
+                    className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={isSubmittingQuotation}
+                    className="flex-1 bg-gradient-to-r from-orange to-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmittingQuotation ? (
+                      <>
+                        <i className="fas fa-spinner fa-spin mr-2"></i>
+                        Submitting...
+                      </>
+                    ) : (
+                      <>
+                        <i className="fas fa-paper-plane mr-2"></i>
+                        Submit Request
+                      </>
+                    )}
+                  </button>
+                </div>
+              </form>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
