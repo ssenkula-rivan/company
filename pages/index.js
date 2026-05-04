@@ -19,10 +19,12 @@ import Tenders from '../components/Tenders'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import WhatsAppFloat from '../components/WhatsAppFloat'
+import SEO from '../components/SEO'
 
 export default function Home() {
   return (
     <>
+      <SEO />
       <Navbar />
       <Hero />
       <SecondaryNav />
