@@ -75,6 +75,11 @@ export default function Hero() {
 
   const notices = [
     {
+      title: 'Our Development Sites',
+      description: 'We have active development sites in Kapeeka, Seeta, and Mukono with premium plots and properties available.',
+      badge: 'LOCATIONS'
+    },
+    {
       title: 'New Property Listings Available',
       description: 'Explore our latest residential and commercial properties available for sale and rent in prime locations.',
       badge: 'NEW'
@@ -85,8 +90,8 @@ export default function Hero() {
       badge: 'NEW'
     },
     {
-      title: 'Premium Residential Properties - Kampala',
-      description: 'Discover luxury homes and apartments in Kampala\'s most sought-after neighborhoods.'
+      title: 'Premium Residential Properties',
+      description: 'Discover luxury homes and apartments in Kapeeka, Seeta, and Mukono\'s most sought-after neighborhoods.'
     }
   ]
 

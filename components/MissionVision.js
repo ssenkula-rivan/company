@@ -133,7 +133,7 @@ export default function MissionVision() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-primary-blue/5 to-orange/5 p-10 rounded-2xl shadow-lg border-l-4 border-orange"
+          className="bg-gradient-to-r from-primary-blue/5 to-orange/5 p-10 rounded-2xl shadow-lg border-l-4 border-orange mb-16"
         >
           <h3 className="text-2xl font-bold text-dark-blue mb-6">Our Story</h3>
           <div className="space-y-4 text-gray-700 leading-relaxed">
@@ -168,6 +168,77 @@ export default function MissionVision() {
               Our commitment to <span className="font-bold text-primary-blue">excellence and integrity</span> ensures every client receives professional service, making property ownership accessible and dreams achievable.
             </p>
           </div>
+          </div>
+        </motion.div>
+
+        {/* Development Sites */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-white p-10 rounded-2xl shadow-lg border-t-4 border-orange"
+        >
+          <h3 className="text-2xl font-bold text-dark-blue mb-6 text-center">Our Development Sites</h3>
+          <p className="text-gray-600 text-center mb-8">We have active development sites in strategic locations across Uganda</p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-gradient-to-br from-orange/10 to-orange/5 p-6 rounded-xl border-2 border-orange/20 hover:border-orange/40 transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-orange rounded-full flex items-center justify-center mb-4 mx-auto">
+                <i className="fas fa-map-marker-alt text-white text-xl"></i>
+              </div>
+              <h4 className="font-bold text-dark-blue text-center mb-2 text-lg">Kapeeka</h4>
+              <p className="text-gray-600 text-center text-sm">Premium plots and residential developments</p>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-gradient-to-br from-primary-blue/10 to-primary-blue/5 p-6 rounded-xl border-2 border-primary-blue/20 hover:border-primary-blue/40 transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-primary-blue rounded-full flex items-center justify-center mb-4 mx-auto">
+                <i className="fas fa-map-marker-alt text-white text-xl"></i>
+              </div>
+              <h4 className="font-bold text-dark-blue text-center mb-2 text-lg">Seeta</h4>
+              <p className="text-gray-600 text-center text-sm">Modern housing and land opportunities</p>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="bg-gradient-to-br from-orange/10 to-orange/5 p-6 rounded-xl border-2 border-orange/20 hover:border-orange/40 transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-orange rounded-full flex items-center justify-center mb-4 mx-auto">
+                <i className="fas fa-map-marker-alt text-white text-xl"></i>
+              </div>
+              <h4 className="font-bold text-dark-blue text-center mb-2 text-lg">Mukono</h4>
+              <p className="text-gray-600 text-center text-sm">Strategic location with growth potential</p>
+            </motion.div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <p className="text-gray-700 mb-4">
+              <i className="fas fa-info-circle text-orange mr-2"></i>
+              All our sites feature titled land, accessible roads, and proximity to essential amenities
+            </p>
+            <motion.a
+              href="/contact"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block bg-gradient-to-r from-orange to-orange-600 text-white px-8 py-3 rounded-full font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg"
+            >
+              <i className="fas fa-phone mr-2"></i>
+              Contact Us for Site Visits
+            </motion.a>
           </div>
         </motion.div>
       </div>
