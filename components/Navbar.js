@@ -149,30 +149,31 @@ export default function Navbar() {
                       <span>{item.name}</span>
                       <i className={`fas ${item.icon} text-xs`}></i>
                     </motion.button>
-                    <motion.div 
-                      initial={{ opacity: 0, y: -15, scale: 0.95 }}
-                      whileHover={{ opacity: 1, y: 0, scale: 1 }}
-                      className="absolute left-0 top-full pt-2 w-56 bg-white rounded-2xl shadow-2xl overflow-hidden opacity-100 visible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50"
-                    >
-                      {item.dropdown.map((subItem, subIndex) => (
-                        <motion.div 
-                          key={subIndex}
-                          whileHover={{ x: 10 }}
-                        >
-                          <Link 
-                            href={subItem.href}
-                            onClick={(e) => handleAnchorClick(e, subItem.href)}
-                            className="block px-6 py-4 hover:bg-orange hover:text-white transition-all duration-300 font-medium text-dark-blue flex items-center space-x-3"
+                    <div className="absolute left-0 top-full pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                      <motion.div 
+                        initial={{ y: -10 }}
+                        className="bg-white rounded-2xl shadow-2xl overflow-hidden"
+                      >
+                        {item.dropdown.map((subItem, subIndex) => (
+                          <motion.div 
+                            key={subIndex}
+                            whileHover={{ x: 10 }}
                           >
-                            {subItem.icon && <i className={`fas ${subItem.icon} text-orange`}></i>}
-                            <span>{subItem.name}</span>
-                          </Link>
-                          {subIndex < item.dropdown.length - 1 && (
-                            <div className="h-px bg-gray-200"></div>
-                          )}
-                        </motion.div>
-                      ))}
-                    </motion.div>
+                            <Link 
+                              href={subItem.href}
+                              onClick={(e) => handleAnchorClick(e, subItem.href)}
+                              className="block px-6 py-4 hover:bg-orange hover:text-white transition-all duration-300 font-medium text-dark-blue flex items-center space-x-3"
+                            >
+                              {subItem.icon && <i className={`fas ${subItem.icon} text-orange hover:text-white`}></i>}
+                              <span>{subItem.name}</span>
+                            </Link>
+                            {subIndex < item.dropdown.length - 1 && (
+                              <div className="h-px bg-gray-200"></div>
+                            )}
+                          </motion.div>
+                        ))}
+                      </motion.div>
+                    </div>
                   </>
                 ) : (
                   <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
