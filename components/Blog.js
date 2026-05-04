@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 export default function Blog() {
   const articles = [
@@ -8,7 +9,8 @@ export default function Blog() {
       category: 'Real Estate Tips',
       date: 'March 10, 2025',
       excerpt: 'Learn essential tips to make your first property purchase a success.',
-      image: '/images/Painted home.jpeg'
+      image: '/images/Painted home.jpeg',
+      link: '/blog/first-time-property-buyers'
     },
     {
       id: 2,
@@ -16,7 +18,8 @@ export default function Blog() {
       category: 'Investment Guide',
       date: 'March 8, 2025',
       excerpt: 'Discover the latest trends in property investment and market opportunities.',
-      image: '/images/_ (38).jpeg'
+      image: '/images/_ (38).jpeg',
+      link: '/blog'
     },
     {
       id: 3,
@@ -24,7 +27,8 @@ export default function Blog() {
       category: 'Property Management',
       date: 'March 5, 2025',
       excerpt: 'Practical strategies to increase your property value and rental income.',
-      image: '/images/_ (41).jpeg'
+      image: '/images/_ (41).jpeg',
+      link: '/blog'
     }
   ]
 
@@ -66,13 +70,15 @@ export default function Blog() {
                 <h3 className="text-xl font-bold text-dark-blue mb-3">{article.title}</h3>
                 <p className="text-gray-600 mb-6">{article.excerpt}</p>
                 
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="text-orange font-semibold hover:text-dark-orange transition-colors"
-                >
-                  Read More →
-                </motion.button>
+                <Link href={article.link}>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="text-orange font-semibold hover:text-dark-orange transition-colors"
+                  >
+                    Read More →
+                  </motion.button>
+                </Link>
               </div>
             </motion.div>
           ))}
