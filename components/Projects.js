@@ -3,33 +3,33 @@ import Link from 'next/link'
 import { useLanguage } from '../contexts/LanguageContext'
 
 export default function Projects() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   
   const projects = [
     {
       id: 1,
-      title: t('language') === 'en' ? 'Kampala Residential Complex' : 'Ekifo ky\'Amayumba mu Kampala',
-      location: t('language') === 'en' ? 'Kampala, Uganda' : 'Kampala, Uganda',
+      title: language === 'en' ? 'Kampala Residential Complex' : 'Ekifo ky\'Amayumba mu Kampala',
+      location: language === 'en' ? 'Kampala, Uganda' : 'Kampala, Uganda',
       status: t('completed'),
-      description: t('language') === 'en' ? '50 modern residential units with world-class amenities' : 'Amayumba 50 ag\'omulembe n\'ebikozesebwa eby\'omulembe',
+      description: language === 'en' ? '50 modern residential units with world-class amenities' : 'Amayumba 50 ag\'omulembe n\'ebikozesebwa eby\'omulembe',
       image: '/images/Painted home.jpeg',
       progress: 100
     },
     {
       id: 2,
-      title: t('language') === 'en' ? 'Ntinda Commercial Hub' : 'Ekifo ky\'Ebyobusuubuzi mu Ntinda',
-      location: t('language') === 'en' ? 'Ntinda, Kampala' : 'Ntinda, Kampala',
+      title: language === 'en' ? 'Ntinda Commercial Hub' : 'Ekifo ky\'Ebyobusuubuzi mu Ntinda',
+      location: language === 'en' ? 'Ntinda, Kampala' : 'Ntinda, Kampala',
       status: t('inProgress'),
-      description: t('language') === 'en' ? 'Premium commercial and office spaces in prime location' : 'Ebifo by\'ebyobusuubuzi n\'ofiisi mu kifo ekikulu',
+      description: language === 'en' ? 'Premium commercial and office spaces in prime location' : 'Ebifo by\'ebyobusuubuzi n\'ofiisi mu kifo ekikulu',
       image: '/images/_ (39).jpeg',
       progress: 75
     },
     {
       id: 3,
-      title: t('language') === 'en' ? 'Mukono Residential Estate' : 'Ekifo ky\'Amayumba mu Mukono',
-      location: t('language') === 'en' ? 'Mukono, Uganda' : 'Mukono, Uganda',
+      title: language === 'en' ? 'Mukono Residential Estate' : 'Ekifo ky\'Amayumba mu Mukono',
+      location: language === 'en' ? 'Mukono, Uganda' : 'Mukono, Uganda',
       status: t('inProgress'),
-      description: t('language') === 'en' ? 'Affordable housing project with 100+ units' : 'Pulojekiti y\'amayumba agabuseeko n\'amayumba 100+',
+      description: language === 'en' ? 'Affordable housing project with 100+ units' : 'Pulojekiti y\'amayumba agabuseeko n\'amayumba 100+',
       image: '/images/_ (40).jpeg',
       progress: 60
     }

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { useLanguage } from '../contexts/LanguageContext'
 
 export default function CEO() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   
   return (
     <section id="ceo" className="relative py-20 bg-gradient-to-br from-slate-50 via-white to-slate-50 overflow-hidden">
@@ -44,10 +44,16 @@ export default function CEO() {
                     />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-2">Amoding Magret</h3>
-                  <p className="text-lg md:text-xl font-semibold mb-1">Chief Executive Officer</p>
-                  <p className="text-base md:text-lg opacity-90">& Managing Director</p>
+                  <p className="text-lg md:text-xl font-semibold mb-1">
+                    {language === 'en' ? 'Chief Executive Officer' : 'Mukulu Omukulu'}
+                  </p>
+                  <p className="text-base md:text-lg opacity-90">
+                    {language === 'en' ? '& Managing Director' : '& Omuddukanya Omukulu'}
+                  </p>
                   <div className="mt-4 pt-4 border-t border-white border-opacity-30">
-                    <p className="text-sm opacity-80">Founder • Amodz Properties Limited</p>
+                    <p className="text-sm opacity-80">
+                      {language === 'en' ? 'Founder • Amodz Properties Limited' : 'Omutandisi • Amodz Properties Limited'}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -75,7 +81,9 @@ export default function CEO() {
               >
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary-blue">BSc</div>
-                  <p className="text-xs text-gray-600 font-medium">Finance • Makerere</p>
+                  <p className="text-xs text-gray-600 font-medium">
+                    {language === 'en' ? 'Finance • Makerere' : 'Ensimbi • Makerere'}
+                  </p>
                 </div>
               </motion.div>
             </div>
@@ -100,7 +108,7 @@ export default function CEO() {
                 <span className="w-8 h-8 bg-gradient-to-r from-orange to-amber-400 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                   <span className="text-white font-bold text-sm">✓</span>
                 </span>
-                Strategic Vision
+                {language === 'en' ? 'Strategic Vision' : 'Okulaba Okw\'Obukugu'}
               </h4>
               <p className="text-gray-700 leading-relaxed text-base md:text-lg">
                 Transforming Uganda's real estate landscape through innovative property development and youth empowerment initiatives.
@@ -116,16 +124,30 @@ export default function CEO() {
               className="grid grid-cols-2 gap-4"
             >
               <div className="bg-gradient-to-br from-orange/5 to-orange/10 rounded-xl p-5 border border-orange/20 hover:border-orange/40 transition-colors">
-                <h5 className="font-bold text-dark-blue mb-2 text-sm">Financial Acumen</h5>
-                <p className="text-gray-600 text-xs leading-relaxed">Makerere Finance graduate with strategic investment expertise</p>
+                <h5 className="font-bold text-dark-blue mb-2 text-sm">
+                  {language === 'en' ? 'Financial Acumen' : 'Obumanyirivu bw\'Ensimbi'}
+                </h5>
+                <p className="text-gray-600 text-xs leading-relaxed">
+                  {language === 'en' 
+                    ? 'Makerere Finance graduate with strategic investment expertise'
+                    : 'Omupulizigwa wa Makerere mu nsimbi n\'obumanyirivu bw\'ensimbi ez\'obukugu'
+                  }
+                </p>
               </div>
               <div className="bg-gradient-to-br from-primary-blue/5 to-primary-blue/10 rounded-xl p-5 border border-primary-blue/20 hover:border-primary-blue/40 transition-colors">
                 <h5 className="font-bold text-dark-blue mb-2 text-sm">Global Reach</h5>
                 <p className="text-gray-600 text-xs leading-relaxed">Specialized diaspora client services and international investments</p>
               </div>
               <div className="bg-gradient-to-br from-orange/5 to-orange/10 rounded-xl p-5 border border-orange/20 hover:border-orange/40 transition-colors">
-                <h5 className="font-bold text-dark-blue mb-2 text-sm">Innovation</h5>
-                <p className="text-gray-600 text-xs leading-relaxed">Modern residential solutions addressing market gaps</p>
+                <h5 className="font-bold text-dark-blue mb-2 text-sm">
+                  {language === 'en' ? 'Innovation' : 'Obuyiiya'}
+                </h5>
+                <p className="text-gray-600 text-xs leading-relaxed">
+                  {language === 'en' 
+                    ? 'Modern residential solutions addressing market gaps'
+                    : 'Eby\'okugonjoolamu amayumba ag\'omulembe ebigonjoola ebbanja ly\'akatale'
+                  }
+                </p>
               </div>
               <div className="bg-gradient-to-br from-primary-blue/5 to-primary-blue/10 rounded-xl p-5 border border-primary-blue/20 hover:border-primary-blue/40 transition-colors">
                 <h5 className="font-bold text-dark-blue mb-2 text-sm">Trust & Integrity</h5>
@@ -142,9 +164,15 @@ export default function CEO() {
               className="bg-gradient-to-r from-primary-blue via-blue-700 to-orange rounded-2xl p-8 text-white relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-40 h-40 bg-white bg-opacity-10 rounded-full -mr-20 -mt-20"></div>
-              <h4 className="text-xl md:text-2xl font-bold mb-4 relative z-10">Leadership Commitment</h4>
+              <h4 className="text-xl md:text-2xl font-bold mb-4 relative z-10">
+                {language === 'en' ? 'Leadership Commitment' : 'Okwewuubuza kw\'Obukulembeze'}
+              </h4>
               <p className="text-base md:text-lg leading-relaxed relative z-10 italic font-light">
-                "Transforming property dreams into reality through innovative real estate solutions. Every development reflects our commitment to excellence, integrity, and your future success."
+                {language === 'en'
+                  ? '"Transforming property dreams into reality through innovative real estate solutions. Every development reflects our commitment to excellence, integrity, and your future success."'
+                  : '"Okukyusa ebiruubirirwa by\'ebintu okuba mazima ng\'oyita mu by\'obuyiiya by\'ebintu. Buli kukulaakulanya kiraga okwewuubuza kwaffe ku butuukirivu, obwesigwa, n\'obuwanguzi bwo obw\'omu maaso."'
+                }
+              </p>
               </p>
             </motion.div>
           </motion.div>

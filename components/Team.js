@@ -2,50 +2,62 @@ import { motion } from 'framer-motion'
 import { useLanguage } from '../contexts/LanguageContext'
 
 export default function Team() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const teamMembers = [
     {
       title: 'Amoding Magret',
-      role: 'Chief Executive Officer & Managing Director',
+      role: language === 'en' ? 'Chief Executive Officer & Managing Director' : 'Mukulu Omukulu n\'Omuddukanya Omukulu',
       icon: 'fa-user',
       image: '/images/new.PNG',
-      description: 'Founder driving innovative real estate solutions with Finance expertise from Makerere University. Specializes in diaspora services, housing gap analysis, and transparent property investments.',
+      description: language === 'en' 
+        ? 'Founder driving innovative real estate solutions with Finance expertise from Makerere University. Specializes in diaspora services, housing gap analysis, and transparent property investments.'
+        : 'Omutandisi akulembera eby\'obuyiiya mu bintu n\'obumanyirivu bw\'ensimbi okuva Yunivesite ya Makerere. Mukugu mu buweereza bw\'abagenzi, okukebera ebbanja ly\'amayumba, n\'ensimbi z\'ebintu ez\'amazima.',
       isCEO: true
     },
     {
       title: 'Kikome Maria Pascy',
-      role: 'Human Resource Manager',
+      role: language === 'en' ? 'Human Resource Manager' : 'Omuddukanya Abantu',
       icon: 'fa-user-tie',
       image: '/images/manager.jpeg',
-      description: 'Strategic HR leader combining Accounting & Finance background with exceptional people management. Drives recruitment, employee relations, and organizational culture development.'
+      description: language === 'en'
+        ? 'Strategic HR leader combining Accounting & Finance background with exceptional people management. Drives recruitment, employee relations, and organizational culture development.'
+        : 'Omukulembeze w\'abantu ow\'obukugu agatta obumanyirivu bw\'okubalirira n\'ensimbi n\'okuddukanya abantu okw\'ekitalo. Akulembera okulonda, enkolagana y\'abakozi, n\'okukulaakulanya obuwangwa bw\'ekitongole.'
     },
     {
       title: 'Kabuye Duncan',
-      role: 'Client Relations Officer',
+      role: language === 'en' ? 'Client Relations Officer' : 'Omukozi w\'Enkolagana ya Bakasitoma',
       icon: 'fa-user-tie',
       image: '/images/client.jpeg',
-      description: 'Client communication specialist ensuring exceptional service delivery and customer relationship management excellence.'
+      description: language === 'en'
+        ? 'Client communication specialist ensuring exceptional service delivery and customer relationship management excellence.'
+        : 'Omukugu mu mpuliziganya ya bakasitoma akakasa okuweebwa obuweereza obw\'ekitalo n\'okuddukanya enkolagana ya bakasitoma okw\'obukugu.'
     }
   ]
 
   const departments = [
     {
-      title: 'Property Development',
-      role: 'Development Team',
+      title: language === 'en' ? 'Property Development' : 'Okukulaakulanya Ebintu',
+      role: language === 'en' ? 'Development Team' : 'Ttiimu y\'Okukulaakulanya',
       icon: 'fa-building',
-      description: 'Expert professionals managing land acquisition and residential construction projects.'
+      description: language === 'en'
+        ? 'Expert professionals managing land acquisition and residential construction projects.'
+        : 'Abakugu abakozi abakulembera okugula ettaka n\'okuzimba amayumba.'
     },
     {
-      title: 'Sales & Marketing',
-      role: 'Revenue Team',
+      title: language === 'en' ? 'Sales & Marketing' : 'Okutunda n\'Okutundisa',
+      role: language === 'en' ? 'Revenue Team' : 'Ttiimu y\'Ensimbi',
       icon: 'fa-chart-line',
-      description: 'Specialized agents handling residential and commercial property transactions.'
+      description: language === 'en'
+        ? 'Specialized agents handling residential and commercial property transactions.'
+        : 'Abakozi abakugu abakwata okutunda amayumba n\'ebyobusuubuzi.'
     },
     {
-      title: 'Property Management',
-      role: 'Operations Team',
+      title: language === 'en' ? 'Property Management' : 'Okuddukanya Ebintu',
+      role: language === 'en' ? 'Operations Team' : 'Ttiimu y\'Emirimu',
       icon: 'fa-cogs',
-      description: 'Dedicated team overseeing property maintenance and tenant relations.'
+      description: language === 'en'
+        ? 'Dedicated team overseeing property maintenance and tenant relations.'
+        : 'Ttiimu eyeewaaqfu okulabirira okuddaabiriza ebintu n\'enkolagana y\'abapangisi.'
     }
   ]
 
@@ -68,7 +80,9 @@ export default function Team() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-4xl font-bold text-center text-dark-blue mb-12">Executive Leadership</h3>
+            <h3 className="text-4xl font-bold text-center text-dark-blue mb-12">
+              {language === 'en' ? 'Executive Leadership' : 'Obukulembeze Obukulu'}
+            </h3>
             
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {teamMembers.map((member, index) => (
@@ -134,7 +148,9 @@ export default function Team() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-4xl font-bold text-center text-dark-blue mb-12">Core Departments</h3>
+            <h3 className="text-4xl font-bold text-center text-dark-blue mb-12">
+              {language === 'en' ? 'Core Departments' : 'Ebitongole Ebikulu'}
+            </h3>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {departments.map((dept, index) => (

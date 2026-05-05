@@ -353,7 +353,7 @@ export default function SecondaryNav() {
                             <div className="flex-1">
                               <p className="font-medium text-gray-800">{district.name}</p>
                               <p className="text-xs text-gray-500">
-                                {district.category} Region
+                                {district.category} {language === 'en' ? 'Region' : 'Ekitundu'}
                                 {district.hasProperties && (
                                   <span className="text-green-600 ml-1">• {t('propertiesAvailable')}</span>
                                 )}
@@ -481,7 +481,7 @@ export default function SecondaryNav() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold">{selectedDistrict?.name}</h3>
-                    <p className="text-sm text-white/80">{selectedDistrict?.category} Region</p>
+                    <p className="text-sm text-white/80">{selectedDistrict?.category} {language === 'en' ? 'Region' : 'Ekitundu'}</p>
                   </div>
                 </div>
               </div>

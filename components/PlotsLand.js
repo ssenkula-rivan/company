@@ -3,67 +3,79 @@ import Link from 'next/link'
 import { useLanguage } from '../contexts/LanguageContext'
 
 export default function PlotsLand() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const plots = [
     {
       id: 1,
-      title: 'Prime Commercial Plot - Kapeeka',
+      title: language === 'en' ? 'Prime Commercial Plot - Kapeeka' : 'Ettaka ly\'Ebyobusuubuzi ery\'Omuwendo - Kapeeka',
       price: 45000000,
       size: '50x100 ft',
-      location: 'Kapeeka, Nakaseke District',
-      status: 'Available',
+      location: language === 'en' ? 'Kapeeka, Nakaseke District' : 'Kapeeka, Disitulikiti ya Nakaseke',
+      status: language === 'en' ? 'Available' : 'Eriwo',
       image_url: '/images/_ (36).jpeg',
-      features: ['Title Ready', 'Main Road Access', 'Electricity Available', 'Water Connection', 'Flat Terrain']
+      features: language === 'en' 
+        ? ['Title Ready', 'Main Road Access', 'Electricity Available', 'Water Connection', 'Flat Terrain']
+        : ['Ttayitolo Eriwo', 'Okutuuka ku Luguudo Olukulu', 'Amasannyalaze Galiwo', 'Amazzi Galiwo', 'Ettaka Erikyerevu']
     },
     {
       id: 2,
-      title: 'Residential Plot - Seeta',
+      title: language === 'en' ? 'Residential Plot - Seeta' : 'Ettaka ly\'Okubeera - Seeta',
       price: 35000000,
       size: '40x80 ft',
-      location: 'Seeta, Mukono',
-      status: 'Available',
+      location: language === 'en' ? 'Seeta, Mukono' : 'Seeta, Mukono',
+      status: language === 'en' ? 'Available' : 'Eriwo',
       image_url: '/images/_ (37).jpeg',
-      features: ['Private Mailo Land', 'Quiet Neighborhood', 'Tarmac Road', 'Schools Nearby', 'Secure Area']
+      features: language === 'en'
+        ? ['Private Mailo Land', 'Quiet Neighborhood', 'Tarmac Road', 'Schools Nearby', 'Secure Area']
+        : ['Ettaka lya Mailo', 'Ekitundu Ekiteefu', 'Oluguudo Olukubiddwa Lami', 'Amasomero Gali Kumpi', 'Ekifo Ekikuumibwa']
     },
     {
       id: 3,
-      title: 'Agricultural Land - Mukono',
+      title: language === 'en' ? 'Agricultural Land - Mukono' : 'Ettaka ly\'Ebyobulimi - Mukono',
       price: 120000000,
-      size: '2 Acres',
-      location: 'Mukono District',
-      status: 'Available',
+      size: language === 'en' ? '2 Acres' : 'Ekkeeri 2',
+      location: language === 'en' ? 'Mukono District' : 'Disitulikiti ya Mukono',
+      status: language === 'en' ? 'Available' : 'Eriwo',
       image_url: '/images/_ (38).jpeg',
-      features: ['Fertile Soil', 'Water Source', 'Fenced', 'Access Road', 'Perfect for Farming']
+      features: language === 'en'
+        ? ['Fertile Soil', 'Water Source', 'Fenced', 'Access Road', 'Perfect for Farming']
+        : ['Ettaka Erigimuka', 'Ensulo y\'Amazzi', 'Likomeddwa', 'Oluguudo Olutuuka', 'Lirungi eri Ebyobulimi']
     },
     {
       id: 4,
-      title: 'Investment Plot - Kapeeka',
+      title: language === 'en' ? 'Investment Plot - Kapeeka' : 'Ettaka ly\'Ensimbi - Kapeeka',
       price: 55000000,
       size: '60x100 ft',
-      location: 'Kapeeka Town Center',
-      status: 'Hot Deal',
+      location: language === 'en' ? 'Kapeeka Town Center' : 'Ekibuga kya Kapeeka',
+      status: language === 'en' ? 'Hot Deal' : 'Omugaso Omukulu',
       image_url: '/images/_ (39).jpeg',
-      features: ['Corner Plot', 'High Traffic Area', 'Commercial Zone', 'Title Available', 'Prime Location']
+      features: language === 'en'
+        ? ['Corner Plot', 'High Traffic Area', 'Commercial Zone', 'Title Available', 'Prime Location']
+        : ['Ettaka ly\'Akakono', 'Ekifo eky\'Abantu Bangi', 'Ekitundu ky\'Ebyobusuubuzi', 'Ttayitolo Eriwo', 'Ekifo eky\'Omuwendo']
     },
     {
       id: 5,
-      title: 'Residential Plot - Seeta',
+      title: language === 'en' ? 'Residential Plot - Seeta' : 'Ettaka ly\'Okubeera - Seeta',
       price: 28000000,
       size: '30x60 ft',
-      location: 'Seeta Trading Center',
-      status: 'Available',
+      location: language === 'en' ? 'Seeta Trading Center' : 'Ekibuga kya Seeta',
+      status: language === 'en' ? 'Available' : 'Eriwo',
       image_url: '/images/_ (40).jpeg',
-      features: ['Affordable', 'Near Market', 'Public Transport', 'Electricity', 'Water Available']
+      features: language === 'en'
+        ? ['Affordable', 'Near Market', 'Public Transport', 'Electricity', 'Water Available']
+        : ['Ebuseeko', 'Kumpi n\'Akatale', 'Entambula ya Bonna', 'Amasannyalaze', 'Amazzi Galiwo']
     },
     {
       id: 6,
-      title: 'Large Plot - Mukono',
+      title: language === 'en' ? 'Large Plot - Mukono' : 'Ettaka Erinene - Mukono',
       price: 85000000,
       size: '100x100 ft',
-      location: 'Mukono Municipality',
-      status: 'Available',
+      location: language === 'en' ? 'Mukono Municipality' : 'Ekibuga kya Mukono',
+      status: language === 'en' ? 'Available' : 'Eriwo',
       image_url: '/images/_ (41).jpeg',
-      features: ['Spacious', 'Gated Community', 'Security', 'Tarmac Road', 'Developed Area']
+      features: language === 'en'
+        ? ['Spacious', 'Gated Community', 'Security', 'Tarmac Road', 'Developed Area']
+        : ['Erinene', 'Ekitundu Ekikomeddwa', 'Obukuumi', 'Oluguudo Olukubiddwa Lami', 'Ekitundu Ekitegekeddwa']
     }
   ]
 

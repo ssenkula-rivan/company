@@ -10,7 +10,7 @@ if (typeof window !== 'undefined') {
 }
 
 export default function Services() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const [activeService, setActiveService] = useState(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
@@ -58,42 +58,42 @@ export default function Services() {
     {
       icon: 'fa-home',
       title: t('propertySales'),
-      description: t('language') === 'en' 
+      description: language === 'en' 
         ? 'Find your dream home or investment property with our expert sales team. We handle residential, commercial, and land sales.'
         : 'Zuula ennyumba yo ey\'ekirooto oba ekintu ky\'ensimbi n\'abakozi baffe abakugu. Tukwata okutunda amayumba, ebyobusuubuzi, n\'ettaka.'
     },
     {
       icon: 'fa-building',
       title: t('propertyRentals'),
-      description: t('language') === 'en'
+      description: language === 'en'
         ? 'Discover perfect rental property for your needs. We manage residential and commercial rentals across prime locations.'
         : 'Zuula ekintu eky\'okupangisa ekikutuukirira. Tuddukanya okupangisa amayumba n\'ebyobusuubuzi mu bifo ebikulu.'
     },
     {
       icon: 'fa-cog',
       title: t('propertyManagement'),
-      description: t('language') === 'en'
+      description: language === 'en'
         ? 'Full-service property management solutions including tenant screening, maintenance, rent collection, and property oversight.'
         : 'Okuddukanya ebintu okw\'amaanyi okw\'omutindo ogw\'amaanyi okuli okukebera abapangisi, okuddaabiriza, okukuŋŋaanya ensimbi z\'okupangisa, n\'okulondoola ebintu.'
     },
     {
       icon: 'fa-chart-line',
       title: t('realEstateValuation'),
-      description: t('language') === 'en'
+      description: language === 'en'
         ? 'Accurate property valuations and market assessments by certified professionals for buying, selling, or investment decisions.'
         : 'Okupima omuwendo gw\'ebintu n\'okukebera akatale mu ngeri etuufu abakugu abakiragiddwa ku kugula, okutunda, oba okusalawo ku nsimbi.'
     },
     {
       icon: 'fa-hard-hat',
       title: t('propertyDevelopment'),
-      description: t('language') === 'en'
+      description: language === 'en'
         ? 'Expert consulting on property development projects from land acquisition to construction management and project completion.'
         : 'Okubuulirwa okw\'obukugu ku pulojekiti z\'okukulaakulanya ebintu okuva ku kugula ettaka okutuuka ku kuddukanya okuzimba n\'okumaliriza pulojekiti.'
     },
     {
       icon: 'fa-lightbulb',
       title: t('investmentAdvisory'),
-      description: t('language') === 'en'
+      description: language === 'en'
         ? 'Strategic real estate investment advice and portfolio management to maximize returns on your property investments.'
         : 'Amagezi ag\'obukugu ku nsimbi z\'ebintu n\'okuddukanya ebintu okwongera amagoba ku nsimbi zo z\'ebintu.'
     }

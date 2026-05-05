@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useLanguage } from '../contexts/LanguageContext'
 
 export default function Contact() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -43,7 +43,12 @@ export default function Contact() {
               <i className="fas fa-map-marker-alt text-orange text-2xl mt-1"></i>
               <div>
                 <strong className="text-dark-blue">{t('officeLocation')}</strong>
-                <p className="text-gray-700">Complex City Centre<br/>Floor 4, Room J10b<br/>Kampala, Uganda</p>
+                <p className="text-gray-700">
+                  {language === 'en' 
+                    ? 'Complex City Centre\nFloor 4, Room J10b\nKampala, Uganda'
+                    : 'Complex City Centre\nOmutendera gwa 4, Ekisenge J10b\nKampala, Uganda'
+                  }
+                </p>
               </div>
             </div>
             
