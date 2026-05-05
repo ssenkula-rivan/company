@@ -442,16 +442,15 @@ export default function SecondaryNav() {
               </div>
             </div>
             
-            <Link href="/contact">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="text-primary-blue hover:text-orange font-semibold transition-colors duration-300 flex items-center gap-2"
-              >
-                <i className="fas fa-phone"></i>
-                <span className="hidden sm:inline">{t('contact')}</span>
-              </motion.button>
-            </Link>
+            <motion.a
+              href="tel:+256752830507"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="text-primary-blue hover:text-orange font-semibold transition-colors duration-300 flex items-center gap-2"
+            >
+              <i className="fas fa-phone"></i>
+              <span className="hidden sm:inline">{t('contact')}</span>
+            </motion.a>
           </motion.div>
         </div>
       </div>
