@@ -17,29 +17,37 @@ export default function Testimonials() {
     {
       id: 1,
       name: 'John Ssemanda',
-      role: 'Property Owner',
-      text: 'AMODZ PROPERTIES LIMITED made my dream of owning a home a reality. The entire process was smooth and transparent. Highly recommended!',
+      role: t('language') === 'en' ? 'Property Owner' : 'Nannyini Kintu',
+      text: t('language') === 'en' 
+        ? 'AMODZ PROPERTIES LIMITED made my dream of owning a home a reality. The entire process was smooth and transparent. Highly recommended!'
+        : 'AMODZ PROPERTIES LIMITED yafuula ekirooto kyange eky\'okuba n\'ennyumba okuba mazima. Enkola yonna yali nnyangu era ey\'amazima. Nkuteesa nnyo!',
       rating: 5
     },
     {
       id: 2,
       name: 'Sarah Nakamatte',
-      role: 'Investor',
-      text: 'I invested in their residential project and the returns have been excellent. Professional team and great communication throughout.',
+      role: t('language') === 'en' ? 'Investor' : 'Asiga Ensimbi',
+      text: t('language') === 'en'
+        ? 'I invested in their residential project and the returns have been excellent. Professional team and great communication throughout.'
+        : 'Nasiga ensimbi mu pulojekiti yaabwe ey\'amayumba era amagoba gabadde manungi nnyo. Ttiimu y\'abakugu era empuliziganya yabadde nnungi okumala.',
       rating: 5
     },
     {
       id: 3,
       name: 'David Mwesigwa',
-      role: 'Commercial Client',
-      text: 'The commercial space I leased from them is perfect for my business. Great location and well-maintained facilities.',
+      role: t('language') === 'en' ? 'Commercial Client' : 'Kasitoma w\'Ebyobusuubuzi',
+      text: t('language') === 'en'
+        ? 'The commercial space I leased from them is perfect for my business. Great location and well-maintained facilities.'
+        : 'Ekifo ky\'ebyobusuubuzi kye napangisa okuva gye bali kituukiridde bizinensi yange. Ekifo kirungi era ebikozesebwa bilabirirwa obulungi.',
       rating: 5
     },
     {
       id: 4,
       name: 'Grace Namukwaya',
-      role: 'First-time Buyer',
-      text: 'As a first-time buyer, I was nervous, but the team guided me through every step. Now I have my dream home!',
+      role: t('language') === 'en' ? 'First-time Buyer' : 'Agula Omulundi Ogw\'okubanza',
+      text: t('language') === 'en'
+        ? 'As a first-time buyer, I was nervous, but the team guided me through every step. Now I have my dream home!'
+        : 'Nga muguli w\'omulundi ogw\'okubanza, nnali ntya, naye ttiimu yankulembedde mu buli mutendera. Kati nina ennyumba yange ey\'ekirooto!',
       rating: 5
     }
   ]
@@ -85,7 +93,10 @@ export default function Testimonials() {
     } catch (error) {
       console.error('Error submitting review:', error)
       setIsSubmitting(false)
-      alert('Failed to submit review. Please try again later.')
+      alert(t('language') === 'en' 
+        ? 'Failed to submit review. Please try again later.'
+        : 'Okubuulira tekusobodde kusindikibwa. Nsaba ddamu okugezaako oluvannyuma.'
+      )
     }
   }
 

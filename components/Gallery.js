@@ -10,43 +10,55 @@ export default function Gallery() {
   const videos = [
     {
       id: 1,
-      title: 'Kampala Residential Complex - Complete Tour',
-      description: 'Take a complete tour of our flagship residential project featuring 50 modern units with world-class amenities.',
+      title: t('language') === 'en' ? 'Kampala Residential Complex - Complete Tour' : 'Ekifo ky\'Amayumba mu Kampala - Okulambula Okujjuvu',
+      description: t('language') === 'en' 
+        ? 'Take a complete tour of our flagship residential project featuring 50 modern units with world-class amenities.'
+        : 'Tambula okulambula okujjuvu kw\'ekifo kyaffe eky\'amayumba ekikulu ekirina amayumba 50 ag\'omulembe n\'ebikozesebwa eby\'omulembe.',
       thumbnail: '/images/_ (36).jpeg',
       comingSoon: true
     },
     {
       id: 2,
-      title: 'Ntinda Commercial Hub - Business Excellence',
-      description: 'Explore premium commercial spaces designed for modern businesses in prime location.',
+      title: t('language') === 'en' ? 'Ntinda Commercial Hub - Business Excellence' : 'Ekifo ky\'Ebyobusuubuzi mu Ntinda - Obukugu mu Bizinensi',
+      description: t('language') === 'en'
+        ? 'Explore premium commercial spaces designed for modern businesses in prime location.'
+        : 'Lambula ebifo by\'ebyobusuubuzi eby\'omuwendo ebyakolebwa bizinensi z\'omulembe mu kifo ekikulu.',
       thumbnail: '/images/_ (37).jpeg',
       comingSoon: true
     },
     {
       id: 3,
-      title: 'Mukono Residential Estate - Affordable Living',
-      description: 'Discover affordable housing solutions with 100+ units designed for comfortable family living.',
+      title: t('language') === 'en' ? 'Mukono Residential Estate - Affordable Living' : 'Ekifo ky\'Amayumba mu Mukono - Okubeera Okubuseeko',
+      description: t('language') === 'en'
+        ? 'Discover affordable housing solutions with 100+ units designed for comfortable family living.'
+        : 'Zuula eby\'okugonjoolamu amayumba ebibuseeko n\'amayumba 100+ agakolebwa amaka okubeera obulungi.',
       thumbnail: '/images/_ (38).jpeg',
       comingSoon: true
     },
     {
       id: 4,
-      title: 'Property Investment Guide - Expert Advice',
-      description: 'Learn from our experts about real estate investment strategies and market trends in Uganda.',
+      title: t('language') === 'en' ? 'Property Investment Guide - Expert Advice' : 'Okuluŋŋamya Ensimbi z\'Ebintu - Amagezi g\'Abakugu',
+      description: t('language') === 'en'
+        ? 'Learn from our experts about real estate investment strategies and market trends in Uganda.'
+        : 'Yiga okuva ku bakugu baffe ku nkola z\'okusiga ensimbi mu bintu n\'enkyukakyuka z\'akatale mu Uganda.',
       thumbnail: '/images/_ (39).jpeg',
       comingSoon: true
     },
     {
       id: 5,
-      title: 'Quality Construction - Behind the Scenes',
-      description: 'See how we maintain quality standards in every construction project we undertake.',
+      title: t('language') === 'en' ? 'Quality Construction - Behind the Scenes' : 'Okuzimba Okw\'Omutindo - Emabega w\'Ebintu',
+      description: t('language') === 'en'
+        ? 'See how we maintain quality standards in every construction project we undertake.'
+        : 'Laba engeri gye tukuumamu omutindo mu buli pulojekiti y\'okuzimba gye tukola.',
       thumbnail: '/images/_ (40).jpeg',
       comingSoon: true
     },
     {
       id: 6,
-      title: 'Client Testimonials - Success Stories',
-      description: 'Hear from our satisfied clients about their experience with Amodz Properties.',
+      title: t('language') === 'en' ? 'Client Testimonials - Success Stories' : 'Okubuulira kwa Bakasitoma - Emboozi z\'Obuwanguzi',
+      description: t('language') === 'en'
+        ? 'Hear from our satisfied clients about their experience with Amodz Properties.'
+        : 'Wulira okuva ku bakasitoma baffe abamatidde ku bumanyirivu bwabwe ne Amodz Properties.',
       thumbnail: '/images/_ (41).jpeg',
       comingSoon: true
     }

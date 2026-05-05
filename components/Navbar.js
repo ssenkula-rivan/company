@@ -55,8 +55,8 @@ export default function Navbar() {
       icon: 'fa-chevron-down',
       translationKey: 'properties',
       dropdown: [
-        { name: 'All Properties', href: '/properties', icon: 'fa-home' },
-        { name: 'Plots & Land', href: '/plots', icon: 'fa-map' },
+        { name: t('language') === 'en' ? 'All Properties' : 'Ebintu Byonna', href: '/properties', icon: 'fa-home' },
+        { name: t('language') === 'en' ? 'Plots & Land' : 'Ettaka n\'Ebifo', href: '/plots', icon: 'fa-map' },
       ]
     },
     {
@@ -65,27 +65,27 @@ export default function Navbar() {
       icon: 'fa-chevron-down',
       translationKey: 'about',
       dropdown: [
-        { name: 'Company Info', href: '/about', icon: 'fa-building' },
-        { name: 'Our Team', href: '/about', icon: 'fa-users' },
+        { name: t('language') === 'en' ? 'Company Info' : 'Ebikwata ku Kkampuni', href: '/about', icon: 'fa-building' },
+        { name: t('language') === 'en' ? 'Our Team' : 'Ttiimu Yaffe', href: '/about', icon: 'fa-users' },
       ]
     },
     {
-      name: 'Media',
+      name: t('language') === 'en' ? 'Media' : 'Amawulire',
       href: '/gallery',
       icon: 'fa-chevron-down',
       dropdown: [
-        { name: 'Image Gallery', href: '/gallery', icon: 'fa-images' },
-        { name: 'Projects', href: '/projects', icon: 'fa-project-diagram' },
+        { name: t('language') === 'en' ? 'Image Gallery' : 'Ebifaananyi', href: '/gallery', icon: 'fa-images' },
+        { name: t('language') === 'en' ? 'Projects' : 'Pulojekiti', href: '/projects', icon: 'fa-project-diagram' },
       ]
     },
     {
-      name: 'Work With Us',
+      name: t('language') === 'en' ? 'Work With Us' : 'Kolera Naffe',
       href: '#',
       icon: 'fa-chevron-down',
       dropdown: [
-        { name: 'Careers', href: '/careers', icon: 'fa-briefcase' },
-        { name: 'Blog/FAQs', href: '/blog', icon: 'fa-book' },
-        { name: 'Tenders', href: '/tenders', icon: 'fa-file-contract' },
+        { name: t('language') === 'en' ? 'Careers' : 'Emirimu', href: '/careers', icon: 'fa-briefcase' },
+        { name: t('language') === 'en' ? 'Blog/FAQs' : 'Amawulire/Ebibuuzo', href: '/blog', icon: 'fa-book' },
+        { name: t('language') === 'en' ? 'Tenders' : 'Tenda', href: '/tenders', icon: 'fa-file-contract' },
       ]
     },
     {
@@ -94,7 +94,7 @@ export default function Navbar() {
       icon: 'fa-chevron-down',
       translationKey: 'services',
       dropdown: [
-        { name: 'All Services', href: '/services', icon: 'fa-concierge-bell' },
+        { name: t('language') === 'en' ? 'All Services' : 'Obuweereza Bwonna', href: '/services', icon: 'fa-concierge-bell' },
       ]
     },
     { name: 'Contact', href: '/contact', icon: 'fa-envelope', translationKey: 'contact' },
