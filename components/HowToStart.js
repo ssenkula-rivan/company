@@ -1,36 +1,39 @@
 import { motion } from 'framer-motion'
+import { useLanguage } from '../contexts/LanguageContext'
 
 export default function HowToStart() {
+  const { t } = useLanguage()
+  
   const steps = [
     {
       number: 1,
-      title: 'Choose Your Property',
-      description: 'Browse our extensive collection of plots, houses, and commercial properties. Find the perfect match for your needs.'
+      title: t('chooseYourProperty'),
+      description: t('browseExtensiveCollection')
     },
     {
       number: 2,
-      title: 'Contact Our Team',
-      description: 'Reach out to our agents to schedule a site visit and discuss your requirements in detail.'
+      title: t('contactOurTeam'),
+      description: t('reachOutToAgents')
     },
     {
       number: 3,
-      title: 'Pay Initial Deposit',
-      description: 'Secure your property with an initial deposit. We offer flexible payment terms to suit your budget.'
+      title: t('payInitialDeposit'),
+      description: t('securePropertyDeposit')
     },
     {
       number: 4,
-      title: 'Payment Plan',
-      description: 'Choose from our flexible installment plans. Pay in convenient monthly or quarterly installments.'
+      title: t('paymentPlan'),
+      description: t('chooseFlexiblePlans')
     },
     {
       number: 5,
-      title: 'Construction Begins',
-      description: 'Our expert team begins construction. Regular updates and site visits keep you informed throughout.'
+      title: t('constructionBegins'),
+      description: t('expertTeamBegins')
     },
     {
       number: 6,
-      title: 'Property Handover',
-      description: 'Receive your completed property with all documentation. Welcome to your new home or investment.'
+      title: t('propertyHandover'),
+      description: t('receiveCompletedProperty')
     }
   ]
 
@@ -43,7 +46,7 @@ export default function HowToStart() {
           viewport={{ once: true }}
           className="text-5xl font-bold text-dark-blue text-center mb-6"
         >
-          How to Start
+          {t('howToStart')}
         </motion.h2>
         
         <motion.p
@@ -52,7 +55,7 @@ export default function HowToStart() {
           viewport={{ once: true }}
           className="text-center text-gray-600 text-lg mb-20 max-w-2xl mx-auto"
         >
-          Follow our simple process to turn your dream of owning a property into reality
+          {t('followSimpleProcess')}
         </motion.p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">

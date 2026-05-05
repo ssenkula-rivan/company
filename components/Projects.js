@@ -1,32 +1,35 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { useLanguage } from '../contexts/LanguageContext'
 
 export default function Projects() {
+  const { t } = useLanguage()
+  
   const projects = [
     {
       id: 1,
-      title: 'Kampala Residential Complex',
-      location: 'Kampala, Uganda',
-      status: 'Completed',
-      description: '50 modern residential units with world-class amenities',
+      title: t('language') === 'en' ? 'Kampala Residential Complex' : 'Ekifo ky\'Amayumba mu Kampala',
+      location: t('language') === 'en' ? 'Kampala, Uganda' : 'Kampala, Uganda',
+      status: t('completed'),
+      description: t('language') === 'en' ? '50 modern residential units with world-class amenities' : 'Amayumba 50 ag\'omulembe n\'ebikozesebwa eby\'omulembe',
       image: '/images/Painted home.jpeg',
       progress: 100
     },
     {
       id: 2,
-      title: 'Ntinda Commercial Hub',
-      location: 'Ntinda, Kampala',
-      status: 'In Progress',
-      description: 'Premium commercial and office spaces in prime location',
+      title: t('language') === 'en' ? 'Ntinda Commercial Hub' : 'Ekifo ky\'Ebyobusuubuzi mu Ntinda',
+      location: t('language') === 'en' ? 'Ntinda, Kampala' : 'Ntinda, Kampala',
+      status: t('inProgress'),
+      description: t('language') === 'en' ? 'Premium commercial and office spaces in prime location' : 'Ebifo by\'ebyobusuubuzi n\'ofiisi mu kifo ekikulu',
       image: '/images/_ (39).jpeg',
       progress: 75
     },
     {
       id: 3,
-      title: 'Mukono Residential Estate',
-      location: 'Mukono, Uganda',
-      status: 'In Progress',
-      description: 'Affordable housing project with 100+ units',
+      title: t('language') === 'en' ? 'Mukono Residential Estate' : 'Ekifo ky\'Amayumba mu Mukono',
+      location: t('language') === 'en' ? 'Mukono, Uganda' : 'Mukono, Uganda',
+      status: t('inProgress'),
+      description: t('language') === 'en' ? 'Affordable housing project with 100+ units' : 'Pulojekiti y\'amayumba agabuseeko n\'amayumba 100+',
       image: '/images/_ (40).jpeg',
       progress: 60
     }
@@ -41,7 +44,7 @@ export default function Projects() {
           viewport={{ once: true }}
           className="text-5xl font-bold text-dark-blue text-center mb-12"
         >
-          Our Projects
+          {t('ourProjects')}
         </motion.h2>
 
         {/* Auto-playing Video Section */}
@@ -77,9 +80,12 @@ export default function Projects() {
                 transition={{ delay: 0.3 }}
                 className="text-center text-white"
               >
-                <h3 className="text-2xl md:text-3xl font-bold mb-3">Discover Our Projects</h3>
+                <h3 className="text-2xl md:text-3xl font-bold mb-3">{t('language') === 'en' ? 'Discover Our Projects' : 'Zuula Pulojekiti Zaffe'}</h3>
                 <p className="text-lg opacity-90 max-w-2xl mx-auto">
-                  Experience our commitment to excellence through our portfolio of completed and ongoing developments across Uganda
+                  {t('language') === 'en' 
+                    ? 'Experience our commitment to excellence through our portfolio of completed and ongoing developments across Uganda'
+                    : 'Laba okwewuubuza kwaffe ku butuukirivu mu pulojekiti zaffe ezimaze n\'ezigenda mu maaso mu Uganda yonna'
+                  }
                 </p>
               </motion.div>
             </div>
@@ -103,7 +109,7 @@ export default function Projects() {
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                 />
                 <div className={`absolute top-4 right-4 px-4 py-2 rounded-full text-sm font-semibold text-white ${
-                  project.status === 'Completed' ? 'bg-green-500' : 'bg-orange'
+                  project.status === t('completed') ? 'bg-green-500' : 'bg-orange'
                 }`}>
                   {project.status}
                 </div>
@@ -116,7 +122,7 @@ export default function Projects() {
                 
                 <div className="mb-6">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-sm font-semibold text-dark-blue">Progress</span>
+                    <span className="text-sm font-semibold text-dark-blue">{t('progress')}</span>
                     <span className="text-sm font-bold text-orange">{project.progress}%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
@@ -136,7 +142,7 @@ export default function Projects() {
                     whileTap={{ scale: 0.95 }}
                     className="w-full bg-gradient-to-r from-primary-blue to-blue-700 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                   >
-                    Learn More
+                    {t('learnMore')}
                   </motion.button>
                 </Link>
               </div>

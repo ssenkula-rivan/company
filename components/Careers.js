@@ -1,7 +1,9 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
+import { useLanguage } from '../contexts/LanguageContext'
 
 export default function Careers() {
+  const { t } = useLanguage()
   const [showForm, setShowForm] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
@@ -15,11 +17,11 @@ export default function Careers() {
   const [submitStatus, setSubmitStatus] = useState(null)
 
   const opportunities = [
-    'Real Estate Agent',
-    'Property Manager',
-    'Leasing Consultant',
-    'Marketing Specialist',
-    'Administrative Assistant'
+    t('realEstateAgent'),
+    t('propertyManager'),
+    t('leasingConsultant'),
+    t('marketingSpecialist'),
+    t('administrativeAssistant')
   ]
 
   const handleInputChange = (e) => {
@@ -68,7 +70,7 @@ export default function Careers() {
           viewport={{ once: true }}
           className="text-5xl font-bold text-dark-blue text-center mb-20"
         >
-          Careers
+          {t('careers')}
         </motion.h2>
         
         <div className="max-w-2xl mx-auto">
@@ -79,12 +81,15 @@ export default function Careers() {
             className="bg-white rounded-2xl shadow-lg p-8 text-center border-t-4 border-orange"
           >
             <i className="fas fa-users text-6xl text-orange mb-6 block"></i>
-            <h3 className="text-3xl font-bold text-dark-blue mb-4">Join Our Team</h3>
+            <h3 className="text-3xl font-bold text-dark-blue mb-4">{t('joinOurTeam')}</h3>
             <p className="text-lg text-gray-700 mb-6">
-              AMODZ PROPERTIES LIMITED is always looking for talented professionals to join our growing team.
+              {t('language') === 'en'
+                ? 'AMODZ PROPERTIES LIMITED is always looking for talented professionals to join our growing team.'
+                : 'AMODZ PROPERTIES LIMITED bulijjo enoonya abakugu abalina obukugu okwegatta ku ttiimu yaffe egenda eyongera.'
+              }
             </p>
             
-            <h5 className="text-xl font-semibold text-dark-blue mt-8 mb-4">Current Opportunities:</h5>
+            <h5 className="text-xl font-semibold text-dark-blue mt-8 mb-4">{t('currentOpportunities')}</h5>
             <ul className="text-left space-y-2 mb-8 max-w-md mx-auto">
               {opportunities.map((opp, index) => (
                 <motion.li 
@@ -102,7 +107,7 @@ export default function Careers() {
             </ul>
             
             <p className="text-gray-700 mb-6">
-              Send your CV to <strong>careers@amodzproperties.com</strong>
+              {t('sendCVTo')} <strong>careers@amodzproperties.com</strong>
             </p>
             
             <motion.button 
@@ -111,7 +116,7 @@ export default function Careers() {
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-primary-blue to-blue-700 text-white px-12 py-3 rounded-full font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
-              Apply Now
+              {t('applyNow')}
             </motion.button>
           </motion.div>
         </div>
@@ -136,7 +141,7 @@ export default function Careers() {
             >
               <div className="sticky top-0 bg-gradient-to-r from-primary-blue to-orange p-6 rounded-t-2xl">
                 <div className="flex justify-between items-center">
-                  <h3 className="text-2xl font-bold text-white">Job Application Form</h3>
+                  <h3 className="text-2xl font-bold text-white">{t('jobApplicationForm')}</h3>
                   <button
                     onClick={() => setShowForm(false)}
                     className="text-white hover:text-gray-200 text-3xl leading-none"
@@ -150,7 +155,7 @@ export default function Careers() {
                 {/* Name */}
                 <div>
                   <label className="block text-dark-blue font-semibold mb-2">
-                    Full Name <span className="text-red-500">*</span>
+                    {t('fullName')} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -159,14 +164,14 @@ export default function Careers() {
                     onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue"
-                    placeholder="Enter your full name"
+                    placeholder={t('language') === 'en' ? 'Enter your full name' : 'Wandiika erinnya lyo lyonna'}
                   />
                 </div>
 
                 {/* Email */}
                 <div>
                   <label className="block text-dark-blue font-semibold mb-2">
-                    Email Address <span className="text-red-500">*</span>
+                    {t('emailAddress')} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="email"
@@ -182,7 +187,7 @@ export default function Careers() {
                 {/* Phone */}
                 <div>
                   <label className="block text-dark-blue font-semibold mb-2">
-                    Phone Number <span className="text-red-500">*</span>
+                    {t('phoneNumber')} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="tel"
@@ -198,7 +203,7 @@ export default function Careers() {
                 {/* Position */}
                 <div>
                   <label className="block text-dark-blue font-semibold mb-2">
-                    Position Applied For <span className="text-red-500">*</span>
+                    {t('positionAppliedFor')} <span className="text-red-500">*</span>
                   </label>
                   <select
                     name="position"
@@ -207,7 +212,7 @@ export default function Careers() {
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue"
                   >
-                    <option value="">Select a position</option>
+                    <option value="">{t('selectPosition')}</option>
                     {opportunities.map((opp, index) => (
                       <option key={index} value={opp}>{opp}</option>
                     ))}
@@ -217,7 +222,7 @@ export default function Careers() {
                 {/* Cover Letter */}
                 <div>
                   <label className="block text-dark-blue font-semibold mb-2">
-                    Cover Letter / Message
+                    {t('coverLetterMessage')}
                   </label>
                   <textarea
                     name="message"
@@ -225,14 +230,14 @@ export default function Careers() {
                     onChange={handleInputChange}
                     rows="4"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue"
-                    placeholder="Tell us why you're a great fit for this position..."
+                    placeholder={t('language') === 'en' ? 'Tell us why you\'re a great fit for this position...' : 'Tubuulire lwaki oli omuntu omutuufu ku mulimu guno...'}
                   ></textarea>
                 </div>
 
                 {/* CV Upload */}
                 <div>
                   <label className="block text-dark-blue font-semibold mb-2">
-                    Upload CV/Resume <span className="text-red-500">*</span>
+                    {t('uploadCV')} <span className="text-red-500">*</span>
                   </label>
                   <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-primary-blue transition-colors">
                     <input
@@ -246,9 +251,9 @@ export default function Careers() {
                     <label htmlFor="cv-upload" className="cursor-pointer">
                       <i className="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-2 block"></i>
                       <p className="text-gray-600 mb-1">
-                        {formData.cv ? formData.cv.name : 'Click to upload or drag and drop'}
+                        {formData.cv ? formData.cv.name : t('clickToUpload')}
                       </p>
-                      <p className="text-sm text-gray-500">PDF, DOC, DOCX (Max 5MB)</p>
+                      <p className="text-sm text-gray-500">{t('pdfDocDocx')}</p>
                     </label>
                   </div>
                 </div>
@@ -261,7 +266,7 @@ export default function Careers() {
                     className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg"
                   >
                     <i className="fas fa-check-circle mr-2"></i>
-                    Application submitted successfully!
+                    {t('applicationSubmitted')}
                   </motion.div>
                 )}
 
@@ -272,7 +277,7 @@ export default function Careers() {
                     onClick={() => setShowForm(false)}
                     className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
                   >
-                    Cancel
+                    {t('cancel')}
                   </button>
                   <button
                     type="submit"
@@ -282,12 +287,12 @@ export default function Careers() {
                     {isSubmitting ? (
                       <>
                         <i className="fas fa-spinner fa-spin mr-2"></i>
-                        Submitting...
+                        {t('submitting')}
                       </>
                     ) : (
                       <>
                         <i className="fas fa-paper-plane mr-2"></i>
-                        Submit Application
+                        {t('submitApplication')}
                       </>
                     )}
                   </button>

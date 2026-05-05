@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { useLanguage } from '../contexts/LanguageContext'
 
 export default function Contact() {
+  const { t } = useLanguage()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -12,7 +14,7 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('Thank you for your message! We will get back to you within 24 hours.')
+    alert(t('thankYouMessage'))
     setFormData({ name: '', email: '', phone: '', service: '', message: '' })
   }
 
@@ -25,7 +27,7 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-5xl font-bold text-dark-blue text-center mb-20"
         >
-          Contact Us
+          {t('contact')}
         </motion.h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -35,12 +37,12 @@ export default function Contact() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h3 className="text-2xl font-bold text-orange mb-6">Get in Touch</h3>
+            <h3 className="text-2xl font-bold text-orange mb-6">{t('getInTouch')}</h3>
             
             <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow border-l-4 border-orange">
               <i className="fas fa-map-marker-alt text-orange text-2xl mt-1"></i>
               <div>
-                <strong className="text-dark-blue">Office Location:</strong>
+                <strong className="text-dark-blue">{t('officeLocation')}</strong>
                 <p className="text-gray-700">Complex City Centre<br/>Floor 4, Room J10b<br/>Kampala, Uganda</p>
               </div>
             </div>
@@ -48,7 +50,7 @@ export default function Contact() {
             <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow border-l-4 border-orange">
               <i className="fas fa-phone text-orange text-2xl mt-1"></i>
               <div>
-                <strong className="text-dark-blue">Phone:</strong>
+                <strong className="text-dark-blue">{t('phone')}</strong>
                 <p className="text-gray-700">+256 752 830 507<br/>+256 784 956 426</p>
               </div>
             </div>
@@ -56,7 +58,7 @@ export default function Contact() {
             <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow border-l-4 border-orange">
               <i className="fas fa-envelope text-orange text-2xl mt-1"></i>
               <div>
-                <strong className="text-dark-blue">Email:</strong>
+                <strong className="text-dark-blue">{t('email')}</strong>
                 <p className="text-gray-700">info@amodzproperties.com<br/>careers@amodzproperties.com<br/>tenders@amodzproperties.com</p>
               </div>
             </div>
@@ -64,8 +66,8 @@ export default function Contact() {
             <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow border-l-4 border-orange">
               <i className="fas fa-clock text-orange text-2xl mt-1"></i>
               <div>
-                <strong className="text-dark-blue">Business Hours:</strong>
-                <p className="text-gray-700">Monday - Friday: 8:00 AM - 6:00 PM<br/>Saturday: Closed<br/>Sunday: Closed</p>
+                <strong className="text-dark-blue">{t('businessHours')}</strong>
+                <p className="text-gray-700">{t('mondayFriday')}<br/>{t('saturday')}<br/>{t('sunday')}</p>
               </div>
             </div>
           </motion.div>
@@ -77,11 +79,11 @@ export default function Contact() {
             onSubmit={handleSubmit}
             className="bg-white p-8 rounded-2xl shadow-lg space-y-4 border-t-4 border-orange"
           >
-            <h3 className="text-2xl font-bold text-orange mb-6">Send Us a Message</h3>
+            <h3 className="text-2xl font-bold text-orange mb-6">{t('sendMessage')}</h3>
             
             <input 
               type="text" 
-              placeholder="Your Name" 
+              placeholder={t('yourName')} 
               required
               value={formData.name}
               onChange={(e) => setFormData({...formData, name: e.target.value})}
@@ -90,7 +92,7 @@ export default function Contact() {
             
             <input 
               type="email" 
-              placeholder="Your Email" 
+              placeholder={t('yourEmail')} 
               required
               value={formData.email}
               onChange={(e) => setFormData({...formData, email: e.target.value})}
@@ -99,7 +101,7 @@ export default function Contact() {
             
             <input 
               type="tel" 
-              placeholder="Phone Number"
+              placeholder={t('phoneNumber')}
               value={formData.phone}
               onChange={(e) => setFormData({...formData, phone: e.target.value})}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange"
@@ -110,19 +112,19 @@ export default function Contact() {
               onChange={(e) => setFormData({...formData, service: e.target.value})}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange"
             >
-              <option value="">Select Service</option>
-              <option value="sales">Property Sales</option>
-              <option value="rentals">Property Rentals</option>
-              <option value="management">Property Management</option>
-              <option value="valuation">Real Estate Valuation</option>
-              <option value="development">Property Development</option>
-              <option value="advisory">Investment Advisory</option>
-              <option value="other">Other</option>
+              <option value="">{t('selectService')}</option>
+              <option value="sales">{t('propertySales')}</option>
+              <option value="rentals">{t('propertyRentals')}</option>
+              <option value="management">{t('propertyManagement')}</option>
+              <option value="valuation">{t('realEstateValuation')}</option>
+              <option value="development">{t('propertyDevelopment')}</option>
+              <option value="advisory">{t('investmentAdvisory')}</option>
+              <option value="other">{t('other')}</option>
             </select>
             
             <textarea 
               rows="5" 
-              placeholder="Your Message" 
+              placeholder={t('yourMessage')} 
               required
               value={formData.message}
               onChange={(e) => setFormData({...formData, message: e.target.value})}
@@ -135,7 +137,7 @@ export default function Contact() {
               whileTap={{ scale: 0.98 }}
               className="w-full bg-gradient-to-r from-primary-blue to-blue-700 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
-              Send Message
+              {t('sendMessage')}
             </motion.button>
           </motion.form>
         </div>

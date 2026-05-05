@@ -3,12 +3,14 @@ import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useLanguage } from '../contexts/LanguageContext'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
 }
 
 export default function Services() {
+  const { t } = useLanguage()
   const [activeService, setActiveService] = useState(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
@@ -55,33 +57,45 @@ export default function Services() {
   const services = [
     {
       icon: 'fa-home',
-      title: 'Property Sales',
-      description: 'Find your dream home or investment property with our expert sales team. We handle residential, commercial, and land sales.'
+      title: t('propertySales'),
+      description: t('language') === 'en' 
+        ? 'Find your dream home or investment property with our expert sales team. We handle residential, commercial, and land sales.'
+        : 'Zuula ennyumba yo ey\'ekirooto oba ekintu ky\'ensimbi n\'abakozi baffe abakugu. Tukwata okutunda amayumba, ebyobusuubuzi, n\'ettaka.'
     },
     {
       icon: 'fa-building',
-      title: 'Property Rentals',
-      description: 'Discover perfect rental property for your needs. We manage residential and commercial rentals across prime locations.'
+      title: t('propertyRentals'),
+      description: t('language') === 'en'
+        ? 'Discover perfect rental property for your needs. We manage residential and commercial rentals across prime locations.'
+        : 'Zuula ekintu eky\'okupangisa ekikutuukirira. Tuddukanya okupangisa amayumba n\'ebyobusuubuzi mu bifo ebikulu.'
     },
     {
       icon: 'fa-cog',
-      title: 'Property Management',
-      description: 'Full-service property management solutions including tenant screening, maintenance, rent collection, and property oversight.'
+      title: t('propertyManagement'),
+      description: t('language') === 'en'
+        ? 'Full-service property management solutions including tenant screening, maintenance, rent collection, and property oversight.'
+        : 'Okuddukanya ebintu okw\'amaanyi okw\'omutindo ogw\'amaanyi okuli okukebera abapangisi, okuddaabiriza, okukuŋŋaanya ensimbi z\'okupangisa, n\'okulondoola ebintu.'
     },
     {
       icon: 'fa-chart-line',
-      title: 'Real Estate Valuation',
-      description: 'Accurate property valuations and market assessments by certified professionals for buying, selling, or investment decisions.'
+      title: t('realEstateValuation'),
+      description: t('language') === 'en'
+        ? 'Accurate property valuations and market assessments by certified professionals for buying, selling, or investment decisions.'
+        : 'Okupima omuwendo gw\'ebintu n\'okukebera akatale mu ngeri etuufu abakugu abakiragiddwa ku kugula, okutunda, oba okusalawo ku nsimbi.'
     },
     {
       icon: 'fa-hard-hat',
-      title: 'Property Development',
-      description: 'Expert consulting on property development projects from land acquisition to construction management and project completion.'
+      title: t('propertyDevelopment'),
+      description: t('language') === 'en'
+        ? 'Expert consulting on property development projects from land acquisition to construction management and project completion.'
+        : 'Okubuulirwa okw\'obukugu ku pulojekiti z\'okukulaakulanya ebintu okuva ku kugula ettaka okutuuka ku kuddukanya okuzimba n\'okumaliriza pulojekiti.'
     },
     {
       icon: 'fa-lightbulb',
-      title: 'Investment Advisory',
-      description: 'Strategic real estate investment advice and portfolio management to maximize returns on your property investments.'
+      title: t('investmentAdvisory'),
+      description: t('language') === 'en'
+        ? 'Strategic real estate investment advice and portfolio management to maximize returns on your property investments.'
+        : 'Amagezi ag\'obukugu ku nsimbi z\'ebintu n\'okuddukanya ebintu okwongera amagoba ku nsimbi zo z\'ebintu.'
     }
   ]
 
@@ -107,7 +121,7 @@ export default function Services() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl font-bold text-dark-blue mb-6">Our Services</h2>
+          <h2 className="text-5xl font-bold text-dark-blue mb-6">{t('ourServices')}</h2>
           <motion.div 
             className="w-24 h-1 bg-orange mx-auto"
             initial={{ width: 0 }}
@@ -185,7 +199,7 @@ export default function Services() {
                       href="/contact" 
                       className="inline-block bg-orange text-white px-8 py-3 rounded-full hover:bg-dark-orange transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105"
                     >
-                      Learn More
+                      {t('learnMore')}
                     </Link>
                   </motion.div>
                 </motion.div>

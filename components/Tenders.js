@@ -1,16 +1,29 @@
 import { motion } from 'framer-motion'
+import { useLanguage } from '../contexts/LanguageContext'
 
 export default function Tenders() {
+  const { t } = useLanguage()
+  
   const tenders = [
     {
-      title: 'Tender Notice: Property Development Partnership',
-      date: 'Posted: January 2025 | Deadline: March 15, 2025',
-      description: 'We invite qualified contractors and suppliers to submit tenders for property development and renovation projects.'
+      title: t('language') === 'en' 
+        ? 'Tender Notice: Property Development Partnership'
+        : 'Okubuulira kwa Tenda: Obukwakkulizo bw\'Okukulaakulanya Ebintu',
+      date: t('language') === 'en' 
+        ? 'Posted: January 2025 | Deadline: March 15, 2025'
+        : 'Kyateekeddwa: Janwali 2025 | Ekiseera: Maarc 15, 2025',
+      description: t('language') === 'en'
+        ? 'We invite qualified contractors and suppliers to submit tenders for property development and renovation projects.'
+        : 'Tuyita abakozi n\'abagulisa abatuufu okusindika tenda ku pulojekiti z\'okukulaakulanya n\'okuddaabiriza ebintu.'
     },
     {
-      title: 'Partnership Opportunities',
-      date: 'Ongoing',
-      description: 'AMODZ PROPERTIES LIMITED is seeking strategic partnerships with property developers, construction companies, and financial institutions.'
+      title: t('language') === 'en'
+        ? 'Partnership Opportunities'
+        : 'Emikisa gy\'Obukwakkulizo',
+      date: t('language') === 'en' ? 'Ongoing' : 'Bigenda Mu Maaso',
+      description: t('language') === 'en'
+        ? 'AMODZ PROPERTIES LIMITED is seeking strategic partnerships with property developers, construction companies, and financial institutions.'
+        : 'AMODZ PROPERTIES LIMITED enoonya obukwakkulizo obw\'obukugu n\'abakulaakulanya ebintu, kkampuni z\'okuzimba, n\'ebitongole by\'ensimbi.'
     }
   ]
 
@@ -23,7 +36,7 @@ export default function Tenders() {
           viewport={{ once: true }}
           className="text-5xl font-bold text-dark-blue text-center mb-20"
         >
-          Tenders & Opportunities
+          {t('tendersOpportunities')}
         </motion.h2>
         
         <div className="max-w-2xl mx-auto">
@@ -33,7 +46,7 @@ export default function Tenders() {
             viewport={{ once: true }}
             className="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-orange"
           >
-            <h4 className="text-2xl font-bold text-dark-blue mb-6">Current Tenders</h4>
+            <h4 className="text-2xl font-bold text-dark-blue mb-6">{t('currentTenders')}</h4>
             
             <div className="space-y-6">
               {tenders.map((tender, index) => (
@@ -54,7 +67,7 @@ export default function Tenders() {
             
             <div className="text-center mt-8 pt-6 border-t border-gray-200">
               <p className="text-gray-700">
-                For tender inquiries: <strong>tenders@amodzproperties.com</strong>
+                {t('tenderInquiries')} <strong>tenders@amodzproperties.com</strong>
               </p>
             </div>
           </motion.div>

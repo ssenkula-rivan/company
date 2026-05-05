@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useLanguage } from '../contexts/LanguageContext'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
@@ -11,6 +12,7 @@ if (typeof window !== 'undefined') {
 export default function Footer() {
   const footerRef = useRef(null)
   const currentYear = new Date().getFullYear()
+  const { t } = useLanguage()
 
   useEffect(() => {
     // Parallax effect for footer background using GSAP
@@ -36,10 +38,10 @@ export default function Footer() {
   ]
 
   const quickLinks = [
-    { name: 'About Us', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Properties', href: '/properties' },
-    { name: 'Contact', href: '/contact' }
+    { name: t('about'), href: '/about' },
+    { name: t('services'), href: '/services' },
+    { name: t('properties'), href: '/properties' },
+    { name: t('contact'), href: '/contact' }
   ]
 
   return (
@@ -71,7 +73,10 @@ export default function Footer() {
               <h5 className="text-lg font-bold">AMODZ PROPERTIES LIMITED</h5>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed mb-4">
-              Your trusted real estate partner for property sales, rentals, and investments.
+              {t('language') === 'en' 
+                ? 'Your trusted real estate partner for property sales, rentals, and investments.'
+                : 'Omukwano gwo ogwesigibwa mu bintu ku kutunda, okupangisa, n\'ensimbi.'
+              }
             </p>
             <div className="flex space-x-3">
               {socialLinks.map((social, index) => (
@@ -98,7 +103,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            <h6 className="text-base font-semibold mb-4 text-orange">Quick Links</h6>
+            <h6 className="text-base font-semibold mb-4 text-orange">{t('quickLinks')}</h6>
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -122,12 +127,12 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-            <h6 className="text-base font-semibold mb-4 text-orange">Services</h6>
+            <h6 className="text-base font-semibold mb-4 text-orange">{t('services')}</h6>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li className="flex items-center"><i className="fas fa-home text-orange mr-2"></i>Property Sales</li>
-              <li className="flex items-center"><i className="fas fa-key text-orange mr-2"></i>Property Rentals</li>
-              <li className="flex items-center"><i className="fas fa-building text-orange mr-2"></i>Land & Plots</li>
-              <li className="flex items-center"><i className="fas fa-chart-line text-orange mr-2"></i>Investment Advisory</li>
+              <li className="flex items-center"><i className="fas fa-home text-orange mr-2"></i>{t('propertySales')}</li>
+              <li className="flex items-center"><i className="fas fa-key text-orange mr-2"></i>{t('propertyRentals')}</li>
+              <li className="flex items-center"><i className="fas fa-building text-orange mr-2"></i>{t('landPlots')}</li>
+              <li className="flex items-center"><i className="fas fa-chart-line text-orange mr-2"></i>{t('investmentAdvisory')}</li>
             </ul>
           </motion.div>
 
@@ -139,7 +144,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            <h6 className="text-base font-semibold mb-4 text-orange">Contact</h6>
+            <h6 className="text-base font-semibold mb-4 text-orange">{t('contact')}</h6>
             <div className="space-y-3 text-sm">
               <div className="flex items-start">
                 <i className="fas fa-map-marker-alt text-orange mr-3 mt-1 flex-shrink-0"></i>
@@ -168,10 +173,10 @@ export default function Footer() {
           transition={{ delay: 0.5, duration: 0.6 }}
           className="flex flex-col sm:flex-row justify-between items-center text-center sm:text-left text-sm text-gray-400 space-y-4 sm:space-y-0"
         >
-          <p>© {currentYear} AMODZ PROPERTIES LIMITED. All rights reserved.</p>
+          <p>© {currentYear} AMODZ PROPERTIES LIMITED. {t('allRightsReserved')}</p>
           <div className="flex space-x-6">
-            <Link href="#" className="hover:text-orange transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-orange transition-colors">Terms & Conditions</Link>
+            <Link href="#" className="hover:text-orange transition-colors">{t('privacyPolicy')}</Link>
+            <Link href="#" className="hover:text-orange transition-colors">{t('termsConditions')}</Link>
           </div>
         </motion.div>
       </div>

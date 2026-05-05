@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
+import { useLanguage } from '../contexts/LanguageContext'
 
 // All Uganda districts/locations
 const allDistricts = [
@@ -128,17 +129,18 @@ const allDistricts = [
 
 // Inquiry types
 const inquiryTypes = [
-  { id: 'land', label: 'Buy Land', icon: 'fa-map-marked-alt' },
-  { id: 'rent', label: 'Rent Property', icon: 'fa-home' },
-  { id: 'house', label: 'Buy House', icon: 'fa-building' },
-  { id: 'apartment', label: 'Apartment', icon: 'fa-city' },
-  { id: 'commercial', label: 'Commercial Space', icon: 'fa-store' },
-  { id: 'plot', label: 'Plot for Development', icon: 'fa-chart-area' },
-  { id: 'investment', label: 'Investment Property', icon: 'fa-hand-holding-usd' },
-  { id: 'other', label: 'Other', icon: 'fa-question-circle' }
+  { id: 'land', label: 'buyLand', icon: 'fa-map-marked-alt' },
+  { id: 'rent', label: 'rentProperty', icon: 'fa-home' },
+  { id: 'house', label: 'buyHouse', icon: 'fa-building' },
+  { id: 'apartment', label: 'apartment', icon: 'fa-city' },
+  { id: 'commercial', label: 'commercialSpace', icon: 'fa-store' },
+  { id: 'plot', label: 'plotForDevelopment', icon: 'fa-chart-area' },
+  { id: 'investment', label: 'investmentProperty', icon: 'fa-hand-holding-usd' },
+  { id: 'other', label: 'other', icon: 'fa-question-circle' }
 ]
 
 export default function SecondaryNav() {
+  const { t } = useLanguage()
   const [searchQuery, setSearchQuery] = useState('')
   const [isSearchFocused, setIsSearchFocused] = useState(false)
   const [showModal, setShowModal] = useState(false)
@@ -200,15 +202,19 @@ export default function SecondaryNav() {
 
   const handleSubmitInquiry = () => {
     if (!inquiryType || !phoneNumber) {
-      alert('Please select what you want and provide your phone number')
+      alert(t('language') === 'en' 
+        ? 'Please select what you want and provide your phone number'
+        : 'Nsaba olonde ky\'oyagala era owe ennamba yo y\'essimu'
+      )
       return
     }
 
     // Get selected inquiry type label
     const selectedInquiry = inquiryTypes.find(type => type.id === inquiryType)
+    const inquiryLabel = t(selectedInquiry.label)
     
     // Compose WhatsApp message
-    const message = `Hello AMODZ Properties!%0A%0AI'm interested in *${selectedInquiry.label}* in *${selectedDistrict.name}* district.%0A%0AMy phone number: *${phoneNumber}*%0A%0APlease contact me with available options.`
+    const message = `Hello AMODZ Properties!%0A%0AI'm interested in *${inquiryLabel}* in *${selectedDistrict.name}* district.%0A%0AMy phone number: *${phoneNumber}*%0A%0APlease contact me with available options.`
     
     // WhatsApp API with company number
     const whatsappNumber = '256752830507'
@@ -286,7 +292,7 @@ export default function SecondaryNav() {
               className="bg-orange text-white px-8 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl hover:bg-orange-600 transition-all duration-300 flex items-center gap-3 border-2 border-white"
             >
               <i className="fas fa-file-invoice text-lg"></i>
-              <span className="text-lg">Get a Quotation</span>
+              <span className="text-lg">{t('getQuotation')}</span>
             </motion.button>
           </motion.div>
 
@@ -307,7 +313,7 @@ export default function SecondaryNav() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onFocus={() => setIsSearchFocused(true)}
-                  placeholder="Find your location..."
+                  placeholder={t('findYourLocation')}
                   className="w-full px-5 py-3 pr-12 rounded-full border-2 border-gray-300 focus:border-orange focus:outline-none bg-gray-50 focus:bg-white transition-all duration-300 text-gray-700 placeholder-gray-500"
                 />
                 <motion.button
@@ -349,13 +355,13 @@ export default function SecondaryNav() {
                               <p className="text-xs text-gray-500">
                                 {district.category} Region
                                 {district.hasProperties && (
-                                  <span className="text-green-600 ml-1">• Properties available</span>
+                                  <span className="text-green-600 ml-1">• {t('propertiesAvailable')}</span>
                                 )}
                               </p>
                             </div>
                             {!district.hasProperties && (
                               <span className="text-xs bg-orange-100 text-orange-600 px-2 py-1 rounded-full">
-                                Request
+                                {t('request')}
                               </span>
                             )}
                           </div>
@@ -382,21 +388,21 @@ export default function SecondaryNav() {
                 className="text-primary-blue hover:text-orange font-semibold transition-colors duration-300 flex items-center gap-2"
               >
                 <i className="fas fa-home"></i>
-                <span className="hidden sm:inline">Properties</span>
+                <span className="hidden sm:inline">{t('properties')}</span>
                 <i className="fas fa-chevron-down text-xs"></i>
               </motion.button>
               
               {/* Properties Dropdown */}
               <div className="absolute right-0 top-full mt-2 w-56 bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <div className="p-2">
-                  <div className="px-3 py-2 text-xs font-bold text-gray-500 uppercase">Our Locations</div>
+                  <div className="px-3 py-2 text-xs font-bold text-gray-500 uppercase">{t('ourLocations')}</div>
                   
                   <a href="/properties?location=Kapeeka" className="block px-3 py-3 hover:bg-gray-50 rounded-lg transition-colors">
                     <div className="flex items-center gap-3">
                       <i className="fas fa-map-marker-alt text-gray-600"></i>
                       <div>
-                        <p className="font-semibold text-dark-blue text-sm">Kapeeka</p>
-                        <p className="text-xs text-gray-500">Premium plots available</p>
+                        <p className="font-semibold text-dark-blue text-sm">{t('kapeeka')}</p>
+                        <p className="text-xs text-gray-500">{t('premiumPlotsAvailable')}</p>
                       </div>
                     </div>
                   </a>
@@ -405,8 +411,8 @@ export default function SecondaryNav() {
                     <div className="flex items-center gap-3">
                       <i className="fas fa-map-marker-alt text-gray-600"></i>
                       <div>
-                        <p className="font-semibold text-dark-blue text-sm">Seeta</p>
-                        <p className="text-xs text-gray-500">Modern housing</p>
+                        <p className="font-semibold text-dark-blue text-sm">{t('seeta')}</p>
+                        <p className="text-xs text-gray-500">{t('modernHousing')}</p>
                       </div>
                     </div>
                   </a>
@@ -415,8 +421,8 @@ export default function SecondaryNav() {
                     <div className="flex items-center gap-3">
                       <i className="fas fa-map-marker-alt text-gray-600"></i>
                       <div>
-                        <p className="font-semibold text-dark-blue text-sm">Mukono</p>
-                        <p className="text-xs text-gray-500">Strategic location</p>
+                        <p className="font-semibold text-dark-blue text-sm">{t('mukono')}</p>
+                        <p className="text-xs text-gray-500">{t('strategicLocation')}</p>
                       </div>
                     </div>
                   </a>
@@ -427,8 +433,8 @@ export default function SecondaryNav() {
                     <div className="flex items-center gap-3">
                       <i className="fas fa-th-large text-gray-600"></i>
                       <div>
-                        <p className="font-semibold text-dark-blue text-sm">View All Properties</p>
-                        <p className="text-xs text-gray-500">Browse complete catalog</p>
+                        <p className="font-semibold text-dark-blue text-sm">{t('viewAllProperties')}</p>
+                        <p className="text-xs text-gray-500">{t('browseCompleteCatalog')}</p>
                       </div>
                     </div>
                   </a>
@@ -443,7 +449,7 @@ export default function SecondaryNav() {
                 className="text-primary-blue hover:text-orange font-semibold transition-colors duration-300 flex items-center gap-2"
               >
                 <i className="fas fa-phone"></i>
-                <span className="hidden sm:inline">Contact</span>
+                <span className="hidden sm:inline">{t('contact')}</span>
               </motion.button>
             </Link>
           </motion.div>
@@ -485,9 +491,12 @@ export default function SecondaryNav() {
               <div className="p-6 space-y-6">
                 <div className="text-center">
                   <p className="text-gray-600">
-                    We don't have properties in this location yet. 
+                    {t('language') === 'en' 
+                      ? "We don't have properties in this location yet."
+                      : "Tetulinawo bintu mu kifo kino kati."
+                    }
                     <span className="font-semibold text-orange block mt-1">
-                      Tell us what you're looking for!
+                      {t('tellUsWhatYoureFor')}
                     </span>
                   </p>
                 </div>
@@ -495,7 +504,7 @@ export default function SecondaryNav() {
                 {/* Inquiry Type Selection */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-3">
-                    What are you looking for?
+                    {t('whatAreYouLookingFor')}
                   </label>
                   <div className="grid grid-cols-2 gap-2">
                     {inquiryTypes.map((type) => (
@@ -511,7 +520,7 @@ export default function SecondaryNav() {
                         }`}
                       >
                         <i className={`fas ${type.icon} mb-1 block`}></i>
-                        <span className="text-sm font-medium">{type.label}</span>
+                        <span className="text-sm font-medium">{t(type.label)}</span>
                       </motion.button>
                     ))}
                   </div>
@@ -520,7 +529,7 @@ export default function SecondaryNav() {
                 {/* Phone Number Input */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Your Phone Number
+                    {t('yourPhoneNumber')}
                   </label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-semibold">
@@ -536,7 +545,7 @@ export default function SecondaryNav() {
                     />
                   </div>
                   <p className="text-xs text-gray-500 mt-1">
-                    We'll send your request via WhatsApp
+                    {t('wellSendRequest')}
                   </p>
                 </div>
 
@@ -548,7 +557,7 @@ export default function SecondaryNav() {
                   className="w-full bg-gradient-to-r from-orange to-orange-600 text-white py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
                 >
                   <i className="fab fa-whatsapp text-xl"></i>
-                  Send Request via WhatsApp
+                  {t('sendRequestViaWhatsApp')}
                 </motion.button>
 
                 {/* Cancel Button */}
@@ -560,7 +569,7 @@ export default function SecondaryNav() {
                   }}
                   className="w-full text-gray-500 hover:text-gray-700 py-2 text-sm font-medium transition-colors"
                 >
-                  Cancel
+                  {t('cancel')}
                 </button>
               </div>
             </motion.div>
@@ -582,9 +591,9 @@ export default function SecondaryNav() {
                 <i className="fas fa-check text-green-600"></i>
               </div>
               <div>
-                <p className="font-semibold text-gray-800">Request Sent!</p>
+                <p className="font-semibold text-gray-800">{t('requestSent')}</p>
                 <p className="text-sm text-gray-600">
-                  Your inquiry has been forwarded. We'll contact you soon!
+                  {t('inquiryForwarded')}
                 </p>
               </div>
             </div>
@@ -612,8 +621,8 @@ export default function SecondaryNav() {
               <div className="sticky top-0 bg-gradient-to-r from-orange to-orange-600 p-6 rounded-t-2xl">
                 <div className="flex justify-between items-center">
                   <div>
-                    <h3 className="text-2xl font-bold text-white">Get a Quotation</h3>
-                    <p className="text-white text-opacity-90 text-sm">Tell us about your project</p>
+                    <h3 className="text-2xl font-bold text-white">{t('getQuotation')}</h3>
+                    <p className="text-white text-opacity-90 text-sm">{t('tellUsAboutProject')}</p>
                   </div>
                   <button
                     onClick={() => setShowQuotationForm(false)}
@@ -628,7 +637,7 @@ export default function SecondaryNav() {
                 {/* Name */}
                 <div>
                   <label className="block text-dark-blue font-semibold mb-2">
-                    Full Name <span className="text-red-500">*</span>
+                    {t('fullName')} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -637,14 +646,14 @@ export default function SecondaryNav() {
                     onChange={handleQuotationInputChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange"
-                    placeholder="Enter your full name"
+                    placeholder={t('language') === 'en' ? 'Enter your full name' : 'Wandiika erinnya lyo lyonna'}
                   />
                 </div>
 
                 {/* Email */}
                 <div>
                   <label className="block text-dark-blue font-semibold mb-2">
-                    Email Address <span className="text-red-500">*</span>
+                    {t('emailAddress')} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="email"
@@ -660,7 +669,7 @@ export default function SecondaryNav() {
                 {/* Phone */}
                 <div>
                   <label className="block text-dark-blue font-semibold mb-2">
-                    Phone Number <span className="text-red-500">*</span>
+                    {t('phoneNumber')} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="tel"
@@ -676,7 +685,7 @@ export default function SecondaryNav() {
                 {/* Service Type */}
                 <div>
                   <label className="block text-dark-blue font-semibold mb-2">
-                    Service Type <span className="text-red-500">*</span>
+                    {t('serviceType')} <span className="text-red-500">*</span>
                   </label>
                   <select
                     name="serviceType"
@@ -685,22 +694,22 @@ export default function SecondaryNav() {
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange"
                   >
-                    <option value="">Select a service</option>
-                    <option value="buy-land">Buy Land</option>
-                    <option value="buy-house">Buy House</option>
-                    <option value="rent-property">Rent Property</option>
-                    <option value="construction">Construction Services</option>
-                    <option value="property-management">Property Management</option>
-                    <option value="valuation">Property Valuation</option>
-                    <option value="consultation">Real Estate Consultation</option>
-                    <option value="other">Other</option>
+                    <option value="">{t('selectService')}</option>
+                    <option value="buy-land">{t('buyLand')}</option>
+                    <option value="buy-house">{t('buyHouse')}</option>
+                    <option value="rent-property">{t('rentProperty')}</option>
+                    <option value="construction">{t('constructionServices')}</option>
+                    <option value="property-management">{t('propertyManagement')}</option>
+                    <option value="valuation">{t('realEstateValuation')}</option>
+                    <option value="consultation">{t('realEstateConsultation')}</option>
+                    <option value="other">{t('other')}</option>
                   </select>
                 </div>
 
                 {/* Location */}
                 <div>
                   <label className="block text-dark-blue font-semibold mb-2">
-                    Preferred Location <span className="text-red-500">*</span>
+                    {t('preferredLocation')} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -716,7 +725,7 @@ export default function SecondaryNav() {
                 {/* Budget */}
                 <div>
                   <label className="block text-dark-blue font-semibold mb-2">
-                    Budget Range
+                    {t('budgetRange')}
                   </label>
                   <select
                     name="budget"
@@ -724,20 +733,20 @@ export default function SecondaryNav() {
                     onChange={handleQuotationInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange"
                   >
-                    <option value="">Select budget range</option>
-                    <option value="under-50m">Under 50M UGX</option>
-                    <option value="50m-100m">50M - 100M UGX</option>
-                    <option value="100m-200m">100M - 200M UGX</option>
-                    <option value="200m-500m">200M - 500M UGX</option>
-                    <option value="above-500m">Above 500M UGX</option>
-                    <option value="flexible">Flexible</option>
+                    <option value="">{t('selectBudgetRange')}</option>
+                    <option value="under-50m">{t('under50m')}</option>
+                    <option value="50m-100m">{t('50m100m')}</option>
+                    <option value="100m-200m">{t('100m200m')}</option>
+                    <option value="200m-500m">{t('200m500m')}</option>
+                    <option value="above-500m">{t('above500m')}</option>
+                    <option value="flexible">{t('flexible')}</option>
                   </select>
                 </div>
 
                 {/* Message */}
                 <div>
                   <label className="block text-dark-blue font-semibold mb-2">
-                    Additional Details
+                    {t('additionalDetails')}
                   </label>
                   <textarea
                     name="message"
@@ -745,7 +754,7 @@ export default function SecondaryNav() {
                     onChange={handleQuotationInputChange}
                     rows="4"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange"
-                    placeholder="Tell us more about your requirements..."
+                    placeholder={t('tellUsMoreRequirements')}
                   ></textarea>
                 </div>
 
@@ -756,7 +765,7 @@ export default function SecondaryNav() {
                     onClick={() => setShowQuotationForm(false)}
                     className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
                   >
-                    Cancel
+                    {t('cancel')}
                   </button>
                   <button
                     type="submit"
@@ -766,12 +775,12 @@ export default function SecondaryNav() {
                     {isSubmittingQuotation ? (
                       <>
                         <i className="fas fa-spinner fa-spin mr-2"></i>
-                        Submitting...
+                        {t('submitting')}
                       </>
                     ) : (
                       <>
                         <i className="fas fa-paper-plane mr-2"></i>
-                        Submit Request
+                        {t('submitRequest')}
                       </>
                     )}
                   </button>

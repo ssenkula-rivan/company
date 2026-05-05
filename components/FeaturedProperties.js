@@ -3,37 +3,37 @@ import Link from 'next/link'
 import { useLanguage } from '../contexts/LanguageContext'
 
 export default function FeaturedProperties() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const properties = [
     {
       id: 1,
-      title: 'Modern 3-Bedroom House in Kapeeka',
+      title: language === 'lg' ? 'Ennyumba y\'Omulembe ey\'Ebisenge 3 mu Kapeeka' : 'Modern 3-Bedroom House in Kapeeka',
       price: 180000000,
-      location: 'Kapeeka, Nakaseke District',
-      type: 'Residential',
-      description: 'Beautiful modern home with spacious rooms, tiled floors, and a large compound. Perfect for families looking for peaceful countryside living.',
+      location: language === 'lg' ? 'Kapeeka, Disitulikiti ya Nakaseke' : 'Kapeeka, Nakaseke District',
+      type: language === 'lg' ? 'Ey\'Okubeera' : 'Residential',
+      description: language === 'lg' ? 'Ennyumba ennungi ey\'omulembe n\'ebisenge ebigazi, emisenge egikubiddwa amabaati, n\'oluggya olunene. Nnungi eri amaka aganoonya okubeera mu kyalo ekiteefu.' : 'Beautiful modern home with spacious rooms, tiled floors, and a large compound. Perfect for families looking for peaceful countryside living.',
       image_url: '/images/Painted home.jpeg',
-      features: ['3 Bedrooms', '2 Bathrooms', 'Large Compound', 'Modern Kitchen', 'Parking Space']
+      features: language === 'lg' ? ['Ebisenge 3', 'Ebyojjulo 2', 'Oluggya Olunene', 'Jikoni y\'Omulembe', 'Ekifo ky\'Emmotoka'] : ['3 Bedrooms', '2 Bathrooms', 'Large Compound', 'Modern Kitchen', 'Parking Space']
     },
     {
       id: 2,
-      title: 'Commercial Plot in Seeta',
+      title: language === 'lg' ? 'Ettaka ly\'Ebyobusuubuzi mu Seeta' : 'Commercial Plot in Seeta',
       price: 150000000,
-      location: 'Seeta, Mukono',
-      type: 'Commercial',
-      description: 'Prime commercial plot along the main road. Ideal for business ventures, shopping centers, or rental apartments. High traffic area.',
+      location: language === 'lg' ? 'Seeta, Mukono' : 'Seeta, Mukono',
+      type: language === 'lg' ? 'Ebyobusuubuzi' : 'Commercial',
+      description: language === 'lg' ? 'Ettaka ly\'ebyobusuubuzi ery\'omuwendo ku luguudo olukulu. Lirungi eri bizinensi, amaduuka, oba amayumba ag\'okupangisa. Ekifo eky\'abantu bangi.' : 'Prime commercial plot along the main road. Ideal for business ventures, shopping centers, or rental apartments. High traffic area.',
       image_url: '/images/_ (36).jpeg',
-      features: ['50x100 ft', 'Main Road Access', 'Commercial Zone', 'Title Available', 'Utilities Ready']
+      features: language === 'lg' ? ['50x100 ft', 'Okutuuka ku Luguudo Olukulu', 'Ekitundu ky\'Ebyobusuubuzi', 'Ttayitolo Eriwo', 'Ebikozesebwa Bitegekeddwa'] : ['50x100 ft', 'Main Road Access', 'Commercial Zone', 'Title Available', 'Utilities Ready']
     },
     {
       id: 3,
-      title: 'Luxury 4-Bedroom Villa in Mukono',
+      title: language === 'lg' ? 'Villa y\'Ebisenge 4 ey\'Obugagga mu Mukono' : 'Luxury 4-Bedroom Villa in Mukono',
       price: 350000000,
-      location: 'Mukono Town',
-      type: 'Residential',
-      description: 'Stunning luxury villa with modern amenities, swimming pool, and beautiful landscaping. Premium location with easy access to Kampala.',
+      location: language === 'lg' ? 'Ekibuga kya Mukono' : 'Mukono Town',
+      type: language === 'lg' ? 'Ey\'Okubeera' : 'Residential',
+      description: language === 'lg' ? 'Villa ennungi ey\'obugagga n\'ebikozesebwa by\'omulembe, ekidiba, n\'olusimbe olulungi. Ekifo eky\'omuwendo n\'okutuuka kwa Kampala kwa mangu.' : 'Stunning luxury villa with modern amenities, swimming pool, and beautiful landscaping. Premium location with easy access to Kampala.',
       image_url: '/images/exterior 🏠.jpeg',
-      features: ['4 Bedrooms', '3 Bathrooms', 'Swimming Pool', 'Garden', 'Security']
+      features: language === 'lg' ? ['Ebisenge 4', 'Ebyojjulo 3', 'Ekidiba', 'Ennimiro', 'Obukuumi'] : ['4 Bedrooms', '3 Bathrooms', 'Swimming Pool', 'Garden', 'Security']
     }
   ]
 

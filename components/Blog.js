@@ -1,32 +1,35 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { useLanguage } from '../contexts/LanguageContext'
 
 export default function Blog() {
+  const { t } = useLanguage()
+  
   const articles = [
     {
       id: 1,
-      title: '5 Tips for First-Time Property Buyers',
-      category: 'Real Estate Tips',
-      date: 'March 10, 2025',
-      excerpt: 'Learn essential tips to make your first property purchase a success.',
+      title: t('language') === 'en' ? '5 Tips for First-Time Property Buyers' : 'Amagezi 5 ku Bagula Ebintu Omulundi Ogw\'okubanza',
+      category: t('realEstateTips'),
+      date: t('language') === 'en' ? 'March 10, 2025' : 'Maarc 10, 2025',
+      excerpt: t('language') === 'en' ? 'Learn essential tips to make your first property purchase a success.' : 'Yiga amagezi ag\'amakulu okufuula okugula kwo okw\'okubanza okw\'ebintu okuwanguzi.',
       image: '/images/Painted home.jpeg',
       link: '/blog/first-time-property-buyers'
     },
     {
       id: 2,
-      title: 'Real Estate Investment Trends in 2025',
-      category: 'Investment Guide',
-      date: 'March 8, 2025',
-      excerpt: 'Discover the latest trends in property investment and market opportunities.',
+      title: t('language') === 'en' ? 'Real Estate Investment Trends in 2025' : 'Enkyukakyuka mu Nsimbi z\'Ebintu mu 2025',
+      category: t('investmentGuide'),
+      date: t('language') === 'en' ? 'March 8, 2025' : 'Maarc 8, 2025',
+      excerpt: t('language') === 'en' ? 'Discover the latest trends in property investment and market opportunities.' : 'Zuula enkyukakyuka empya mu nsimbi z\'ebintu n\'emikisa gy\'akatale.',
       image: '/images/_ (38).jpeg',
       link: '/blog'
     },
     {
       id: 3,
-      title: 'How to Maximize Your Property Value',
-      category: 'Property Management',
-      date: 'March 5, 2025',
-      excerpt: 'Practical strategies to increase your property value and rental income.',
+      title: t('language') === 'en' ? 'How to Maximize Your Property Value' : 'Engeri y\'Okwongera Omuwendo gw\'Ekintu Kyo',
+      category: t('propertyManagement'),
+      date: t('language') === 'en' ? 'March 5, 2025' : 'Maarc 5, 2025',
+      excerpt: t('language') === 'en' ? 'Practical strategies to increase your property value and rental income.' : 'Enkola ez\'amagezi okwongera omuwendo gw\'ekintu kyo n\'ensimbi z\'okupangisa.',
       image: '/images/_ (41).jpeg',
       link: '/blog'
     }
@@ -41,7 +44,7 @@ export default function Blog() {
           viewport={{ once: true }}
           className="text-5xl font-bold text-dark-blue text-center mb-20"
         >
-          Latest News & Articles
+          {t('latestNewsArticles')}
         </motion.h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -76,7 +79,7 @@ export default function Blog() {
                     whileTap={{ scale: 0.95 }}
                     className="text-orange font-semibold hover:text-dark-orange transition-colors"
                   >
-                    Read More →
+                    {t('readMore')} →
                   </motion.button>
                 </Link>
               </div>
