@@ -131,7 +131,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Link href="#home" onClick={(e) => handleAnchorClick(e, '#home')} className="flex items-center">
+            <Link href="/" className="flex items-center">
               <motion.div 
                 className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg"
                 whileHover={{ rotate: 360 }}
