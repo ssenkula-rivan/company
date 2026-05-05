@@ -173,7 +173,6 @@ export default function CEO() {
                   : '"Okukyusa ebiruubirirwa by\'ebintu okuba mazima ng\'oyita mu by\'obuyiiya by\'ebintu. Buli kukulaakulanya kiraga okwewuubuza kwaffe ku butuukirivu, obwesigwa, n\'obuwanguzi bwo obw\'omu maaso."'
                 }
               </p>
-              </p>
             </motion.div>
           </motion.div>
         </div>
