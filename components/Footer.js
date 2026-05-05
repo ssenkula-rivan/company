@@ -148,7 +148,7 @@ export default function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-start">
                 <i className="fas fa-map-marker-alt text-orange mr-3 mt-1 flex-shrink-0"></i>
-                <p className="text-gray-300">City Complex Centre, Floor 4, Room J10b, Kampala</p>
+                <p className="text-gray-300">City Centre Complex, Floor 4, Room J10b, Kampala</p>
               </div>
               <div className="flex items-center">
                 <i className="fas fa-phone text-orange mr-3 flex-shrink-0"></i>

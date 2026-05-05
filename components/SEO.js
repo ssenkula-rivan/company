@@ -32,7 +32,7 @@ export default function SEO({
     foundingDate: '2022-08-26',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'City Complex Centre, Floor 4, Room J10b',
+      streetAddress: 'City Centre Complex, Floor 4, Room J10b',
       addressLocality: 'Kampala',
       addressCountry: 'UG'
     },
