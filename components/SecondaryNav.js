@@ -214,7 +214,9 @@ export default function SecondaryNav() {
     const inquiryLabel = t(selectedInquiry.label)
     
     // Compose WhatsApp message
-    const message = `Hello AMODZ Properties!%0A%0AI'm interested in *${inquiryLabel}* in *${selectedDistrict.name}* district.%0A%0AMy phone number: *${phoneNumber}*%0A%0APlease contact me with available options.`
+    const message = language === 'en'
+      ? `Hello AMODZ Properties!%0A%0AI'm interested in *${inquiryLabel}* in *${selectedDistrict.name}* district.%0A%0AMy phone number: *${phoneNumber}*%0A%0APlease contact me with available options.`
+      : `Nkulamusizza AMODZ Properties!%0A%0ANjagala *${inquiryLabel}* mu disitulikiti ya *${selectedDistrict.name}*.%0A%0AEnnamba yange y'essimu: *${phoneNumber}*%0A%0ANsaba munkubire n'emikisa egiriwo.`
     
     // WhatsApp API with company number
     const whatsappNumber = '256752830507'
