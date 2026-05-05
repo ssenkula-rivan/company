@@ -45,8 +45,8 @@ export default function Contact() {
                 <strong className="text-dark-blue">{t('officeLocation')}</strong>
                 <p className="text-gray-700">
                   {language === 'en' 
-                    ? 'Complex City Centre\nFloor 4, Room J10b\nKampala, Uganda'
-                    : 'Complex City Centre\nOmutendera gwa 4, Ekisenge J10b\nKampala, Uganda'
+                    ? 'City Complex Centre\nFloor 4, Room J10b\nKampala, Uganda'
+                    : 'City Complex Centre\nOmutendera gwa 4, Ekisenge J10b\nKampala, Uganda'
                   }
                 </p>
               </div>
