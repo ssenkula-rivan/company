@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useLanguage } from '../contexts/LanguageContext'
 
 export default function Careers() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const [showForm, setShowForm] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
@@ -83,7 +83,7 @@ export default function Careers() {
             <i className="fas fa-users text-6xl text-orange mb-6 block"></i>
             <h3 className="text-3xl font-bold text-dark-blue mb-4">{t('joinOurTeam')}</h3>
             <p className="text-lg text-gray-700 mb-6">
-              {t('language') === 'en'
+              {language === 'en'
                 ? 'AMODZ PROPERTIES LIMITED is always looking for talented professionals to join our growing team.'
                 : 'AMODZ PROPERTIES LIMITED bulijjo enoonya abakugu abalina obukugu okwegatta ku ttiimu yaffe egenda eyongera.'
               }
@@ -164,7 +164,7 @@ export default function Careers() {
                     onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue"
-                    placeholder={t('language') === 'en' ? 'Enter your full name' : 'Wandiika erinnya lyo lyonna'}
+                    placeholder={language === 'en' ? 'Enter your full name' : 'Wandiika erinnya lyo lyonna'}
                   />
                 </div>
 
@@ -230,7 +230,7 @@ export default function Careers() {
                     onChange={handleInputChange}
                     rows="4"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue"
-                    placeholder={t('language') === 'en' ? 'Tell us why you\'re a great fit for this position...' : 'Tubuulire lwaki oli omuntu omutuufu ku mulimu guno...'}
+                    placeholder={language === 'en' ? 'Tell us why you\'re a great fit for this position...' : 'Tubuulire lwaki oli omuntu omutuufu ku mulimu guno...'}
                   ></textarea>
                 </div>
 

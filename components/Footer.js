@@ -12,7 +12,7 @@ if (typeof window !== 'undefined') {
 export default function Footer() {
   const footerRef = useRef(null)
   const currentYear = new Date().getFullYear()
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
   useEffect(() => {
     // Parallax effect for footer background using GSAP
@@ -73,7 +73,7 @@ export default function Footer() {
               <h5 className="text-lg font-bold">AMODZ PROPERTIES LIMITED</h5>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed mb-4">
-              {t('language') === 'en' 
+              {language === 'en' 
                 ? 'Your trusted real estate partner for property sales, rentals, and investments.'
                 : 'Omukwano gwo ogwesigibwa mu bintu ku kutunda, okupangisa, n\'ensimbi.'
               }

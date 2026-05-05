@@ -14,7 +14,7 @@ export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 })
   const heroRef = useRef(null)
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
   const carouselImages = [
     '/images/_ (36).jpeg',
@@ -77,29 +77,29 @@ export default function Hero() {
 
   const notices = [
     {
-      title: t('language') === 'en' ? 'Our Development Sites' : 'Ebifo Byaffe eby\'Okukulaakulanya',
-      description: t('language') === 'en' 
+      title: language === 'en' ? 'Our Development Sites' : 'Ebifo Byaffe eby\'Okukulaakulanya',
+      description: language === 'en' 
         ? 'We have active development sites in Kapeeka, Seeta, and Mukono with premium plots and properties available.'
         : 'Tulina ebifo eby\'okukulaakulanya ebikola mu Kapeeka, Seeta, ne Mukono n\'ettaka ery\'omuwendo n\'ebintu ebirabikira.',
-      badge: t('language') === 'en' ? 'LOCATIONS' : 'EBIFO'
+      badge: language === 'en' ? 'LOCATIONS' : 'EBIFO'
     },
     {
-      title: t('language') === 'en' ? 'New Property Listings Available' : 'Ebintu Ebipya Ebirabikira',
-      description: t('language') === 'en'
+      title: language === 'en' ? 'New Property Listings Available' : 'Ebintu Ebipya Ebirabikira',
+      description: language === 'en'
         ? 'Explore our latest residential and commercial properties available for sale and rent in prime locations.'
         : 'Lambula ebintu byaffe ebipya eby\'amayumba n\'ebyobusuubuzi ebirabikira okutundibwa n\'okupangisibwa mu bifo ebikulu.',
-      badge: t('language') === 'en' ? 'NEW' : 'BIPYA'
+      badge: language === 'en' ? 'NEW' : 'BIPYA'
     },
     {
-      title: t('language') === 'en' ? 'Property Investment Seminar - March 2025' : 'Okusomesa ku Nsimbi z\'Ebintu - Maarc 2025',
-      description: t('language') === 'en'
+      title: language === 'en' ? 'Property Investment Seminar - March 2025' : 'Okusomesa ku Nsimbi z\'Ebintu - Maarc 2025',
+      description: language === 'en'
         ? 'Join our experts for a comprehensive workshop on real estate investment strategies and market trends.'
         : 'Weegatte ku bakugu baffe ku musomo ogw\'amaanyi ku nkola z\'okusiga ensimbi mu bintu n\'enkyukakyuka z\'akatale.',
-      badge: t('language') === 'en' ? 'NEW' : 'KIPYA'
+      badge: language === 'en' ? 'NEW' : 'KIPYA'
     },
     {
-      title: t('language') === 'en' ? 'Premium Residential Properties' : 'Ebintu by\'Amayumba eby\'Omuwendo',
-      description: t('language') === 'en'
+      title: language === 'en' ? 'Premium Residential Properties' : 'Ebintu by\'Amayumba eby\'Omuwendo',
+      description: language === 'en'
         ? 'Discover luxury homes and apartments in Kapeeka, Seeta, and Mukono\'s most sought-after neighborhoods.'
         : 'Zuula amayumba ag\'obugagga n\'apartment mu bitundu bya Kapeeka, Seeta, ne Mukono ebisingayo okwagalibwa.'
     }
@@ -107,15 +107,15 @@ export default function Hero() {
 
   const events = [
     {
-      title: t('language') === 'en' ? 'Annual Real Estate Expo 2025' : 'Okulaga Ebintu kwa Buli Mwaka 2025',
-      description: t('language') === 'en'
+      title: language === 'en' ? 'Annual Real Estate Expo 2025' : 'Okulaga Ebintu kwa Buli Mwaka 2025',
+      description: language === 'en'
         ? 'Join industry leaders for our annual property exhibition featuring new developments and investment opportunities.'
         : 'Weegatte ku bakulembeze b\'amakolero ku kulaga kwaffe okwa buli mwaka okw\'ebintu okw\'okukulaakulanya okupya n\'emikisa gy\'ensimbi.',
-      badge: t('language') === 'en' ? 'NEW' : 'KIPYA'
+      badge: language === 'en' ? 'NEW' : 'KIPYA'
     },
     {
-      title: t('language') === 'en' ? 'First-Time Homebuyer Workshop' : 'Okusomesa Abagula Amayumba Omulundi Ogw\'okubanza',
-      description: t('language') === 'en'
+      title: language === 'en' ? 'First-Time Homebuyer Workshop' : 'Okusomesa Abagula Amayumba Omulundi Ogw\'okubanza',
+      description: language === 'en'
         ? 'Learn everything you need to know about buying your first property from our experienced agents.'
         : 'Yiga byonna by\'weetaaga okumanya ku kugula ekintu kyo eky\'okubanza okuva ku bakozi baffe abamanyirivu.'
     }
@@ -199,7 +199,7 @@ export default function Hero() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  {t('language') === 'en' ? 'Notices' : 'Okubuulira'}
+                  {language === 'en' ? 'Notices' : 'Okubuulira'}
                 </motion.button>
                 <motion.button 
                   onClick={() => setActiveTab('events')}
@@ -211,7 +211,7 @@ export default function Hero() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  {t('language') === 'en' ? 'Events' : 'Emikolo'}
+                  {language === 'en' ? 'Events' : 'Emikolo'}
                 </motion.button>
               </div>
               

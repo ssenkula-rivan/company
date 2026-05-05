@@ -2,26 +2,26 @@ import { motion } from 'framer-motion'
 import { useLanguage } from '../contexts/LanguageContext'
 
 export default function Tenders() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   
   const tenders = [
     {
-      title: t('language') === 'en' 
+      title: language === 'en' 
         ? 'Tender Notice: Property Development Partnership'
         : 'Okubuulira kwa Tenda: Obukwakkulizo bw\'Okukulaakulanya Ebintu',
-      date: t('language') === 'en' 
+      date: language === 'en' 
         ? 'Posted: January 2025 | Deadline: March 15, 2025'
         : 'Kyateekeddwa: Janwali 2025 | Ekiseera: Maarc 15, 2025',
-      description: t('language') === 'en'
+      description: language === 'en'
         ? 'We invite qualified contractors and suppliers to submit tenders for property development and renovation projects.'
         : 'Tuyita abakozi n\'abagulisa abatuufu okusindika tenda ku pulojekiti z\'okukulaakulanya n\'okuddaabiriza ebintu.'
     },
     {
-      title: t('language') === 'en'
+      title: language === 'en'
         ? 'Partnership Opportunities'
         : 'Emikisa gy\'Obukwakkulizo',
-      date: t('language') === 'en' ? 'Ongoing' : 'Bigenda Mu Maaso',
-      description: t('language') === 'en'
+      date: language === 'en' ? 'Ongoing' : 'Bigenda Mu Maaso',
+      description: language === 'en'
         ? 'AMODZ PROPERTIES LIMITED is seeking strategic partnerships with property developers, construction companies, and financial institutions.'
         : 'AMODZ PROPERTIES LIMITED enoonya obukwakkulizo obw\'obukugu n\'abakulaakulanya ebintu, kkampuni z\'okuzimba, n\'ebitongole by\'ensimbi.'
     }

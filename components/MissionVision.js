@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { useLanguage } from '../contexts/LanguageContext'
 
 export default function MissionVision() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   
   return (
     <section id="mission" className="py-24 bg-gray-50 border-t border-gray-200">
@@ -142,7 +142,7 @@ export default function MissionVision() {
           <div className="space-y-4 text-gray-700 leading-relaxed">
             <div className="space-y-6 text-gray-700 leading-relaxed">
             <p className="text-lg">
-              {t('foundedOn')} <span className="font-bold text-primary-blue">August 26, 2022</span> {t('language') === 'en' ? 'by' : 'nga'} <span className="font-bold text-primary-blue">Amoding Magret</span>, Amodz Properties Limited {t('establishedTrusted')}
+              {t('foundedOn')} <span className="font-bold text-primary-blue">August 26, 2022</span> {language === 'en' ? 'by' : 'nga'} <span className="font-bold text-primary-blue">Amoding Magret</span>, Amodz Properties Limited {t('establishedTrusted')}
             </p>
             
             <div className="bg-gradient-to-r from-primary-blue/5 to-orange/5 rounded-xl p-6 border-l-4 border-orange">
@@ -196,7 +196,7 @@ export default function MissionVision() {
                 <i className="fas fa-map-marker-alt text-white text-xl"></i>
               </div>
               <h4 className="font-bold text-dark-blue text-center mb-2 text-lg">{t('kapeeka')}</h4>
-              <p className="text-gray-600 text-center text-sm">{t('language') === 'en' ? 'Premium plots and residential developments' : 'Ettaka ery\'omuwendo n\'okukulaakulanya amayumba'}</p>
+              <p className="text-gray-600 text-center text-sm">{language === 'en' ? 'Premium plots and residential developments' : 'Ettaka ery\'omuwendo n\'okukulaakulanya amayumba'}</p>
             </motion.div>
 
             <motion.div 
@@ -210,7 +210,7 @@ export default function MissionVision() {
                 <i className="fas fa-map-marker-alt text-white text-xl"></i>
               </div>
               <h4 className="font-bold text-dark-blue text-center mb-2 text-lg">{t('seeta')}</h4>
-              <p className="text-gray-600 text-center text-sm">{t('language') === 'en' ? 'Modern housing and land opportunities' : 'Amayumba ag\'omulembe n\'emikisa gy\'ettaka'}</p>
+              <p className="text-gray-600 text-center text-sm">{language === 'en' ? 'Modern housing and land opportunities' : 'Amayumba ag\'omulembe n\'emikisa gy\'ettaka'}</p>
             </motion.div>
 
             <motion.div 
@@ -224,7 +224,7 @@ export default function MissionVision() {
                 <i className="fas fa-map-marker-alt text-white text-xl"></i>
               </div>
               <h4 className="font-bold text-dark-blue text-center mb-2 text-lg">{t('mukono')}</h4>
-              <p className="text-gray-600 text-center text-sm">{t('language') === 'en' ? 'Strategic location with growth potential' : 'Ekifo eky\'obukugu ekirina obuyinza bw\'okukulaakulana'}</p>
+              <p className="text-gray-600 text-center text-sm">{language === 'en' ? 'Strategic location with growth potential' : 'Ekifo eky\'obukugu ekirina obuyinza bw\'okukulaakulana'}</p>
             </motion.div>
           </div>
 

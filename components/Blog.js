@@ -3,33 +3,33 @@ import Link from 'next/link'
 import { useLanguage } from '../contexts/LanguageContext'
 
 export default function Blog() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   
   const articles = [
     {
       id: 1,
-      title: t('language') === 'en' ? '5 Tips for First-Time Property Buyers' : 'Amagezi 5 ku Bagula Ebintu Omulundi Ogw\'okubanza',
+      title: language === 'en' ? '5 Tips for First-Time Property Buyers' : 'Amagezi 5 ku Bagula Ebintu Omulundi Ogw\'okubanza',
       category: t('realEstateTips'),
-      date: t('language') === 'en' ? 'March 10, 2025' : 'Maarc 10, 2025',
-      excerpt: t('language') === 'en' ? 'Learn essential tips to make your first property purchase a success.' : 'Yiga amagezi ag\'amakulu okufuula okugula kwo okw\'okubanza okw\'ebintu okuwanguzi.',
+      date: language === 'en' ? 'March 10, 2025' : 'Maarc 10, 2025',
+      excerpt: language === 'en' ? 'Learn essential tips to make your first property purchase a success.' : 'Yiga amagezi ag\'amakulu okufuula okugula kwo okw\'okubanza okw\'ebintu okuwanguzi.',
       image: '/images/Painted home.jpeg',
       link: '/blog/first-time-property-buyers'
     },
     {
       id: 2,
-      title: t('language') === 'en' ? 'Real Estate Investment Trends in 2025' : 'Enkyukakyuka mu Nsimbi z\'Ebintu mu 2025',
+      title: language === 'en' ? 'Real Estate Investment Trends in 2025' : 'Enkyukakyuka mu Nsimbi z\'Ebintu mu 2025',
       category: t('investmentGuide'),
-      date: t('language') === 'en' ? 'March 8, 2025' : 'Maarc 8, 2025',
-      excerpt: t('language') === 'en' ? 'Discover the latest trends in property investment and market opportunities.' : 'Zuula enkyukakyuka empya mu nsimbi z\'ebintu n\'emikisa gy\'akatale.',
+      date: language === 'en' ? 'March 8, 2025' : 'Maarc 8, 2025',
+      excerpt: language === 'en' ? 'Discover the latest trends in property investment and market opportunities.' : 'Zuula enkyukakyuka empya mu nsimbi z\'ebintu n\'emikisa gy\'akatale.',
       image: '/images/_ (38).jpeg',
       link: '/blog'
     },
     {
       id: 3,
-      title: t('language') === 'en' ? 'How to Maximize Your Property Value' : 'Engeri y\'Okwongera Omuwendo gw\'Ekintu Kyo',
+      title: language === 'en' ? 'How to Maximize Your Property Value' : 'Engeri y\'Okwongera Omuwendo gw\'Ekintu Kyo',
       category: t('propertyManagement'),
-      date: t('language') === 'en' ? 'March 5, 2025' : 'Maarc 5, 2025',
-      excerpt: t('language') === 'en' ? 'Practical strategies to increase your property value and rental income.' : 'Enkola ez\'amagezi okwongera omuwendo gw\'ekintu kyo n\'ensimbi z\'okupangisa.',
+      date: language === 'en' ? 'March 5, 2025' : 'Maarc 5, 2025',
+      excerpt: language === 'en' ? 'Practical strategies to increase your property value and rental income.' : 'Enkola ez\'amagezi okwongera omuwendo gw\'ekintu kyo n\'ensimbi z\'okupangisa.',
       image: '/images/_ (41).jpeg',
       link: '/blog'
     }

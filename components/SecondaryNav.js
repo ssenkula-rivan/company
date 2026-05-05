@@ -140,7 +140,7 @@ const inquiryTypes = [
 ]
 
 export default function SecondaryNav() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const [searchQuery, setSearchQuery] = useState('')
   const [isSearchFocused, setIsSearchFocused] = useState(false)
   const [showModal, setShowModal] = useState(false)
@@ -202,7 +202,7 @@ export default function SecondaryNav() {
 
   const handleSubmitInquiry = () => {
     if (!inquiryType || !phoneNumber) {
-      alert(t('language') === 'en' 
+      alert(language === 'en' 
         ? 'Please select what you want and provide your phone number'
         : 'Nsaba olonde ky\'oyagala era owe ennamba yo y\'essimu'
       )
@@ -490,7 +490,7 @@ export default function SecondaryNav() {
               <div className="p-6 space-y-6">
                 <div className="text-center">
                   <p className="text-gray-600">
-                    {t('language') === 'en' 
+                    {language === 'en' 
                       ? "We don't have properties in this location yet."
                       : "Tetulinawo bintu mu kifo kino kati."
                     }
@@ -645,7 +645,7 @@ export default function SecondaryNav() {
                     onChange={handleQuotationInputChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange"
-                    placeholder={t('language') === 'en' ? 'Enter your full name' : 'Wandiika erinnya lyo lyonna'}
+                    placeholder={language === 'en' ? 'Enter your full name' : 'Wandiika erinnya lyo lyonna'}
                   />
                 </div>
 

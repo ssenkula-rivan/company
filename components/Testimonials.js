@@ -4,7 +4,7 @@ import { useLanguage } from '../contexts/LanguageContext'
 
 // Testimonials component with client review submission form
 export default function Testimonials() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const [commentData, setCommentData] = useState({
     name: '',
     rating: 5,
@@ -17,8 +17,8 @@ export default function Testimonials() {
     {
       id: 1,
       name: 'John Ssemanda',
-      role: t('language') === 'en' ? 'Property Owner' : 'Nannyini Kintu',
-      text: t('language') === 'en' 
+      role: language === 'en' ? 'Property Owner' : 'Nannyini Kintu',
+      text: language === 'en' 
         ? 'AMODZ PROPERTIES LIMITED made my dream of owning a home a reality. The entire process was smooth and transparent. Highly recommended!'
         : 'AMODZ PROPERTIES LIMITED yafuula ekirooto kyange eky\'okuba n\'ennyumba okuba mazima. Enkola yonna yali nnyangu era ey\'amazima. Nkuteesa nnyo!',
       rating: 5
@@ -26,8 +26,8 @@ export default function Testimonials() {
     {
       id: 2,
       name: 'Sarah Nakamatte',
-      role: t('language') === 'en' ? 'Investor' : 'Asiga Ensimbi',
-      text: t('language') === 'en'
+      role: language === 'en' ? 'Investor' : 'Asiga Ensimbi',
+      text: language === 'en'
         ? 'I invested in their residential project and the returns have been excellent. Professional team and great communication throughout.'
         : 'Nasiga ensimbi mu pulojekiti yaabwe ey\'amayumba era amagoba gabadde manungi nnyo. Ttiimu y\'abakugu era empuliziganya yabadde nnungi okumala.',
       rating: 5
@@ -35,8 +35,8 @@ export default function Testimonials() {
     {
       id: 3,
       name: 'David Mwesigwa',
-      role: t('language') === 'en' ? 'Commercial Client' : 'Kasitoma w\'Ebyobusuubuzi',
-      text: t('language') === 'en'
+      role: language === 'en' ? 'Commercial Client' : 'Kasitoma w\'Ebyobusuubuzi',
+      text: language === 'en'
         ? 'The commercial space I leased from them is perfect for my business. Great location and well-maintained facilities.'
         : 'Ekifo ky\'ebyobusuubuzi kye napangisa okuva gye bali kituukiridde bizinensi yange. Ekifo kirungi era ebikozesebwa bilabirirwa obulungi.',
       rating: 5
@@ -44,8 +44,8 @@ export default function Testimonials() {
     {
       id: 4,
       name: 'Grace Namukwaya',
-      role: t('language') === 'en' ? 'First-time Buyer' : 'Agula Omulundi Ogw\'okubanza',
-      text: t('language') === 'en'
+      role: language === 'en' ? 'First-time Buyer' : 'Agula Omulundi Ogw\'okubanza',
+      text: language === 'en'
         ? 'As a first-time buyer, I was nervous, but the team guided me through every step. Now I have my dream home!'
         : 'Nga muguli w\'omulundi ogw\'okubanza, nnali ntya, naye ttiimu yankulembedde mu buli mutendera. Kati nina ennyumba yange ey\'ekirooto!',
       rating: 5
@@ -93,7 +93,7 @@ export default function Testimonials() {
     } catch (error) {
       console.error('Error submitting review:', error)
       setIsSubmitting(false)
-      alert(t('language') === 'en' 
+      alert(language === 'en' 
         ? 'Failed to submit review. Please try again later.'
         : 'Okubuulira tekusobodde kusindikibwa. Nsaba ddamu okugezaako oluvannyuma.'
       )

@@ -3,47 +3,47 @@ import { useState } from 'react'
 import { useLanguage } from '../contexts/LanguageContext'
 
 export default function FAQ() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const [openIndex, setOpenIndex] = useState(0)
 
   const faqs = [
     {
-      question: t('language') === 'en' 
+      question: language === 'en' 
         ? 'What services does AMODZ PROPERTIES LIMITED provide?'
         : 'Buweereza ki AMODZ PROPERTIES LIMITED bw\'ewa?',
-      answer: t('language') === 'en'
+      answer: language === 'en'
         ? 'AMODZ PROPERTIES LIMITED provides comprehensive real estate services including property sales, rentals, property management, real estate valuation, property development consulting, and investment advisory services.'
         : 'AMODZ PROPERTIES LIMITED ewa obuweereza bw\'ebintu obw\'amaanyi okuli okutunda ebintu, okupangisa, okuddukanya ebintu, okupima omuwendo gw\'ebintu, okubuulirwa ku kukulaakulanya ebintu, n\'okubuulirwa ku nsimbi.'
     },
     {
-      question: t('language') === 'en'
+      question: language === 'en'
         ? 'How do I list my property for sale?'
         : 'Nkola ntya okuwandiisa ekintu kyange okukitunda?',
-      answer: t('language') === 'en'
+      answer: language === 'en'
         ? 'Contact us through our website, phone, or visit our office. Our agents will guide you through the listing process, including property valuation, documentation, and marketing your property to potential buyers.'
         : 'Tukubire ku mukutu gwaffe, essimu, oba jjangu ku ofiisi yaffe. Abakozi baffe bajja kukukulembera mu nkola y\'okuwandiisa, okuli okupima omuwendo gw\'ekintu, ebiwandiiko, n\'okutunda ekintu kyo eri abagula.'
     },
     {
-      question: t('language') === 'en'
+      question: language === 'en'
         ? 'Do you help with property rentals?'
         : 'Muyamba ku kupangisa ebintu?',
-      answer: t('language') === 'en'
+      answer: language === 'en'
         ? 'Yes! We offer comprehensive property rental services. We help landlords find qualified tenants and assist renters in finding their ideal homes or commercial spaces.'
         : 'Ye! Tuwa obuweereza bw\'okupangisa ebintu obw\'amaanyi. Tuyamba bannannyini mayumba okuzuula abapangisi abatuufu era tuyamba abapangisi okuzuula amayumba gaabwe ag\'ekirooto oba ebifo by\'ebyobusuubuzi.'
     },
     {
-      question: t('language') === 'en'
+      question: language === 'en'
         ? 'What areas do you serve?'
         : 'Bitundu ki bye mukola?',
-      answer: t('language') === 'en'
+      answer: language === 'en'
         ? 'We are based in Kampala, Uganda, and serve clients throughout Uganda and the East African region with mobile teams available for remote locations.'
         : 'Tuli mu Kampala, Uganda, era tuweereza bakasitoma mu Uganda yonna n\'ekitundu ky\'Ebuvanjuba bw\'Afrika n\'amatiimu ag\'entambula agaliwo ku bifo eby\'ewala.'
     },
     {
-      question: t('language') === 'en'
+      question: language === 'en'
         ? 'Are you certified?'
         : 'Mulina obukakase?',
-      answer: t('language') === 'en'
+      answer: language === 'en'
         ? 'Yes, AMODZ PROPERTIES LIMITED is a licensed and registered real estate company operating under all relevant laws and regulations in Uganda.'
         : 'Ye, AMODZ PROPERTIES LIMITED ye kkampuni y\'ebintu ekiragiddwa era ewandiisiddwa ekola wansi w\'amateeka gonna ag\'enkizo mu Uganda.'
     }
