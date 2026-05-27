@@ -64,10 +64,10 @@ export default function Gallery() {
     },
     {
       id: 7,
-      title: language === 'en' ? 'Client Success Stories' : 'Emboozi z\'Obuwanguzi bwa Bakasitoma',
+      title: language === 'en' ? 'Property Portfolio' : 'Ebintu Byaffe',
       description: language === 'en'
-        ? 'Hear from our satisfied clients about their experience with Amodz Properties.'
-        : 'Wulira okuva ku bakasitoma baffe abamatidde ku bumanyirivu bwabwe ne Amodz Properties.',
+        ? 'Browse through our diverse portfolio of quality properties and developments.'
+        : 'Lambula mu bintu byaffe eby\'enjawulo eby\'omutindo n\'okukulaakulanya.',
       thumbnail: '/images/7.jpeg',
       comingSoon: true
     },
@@ -186,6 +186,15 @@ export default function Gallery() {
         ? 'Experience trusted real estate and construction services with Novera.'
         : 'Fumba empeereza z\'ebintu n\'okuzimba ezesigika ne Novera.',
       thumbnail: '/images/Novera Real Estate Company In Uganda_ For Only Trusted Real Estate & Construction Services_.jpeg',
+      comingSoon: true
+    },
+    {
+      id: 21,
+      title: language === 'en' ? 'Property Showcase' : 'Okulaga Ebintu',
+      description: language === 'en'
+        ? 'View our featured properties and real estate opportunities.'
+        : 'Laba ebintu byaffe ebikulu n\'emikisa gy\'ebintu.',
+      thumbnail: '/images/86K views _ Reel by Samwely.jpeg',
       comingSoon: true
     }
   ]
