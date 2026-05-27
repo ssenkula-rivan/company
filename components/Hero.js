@@ -17,17 +17,15 @@ export default function Hero() {
   const { t, language } = useLanguage()
 
   const carouselImages = [
-    '/images/_ (36).jpeg',
-    '/images/_ (37).jpeg',
-    '/images/_ (38).jpeg',
-    '/images/_ (39).jpeg',
-    '/images/_ (40).jpeg',
-    '/images/_ (41).jpeg',
-    '/images/_ (42).jpeg',
-    '/images/8 Genius Tricks to Keep Your Vacant Land From Being Undervalued.jpeg',
-    '/images/86K views _ Reel by Samwely.jpeg',
-    '/images/exterior 🏠.jpeg',
-    '/images/Painted home.jpeg'
+    '/images/1.jpeg',
+    '/images/2.jpeg',
+    '/images/3.jpeg',
+    '/images/4.jpeg',
+    '/images/5.jpeg',
+    '/images/6.jpeg',
+    '/images/7.jpeg',
+    '/images/8.jpeg',
+    '/images/9.jpeg'
   ]
 
   useEffect(() => {
