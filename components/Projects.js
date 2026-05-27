@@ -80,9 +80,9 @@ export default function Projects() {
                 transition={{ delay: 0.3 }}
                 className="text-center text-white"
               >
-                <h3 className="text-2xl md:text-3xl font-bold mb-3">{t('language') === 'en' ? 'Discover Our Projects' : 'Zuula Pulojekiti Zaffe'}</h3>
+                <h3 className="text-2xl md:text-3xl font-bold mb-3">{language === 'en' ? 'Discover Our Projects' : 'Zuula Pulojekiti Zaffe'}</h3>
                 <p className="text-lg opacity-90 max-w-2xl mx-auto">
-                  {t('language') === 'en' 
+                  {language === 'en' 
                     ? 'Experience our commitment to excellence through our portfolio of completed and ongoing developments across Uganda'
                     : 'Laba okwewuubuza kwaffe ku butuukirivu mu pulojekiti zaffe ezimaze n\'ezigenda mu maaso mu Uganda yonna'
                   }
