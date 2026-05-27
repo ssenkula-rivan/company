@@ -30,7 +30,7 @@ export default function Blog() {
       category: t('propertyManagement'),
       date: language === 'en' ? 'March 5, 2025' : 'Maarc 5, 2025',
       excerpt: language === 'en' ? 'Practical strategies to increase your property value and rental income.' : 'Enkola ez\'amagezi okwongera omuwendo gw\'ekintu kyo n\'ensimbi z\'okupangisa.',
-      image: '/images/_ (41).jpeg',
+      image: '/images/5.jpeg',
       link: '/blog'
     }
   ]

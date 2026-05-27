@@ -23,7 +23,7 @@ export default function Gallery() {
       description: language === 'en'
         ? 'Explore premium commercial spaces designed for modern businesses in prime location.'
         : 'Lambula ebifo by\'ebyobusuubuzi eby\'omuwendo ebyakolebwa bizinensi z\'omulembe mu kifo ekikulu.',
-      thumbnail: '/images/_ (37).jpeg',
+      thumbnail: '/images/3.jpeg',
       comingSoon: true
     },
     {
@@ -59,7 +59,7 @@ export default function Gallery() {
       description: language === 'en'
         ? 'Hear from our satisfied clients about their experience with Amodz Properties.'
         : 'Wulira okuva ku bakasitoma baffe abamatidde ku bumanyirivu bwabwe ne Amodz Properties.',
-      thumbnail: '/images/_ (41).jpeg',
+      thumbnail: '/images/7.jpeg',
       comingSoon: true
     }
   ]

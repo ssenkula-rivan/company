@@ -24,7 +24,7 @@ export default function PlotsLand() {
       size: '40x80 ft',
       location: language === 'en' ? 'Seeta, Mukono' : 'Seeta, Mukono',
       status: language === 'en' ? 'Available' : 'Eriwo',
-      image_url: '/images/_ (37).jpeg',
+      image_url: '/images/2.jpeg',
       features: language === 'en'
         ? ['Private Mailo Land', 'Quiet Neighborhood', 'Tarmac Road', 'Schools Nearby', 'Secure Area']
         : ['Ettaka lya Mailo', 'Ekitundu Ekiteefu', 'Oluguudo Olukubiddwa Lami', 'Amasomero Gali Kumpi', 'Ekifo Ekikuumibwa']
@@ -72,7 +72,7 @@ export default function PlotsLand() {
       size: '100x100 ft',
       location: language === 'en' ? 'Mukono Municipality' : 'Ekibuga kya Mukono',
       status: language === 'en' ? 'Available' : 'Eriwo',
-      image_url: '/images/_ (41).jpeg',
+      image_url: '/images/6.jpeg',
       features: language === 'en'
         ? ['Spacious', 'Gated Community', 'Security', 'Tarmac Road', 'Developed Area']
         : ['Erinene', 'Ekitundu Ekikomeddwa', 'Obukuumi', 'Oluguudo Olukubiddwa Lami', 'Ekitundu Ekitegekeddwa']
