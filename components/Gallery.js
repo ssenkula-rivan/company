@@ -92,39 +92,39 @@ export default function Gallery() {
     },
     {
       id: 10,
-      title: language === 'en' ? 'Prime Commercial Plot' : 'Ettaka ly\'Ebyobusuubuzi ery\'Omuwendo',
+      title: language === 'en' ? 'Prime Land for Development' : 'Ettaka ery\'Omuwendo ery\'Okukulaakulanya',
       description: language === 'en'
-        ? 'Premium commercial plots in strategic locations for your business.'
-        : 'Ettaka ly\'ebyobusuubuzi ery\'omuwendo mu bifo ebikulu eri bizinensi yo.',
+        ? 'Premium undeveloped land in strategic locations ready for your project.'
+        : 'Ettaka ery\'omuwendo eritannazimbibwako mu bifo ebikulu eryeetegese pulojekiti yo.',
       image: '/images/_ (36).jpeg',
       category: 'land'
     },
     {
       id: 11,
-      title: language === 'en' ? 'Agricultural Land' : 'Ettaka ly\'Ebyobulimi',
+      title: language === 'en' ? 'Agricultural Land Plots' : 'Ettaka ly\'Ebyobulimi',
       description: language === 'en'
-        ? 'Fertile agricultural land perfect for farming and investment.'
-        : 'Ettaka ly\'ebyobulimi erigimuka erirungi eri ebyobulimi n\'ensimbi.',
+        ? 'Fertile agricultural land perfect for farming and investment opportunities.'
+        : 'Ettaka ly\'ebyobulimi erigimuka erirungi eri ebyobulimi n\'emikisa gy\'ensimbi.',
       image: '/images/_ (38).jpeg',
       category: 'land'
     },
     {
       id: 12,
+      title: language === 'en' ? 'Residential Development Plots' : 'Ettaka ly\'Okuzimba Amayumba',
+      description: language === 'en'
+        ? 'Affordable residential plots in developing areas with great potential for building.'
+        : 'Ettaka ly\'okubeera eribuseeko mu bitundu ebikulaakulana n\'omukisa omunene okuzimba.',
+      image: '/images/_ (40).jpeg',
+      category: 'land'
+    },
+    {
+      id: 13,
       title: language === 'en' ? 'Investment Opportunities' : 'Emikisa gy\'Ensimbi',
       description: language === 'en'
         ? 'Learn from our experts about real estate investment strategies and market trends.'
         : 'Yiga okuva ku bakugu baffe ku nkola z\'okusiga ensimbi mu bintu n\'enkyukakyuka z\'akatale.',
       image: '/images/_ (39).jpeg',
       category: 'properties'
-    },
-    {
-      id: 13,
-      title: language === 'en' ? 'Residential Plots' : 'Ettaka ly\'Okubeera',
-      description: language === 'en'
-        ? 'Affordable residential plots in developing areas with great potential.'
-        : 'Ettaka ly\'okubeera eribuseeko mu bitundu ebikulaakulana n\'omukisa omunene.',
-      image: '/images/_ (40).jpeg',
-      category: 'land'
     },
     {
       id: 14,
