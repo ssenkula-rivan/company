@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+@import './animations.css';
+
+@layer base {
+  :root {
+    --primary-blue: #1E4399;
+    --cyan-blue: #1E4399;
+    --dark-blue: #1a3a5c;
+    --text-dark: #000000;
+    --orange: #F1592B;
+    --dark-orange: #DC5328;
+    --whatsapp-green: #25D366;
+  }
+
+  * {
+    @apply box-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 leading-relaxed;
+    font-family: 'Playfair Display', serif;
+  }
+
+  h1 {
+    @apply text-4xl font-bold text-dark-blue;
+    font-family: 'Cinzel', serif;
+  }
+
+  h2 {
+    @apply text-3xl font-bold text-dark-blue;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold text-dark-blue;
+  }
+
+  h4 {
+    @apply text-xl font-semibold text-orange;
+  }
+
+  h5 {
+    @apply text-lg font-semibold text-orange;
+  }
+
+  p {
+    @apply text-base mb-4;
+  }
+
+  .lead {
+    @apply text-xl text-orange font-normal;
+  }
+
+  /* Smooth scrolling for Firefox */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Smooth scrolling for Chrome, Safari, Edge */
+  html::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  html::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  html::-webkit-scrollbar-thumb {
+    background: var(--orange);
+    border-radius: 0.25rem;
+  }
+
+  /* Custom scrollbar for webkit browsers */
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--orange);
+    border-radius: 0.25rem;
+  }
+
+  /* CSS Transform & Opacity Animations */
+  .animate-in {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+  }
+
+  .animate-on-scroll.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Sticky Sections */
+  .sticky-section {
+    position: sticky;
+    top: 80px;
+    z-index: 40;
+  }
+
+  /* Parallax Elements */
+  .parallax-element {
+    will-change: transform;
+  }
+
+  /* Page Transitions */
+  .page-transition {
+    animation: pageTransition 0.5s ease-out;
+  }
+
+  /* Navigation smooth scroll offset */
+  html {
+    scroll-padding-top: 80px;
+  }
+
+  /* Intersection Observer animations */
+  .intersection-animate {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .intersection-animate.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Gallery Styles */
+#project-gallery .line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#project-gallery img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Lightbox Styles */
+.lightbox-overlay {
+  backdrop-filter: blur(10px);
+}
+
+/* Smooth transitions for category changes */
+#project-gallery .grid {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover effects for gallery items */
+#project-gallery .group:hover img {
+  transform: scale(1.1);
+}
+
+/* Custom scrollbar for modal */
+.lightbox-overlay::-webkit-scrollbar {
+  width: 8px;
+}
+
+.lightbox-overlay::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.lightbox-overlay::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.lightbox-overlay::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}

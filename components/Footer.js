@@ -1,0 +1,185 @@
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useLanguage } from '../contexts/LanguageContext'
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger)
+}
+
+export default function Footer() {
+  const footerRef = useRef(null)
+  const currentYear = new Date().getFullYear()
+  const { t, language } = useLanguage()
+
+  useEffect(() => {
+    // Parallax effect for footer background using GSAP
+    if (typeof window !== 'undefined') {
+      gsap.to('.footer-parallax', {
+        scrollTrigger: {
+          trigger: footerRef.current,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 1,
+        },
+        yPercent: -20,
+        ease: 'none'
+      })
+    }
+  }, [])
+
+  const socialLinks = [
+    { name: 'facebook', icon: 'fab fa-facebook', href: '#' },
+    { name: 'twitter', icon: 'fab fa-twitter', href: '#' },
+    { name: 'linkedin', icon: 'fab fa-linkedin', href: '#' },
+    { name: 'tiktok', icon: 'fab fa-tiktok', href: 'https://www.tiktok.com/@amodzproperties?_r=1&_t=ZS-95TybrfcLeE', target: '_blank' }
+  ]
+
+  const quickLinks = [
+    { name: t('about'), href: '/about' },
+    { name: t('services'), href: '/services' },
+    { name: t('properties'), href: '/properties' },
+    { name: t('contact'), href: '/contact' }
+  ]
+
+  return (
+    <motion.footer 
+      ref={footerRef}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      className="bg-dark-blue text-white py-12 md:py-20 relative overflow-hidden border-t-4 border-orange"
+    >
+      {/* Parallax Background */}
+      <div className="footer-parallax absolute inset-0 bg-gradient-to-br from-orange/10 to-primary-blue/10">
+        <div className="absolute inset-0 opacity-5" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-8">
+          {/* Company Info */}
+          <motion.div 
+            className="footer-section"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+          >
+            <div className="flex items-center mb-4">
+              <img src="/LOGO.png" alt="AMODZ Logo" className="w-14 h-14 mr-3 bg-white rounded-full p-2" />
+              <h5 className="text-lg font-bold">AMODZ PROPERTIES LIMITED</h5>
+            </div>
+            <p className="text-gray-300 text-sm leading-relaxed mb-4">
+              {language === 'en' 
+                ? 'Your trusted real estate partner for property sales, rentals, and investments.'
+                : 'Omukwano gwo ogwesigibwa mu bintu ku kutunda, okupangisa, n\'ensimbi.'
+              }
+            </p>
+            <div className="flex space-x-3">
+              {socialLinks.map((social, index) => (
+                <motion.a
+                  key={index}
+                  href={social.href}
+                  target={social.target || '_self'}
+                  rel={social.target === '_blank' ? 'noopener noreferrer' : undefined}
+                  className="w-10 h-10 bg-orange/20 hover:bg-orange text-white rounded-full flex items-center justify-center transition-all duration-300"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <i className={`${social.icon} text-sm`}></i>
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Quick Links */}
+          <motion.div 
+            className="footer-section"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+          >
+            <h6 className="text-base font-semibold mb-4 text-orange">{t('quickLinks')}</h6>
+            <ul className="space-y-2">
+              {quickLinks.map((link, index) => (
+                <li key={index}>
+                  <Link 
+                    href={link.href}
+                    className="text-gray-300 text-sm hover:text-orange transition-colors duration-300 flex items-center"
+                  >
+                    <i className="fas fa-chevron-right text-orange mr-2 text-xs"></i>
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Services */}
+          <motion.div 
+            className="footer-section"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+          >
+            <h6 className="text-base font-semibold mb-4 text-orange">{t('services')}</h6>
+            <ul className="space-y-2 text-sm text-gray-300">
+              <li className="flex items-center"><i className="fas fa-home text-orange mr-2"></i>{t('propertySales')}</li>
+              <li className="flex items-center"><i className="fas fa-key text-orange mr-2"></i>{t('propertyRentals')}</li>
+              <li className="flex items-center"><i className="fas fa-building text-orange mr-2"></i>{t('landPlots')}</li>
+              <li className="flex items-center"><i className="fas fa-chart-line text-orange mr-2"></i>{t('investmentAdvisory')}</li>
+            </ul>
+          </motion.div>
+
+          {/* Contact Info */}
+          <motion.div 
+            className="footer-section"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+          >
+            <h6 className="text-base font-semibold mb-4 text-orange">{t('contact')}</h6>
+            <div className="space-y-3 text-sm">
+              <div className="flex items-start">
+                <i className="fas fa-map-marker-alt text-orange mr-3 mt-1 flex-shrink-0"></i>
+                <p className="text-gray-300">City Centre Complex, Floor 4, Room J10b, Kampala</p>
+              </div>
+              <div className="flex items-center">
+                <i className="fas fa-phone text-orange mr-3 flex-shrink-0"></i>
+                <a href="tel:+256752830507" className="text-gray-300 hover:text-orange transition-colors">+256 752 830 507</a>
+              </div>
+              <div className="flex items-center">
+                <i className="fas fa-envelope text-orange mr-3 flex-shrink-0"></i>
+                <a href="mailto:info@amodz.com" className="text-gray-300 hover:text-orange transition-colors">info@amodz.com</a>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Divider */}
+        <div className="border-t border-gray-700 my-8"></div>
+
+        {/* Bottom Footer */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="flex flex-col sm:flex-row justify-between items-center text-center sm:text-left text-sm text-gray-400 space-y-4 sm:space-y-0"
+        >
+          <p>© {currentYear} AMODZ PROPERTIES LIMITED. {t('allRightsReserved')}</p>
+          <div className="flex space-x-6">
+            <Link href="#" className="hover:text-orange transition-colors">{t('privacyPolicy')}</Link>
+            <Link href="#" className="hover:text-orange transition-colors">{t('termsConditions')}</Link>
+          </div>
+        </motion.div>
+      </div>
+    </motion.footer>
+  )
+}
